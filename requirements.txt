@@ -1,0 +1,6 @@
+websocket-client
+requests
+tls-client
+langchain
+streamlit 
+streamlit-chat-media
