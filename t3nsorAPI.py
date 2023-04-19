@@ -31,7 +31,7 @@ class gpt3NoInternet(LLM):
         return {"messages": self.messages}
 
 
-#llm = gpt3NoInternet(messages=[])
+llm = gpt3NoInternet(messages=[])
 
-#print(llm("Never forget you are a Python Programmer and I am a Stock Trader."))
+print(llm("Never forget you are a Python Programmer and I am a Stock Trader."))
 

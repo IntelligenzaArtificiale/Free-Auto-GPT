@@ -11,9 +11,21 @@ from langchain.schema import (
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
 from t3nsorAPI import gpt3NoInternet
+from oraAPI import GPT4ORA
 from message import get_sys_msgs 
 import streamlit as st
 from streamlit_chat_media import message
+
+st.set_page_config(
+    page_title="FREE AUTOGPT 🚀 by Intelligenza Artificiale Italia",
+    page_icon="🚀",
+    layout="wide",
+    menu_items={
+        'Get help': 'https://www.intelligenzaartificialeitalia.net/',
+        'Report a bug': "mailto:servizi@intelligenzaartificialeitalia.net",
+        'About': "# *🚀  FREE AUTOGPT  🚀* "
+    }
+)
 
     
 class CAMELAgent:
@@ -21,7 +33,7 @@ class CAMELAgent:
     def __init__(
         self,
         system_message: SystemMessage,
-        model: gpt3NoInternet(messages=[]),
+        model: GPT4ORA(),
     ) -> None:
         self.system_message = system_message.content
         self.model = model
@@ -63,7 +75,7 @@ if st.button("Start Autonomus AI AGENT"):
     )
     task_specifier_template = HumanMessagePromptTemplate.from_template(template=task_specifier_prompt)
     
-    task_specify_agent = CAMELAgent(task_specifier_sys_msg, gpt3NoInternet(messages=[]))
+    task_specify_agent = CAMELAgent(task_specifier_sys_msg, GPT4ORA())
     task_specifier_msg = task_specifier_template.format_messages(assistant_role_name=assistant_role_name,
                                                                 user_role_name=user_role_name,
                                                                 task=task, word_limit=word_limit)[0]
@@ -78,8 +90,8 @@ if st.button("Start Autonomus AI AGENT"):
 
 
     assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
-    assistant_agent = CAMELAgent(assistant_sys_msg, gpt3NoInternet(messages=[]))
-    user_agent = CAMELAgent(user_sys_msg, gpt3NoInternet(messages=[]))
+    assistant_agent = CAMELAgent(assistant_sys_msg, GPT4ORA())
+    user_agent = CAMELAgent(user_sys_msg, GPT4ORA())
 
     # Reset agents
     assistant_agent.reset()
@@ -97,7 +109,7 @@ if st.button("Start Autonomus AI AGENT"):
     print(f"Original task prompt:\n{task}\n")
     print(f"Specified task prompt:\n{specified_task}\n")
 
-    chat_turn_limit, n = 300, 0
+    chat_turn_limit, n = 30, 0
     while n < chat_turn_limit:
         n += 1
         user_ai_msg = user_agent.step(assistant_msg)
