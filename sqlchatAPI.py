@@ -1,7 +1,6 @@
 import requests
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
-import you
 import pydantic
 
 
@@ -53,7 +52,7 @@ class sqlchatGPT3(LLM):
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
         """Get the identifying parameters."""
-        return {"model": "davinci"}
+        return {"model": "sqlchat.ai"}
 
 
 #llm = sqlchatGPT3()
