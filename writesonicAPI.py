@@ -1,13 +1,14 @@
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
-import quora
+import writesonic
 import pydantic
 
 
-class GPT4QUORA(LLM):
+class GPT3Internet(LLM):
     
-    token: Optional[quora.Account] = quora.Account.create(logging = True, enable_bot_creation=True)
-    
+    history_data: Optional[List[Mapping[str, Any]]] = []
+    token: Optional[writesonic.Account] = writesonic.Account.create(logging = True)
+
 
 
     @property
@@ -19,13 +20,17 @@ class GPT4QUORA(LLM):
             raise ValueError("stop kwargs are not permitted.")
 
         # GPT4 have one limit request for account , try to buypass this limit
-        response = quora.Completion.create(model  = 'gpt-3.5-turbo',
+        response =  writesonic.Completion.create(api_key= self.token.key,
                                             prompt = prompt,
-                                            token  = self.token)
+                                            enable_memory = True,
+                                            enable_google_results = True)
 
 
         text = response.completion.choices[0].text
 
+        self.history_data.append({'is_sent': True, 'message': prompt})
+        self.history_data.append({'is_sent': False, 'message': text})
+        
         return text
 
     @property
@@ -34,8 +39,8 @@ class GPT4QUORA(LLM):
         return {"conversation_id": self.token}
 
 
-llm = GPT4ORA()
+#llm = GPT3Internet()
 
-print(llm("Hello, how are you?"))
+#print(llm("Hello, how are you?"))
 #print(llm("what is AI?"))
 #print(llm("how have i question in before?"))

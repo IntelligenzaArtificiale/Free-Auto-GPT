@@ -11,7 +11,7 @@ from langchain.schema import (
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
 from t3nsorAPI import gpt3NoInternet
-from quoraAPI import GPT4QUORA
+from writesonicAPI import GPT3Internet
 from message import get_sys_msgs 
 import streamlit as st
 from streamlit_chat_media import message
@@ -28,14 +28,14 @@ st.set_page_config(
 )
 
 
-st.markdown("<style>.css-1meupwp > div {    text-align: left;}</style>", unsafe_allow_html=True)
+st.markdown("<style> iframe > div {    text-align: left;} </style>", unsafe_allow_html=True)
     
 class CAMELAgent:
 
     def __init__(
         self,
         system_message: SystemMessage,
-        model: GPT4QUORA(),
+        model: GPT3Internet(),
     ) -> None:
         self.system_message = system_message.content
         self.model = model
@@ -77,7 +77,7 @@ if st.button("Start Autonomus AI AGENT"):
     )
     task_specifier_template = HumanMessagePromptTemplate.from_template(template=task_specifier_prompt)
     
-    task_specify_agent = CAMELAgent(task_specifier_sys_msg, GPT4QUORA())
+    task_specify_agent = CAMELAgent(task_specifier_sys_msg, GPT3Internet())
     task_specifier_msg = task_specifier_template.format_messages(assistant_role_name=assistant_role_name,
                                                                 user_role_name=user_role_name,
                                                                 task=task, word_limit=word_limit)[0]
@@ -92,8 +92,8 @@ if st.button("Start Autonomus AI AGENT"):
 
 
     assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
-    assistant_agent = CAMELAgent(assistant_sys_msg, GPT4QUORA())
-    user_agent = CAMELAgent(user_sys_msg, GPT4QUORA())
+    assistant_agent = CAMELAgent(assistant_sys_msg, GPT3Internet())
+    user_agent = CAMELAgent(user_sys_msg, GPT3Internet())
 
     # Reset agents
     assistant_agent.reset()
