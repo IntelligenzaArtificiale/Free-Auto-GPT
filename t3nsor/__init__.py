@@ -134,4 +134,4 @@ class StreamCompletion:
                     'completion_chars' : len(chunk.decode()), 
                     'total_chars'      : len(prompt) + len(chunk.decode())
                 }
-            })
+            }) 
