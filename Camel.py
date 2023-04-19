@@ -96,6 +96,22 @@ if st.button("Start Autonomus AI AGENT"):
     specified_task = specified_task_msg
 
     #define the agents
+    """
+    for GPT4 + internet :  phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content) or phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content)
+    
+    for YOU + internt :     youGPT3Internet()
+    
+    for WRITESONIC + internt : writesonicGPT3Internet()
+    
+    for sqlchat.ai + internt :   sqlchatGPT3()
+    
+    for t3nsor gpt3NoInternet() - NOT WORKING BEST RESULT
+    
+    for Quora GPT4QUORA() - WORKING 50%
+    
+    """
+    
+    
     assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
     assistant_agent = CAMELAgent(assistant_sys_msg, phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content))
     user_agent = CAMELAgent(user_sys_msg, phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content))
@@ -128,7 +144,7 @@ if st.button("Start Autonomus AI AGENT"):
         assistant_msg = HumanMessage(content=assistant_ai_msg)
         #print(f"AI Assistant ({assistant_role_name}):\n\n{assistant_msg}\n\n")
         message(f"AI Assistant ({assistant_role_name}):\n\n{assistant_msg.content}\n\n", is_user=False, allow_html=True, key=str(n)+"_assistant" , avatar_style="pixel-art")
-        if "<CAMEL_TASK_DONE>" in user_msg.content:
+        if "<CAMEL_TASK_DONE>" in user_msg.content or 'task  completed' in user_msg.content:
             message("Task completed!", allow_html=True, key="task_done")
             break
         if 'Error' in user_msg.content:

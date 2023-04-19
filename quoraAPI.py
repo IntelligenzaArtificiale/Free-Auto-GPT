@@ -19,7 +19,7 @@ class GPT4QUORA(LLM):
             raise ValueError("stop kwargs are not permitted.")
 
         # GPT4 have one limit request for account , try to buypass this limit
-        response = quora.Completion.create(model  = 'gpt-3.5-turbo',
+        response = quora.Completion.create(model  = 'gpt-4',
                                             prompt = prompt,
                                             token  = self.token)
 
@@ -34,8 +34,8 @@ class GPT4QUORA(LLM):
         return {"conversation_id": self.token}
 
 
-llm = GPT4ORA()
+#llm = GPT4QUORA()
 
-print(llm("Hello, how are you?"))
+#print(llm("Hello, how are you?"))
 #print(llm("what is AI?"))
 #print(llm("how have i question in before?"))
