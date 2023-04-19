@@ -2,11 +2,13 @@
 - [x] Create free LLM langchain wrapper based on [t3nsor now down](https://github.com/xtekky/gpt4free/tree/main/t3nsor) 
 - [x] Create free LLM langchain wrapper based on [Quora now down](https://github.com/xtekky/gpt4free/tree/main/qoura) 
 - [x] Create free LLM langchain wrapper based on [WriteSonic with gpt3.5 and intenet access](https://github.com/xtekky/gpt4free/tree/main/writesonic) 
+- [x] Create free LLM langchain wrapper based on [You with gpt3.5 and intenet access](https://github.com/xtekky/gpt4free/tree/main/you) 
 - [x] Create a simple versione of AUTOGPT
 - [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
 - [ ] Add web search agent
 - [ ] Add file writer agent
 - [ ] Add long term memory
+
 
 
 Hello everyone :smiling_face_with_three_hearts: ,
