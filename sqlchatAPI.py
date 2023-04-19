@@ -56,8 +56,8 @@ class sqlchatGPT3(LLM):
         return {"model": "davinci"}
 
 
-llm = sqlchatGPT3()
+#llm = sqlchatGPT3()
 
-print(llm("Hello, how are you?"))
-print(llm("what is AI?"))
-print(llm("how have i question in before?"))
+#print(llm("Hello, how are you?"))
+#print(llm("what is AI?"))
+#print(llm("how have i question in before?"))
