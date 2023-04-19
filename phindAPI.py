@@ -1,9 +1,10 @@
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
-import t3nsor
+import phind
 
-class gpt3NoInternet(LLM):
+class phindGPT4Internet(LLM):
     messages: List[Mapping[str, Any]]
+    base_prompt: str 
     
     @property
     def _llm_type(self) -> str:
@@ -13,12 +14,15 @@ class gpt3NoInternet(LLM):
         if stop is not None:
             raise ValueError("stop kwargs are not permitted.")
         
-        t3nsor_cmpl = t3nsor.Completion.create(
-            prompt   = prompt,
-            messages = self.messages
-        )
+        result = phind.Completion.create(model  = 'gpt-4',
+                                        prompt = prompt,
+                                        results     = phind.Search.create(prompt, actualSearch = False), # create search (set actualSearch to False to disable internet)
+                                        creative    = False,
+                                        detailed    = False,
+                                        codeContext = self.base_prompt)
+        
 
-        response = t3nsor_cmpl.completion.choices[0].text
+        response = result.completion.choices[0].text
         
         self.messages.append({'role': 'user', 'content': prompt})
         self.messages.append({'role': 'assistant', 'content': response})
@@ -30,7 +34,9 @@ class gpt3NoInternet(LLM):
         """Get the identifying parameters."""
         return {"messages": self.messages}
 
-#llm = gpt3NoInternet()
+
+#llm = phindGPT4Internet(messages=[])
+
 
 #print(llm("Hello, how are you?"))
 #print(llm("what is AI?"))

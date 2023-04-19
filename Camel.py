@@ -14,6 +14,7 @@ from typing import Optional, List, Mapping, Any
 #from t3nsorAPI import gpt3NoInternet  not working the best
 #from quoraAPI import GPT4QUORA        not working
 #from sqlchatAPI import sqlchatGPT3    work but low result
+from phindAPI import phindGPT4Internet
 from writesonicAPI import writesonicGPT3Internet
 from youAPI import youGPT3Internet
 from message import get_sys_msgs 
@@ -96,8 +97,8 @@ if st.button("Start Autonomus AI AGENT"):
 
     #define the agents
     assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
-    assistant_agent = CAMELAgent(assistant_sys_msg, writesonicGPT3Internet())
-    user_agent = CAMELAgent(user_sys_msg, youGPT3Internet())
+    assistant_agent = CAMELAgent(assistant_sys_msg, phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content))
+    user_agent = CAMELAgent(user_sys_msg, phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content))
 
     # Reset agents
     assistant_agent.reset()
