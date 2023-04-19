@@ -23,6 +23,7 @@ class GPT3Internet(LLM):
         response =  writesonic.Completion.create(api_key= self.token.key,
                                             prompt = prompt,
                                             enable_memory = True,
+                                            history_data= self.history_data,
                                             enable_google_results = True)
 
 
