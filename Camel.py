@@ -8,10 +8,12 @@ from langchain.schema import (
     SystemMessage,
     BaseMessage,
 )
+
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
-#from t3nsorAPI import gpt3NoInternet  not working
+#from t3nsorAPI import gpt3NoInternet  not working the best
 #from quoraAPI import GPT4QUORA        not working
+#from sqlchatAPI import sqlchatGPT3    work but low result
 from writesonicAPI import writesonicGPT3Internet
 from youAPI import youGPT3Internet
 from message import get_sys_msgs 
@@ -113,7 +115,7 @@ if st.button("Start Autonomus AI AGENT"):
     print(f"Original task prompt:\n{task}\n")
     print(f"Specified task prompt:\n{specified_task}\n")
 
-    chat_turn_limit, n = 30, 0 
+    chat_turn_limit, n = 30, 0
     while n < chat_turn_limit:
         n += 1
         user_ai_msg = user_agent.step(assistant_msg)

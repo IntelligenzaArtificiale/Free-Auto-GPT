@@ -4,7 +4,7 @@ import writesonic
 import pydantic
 
 
-class GPT3Internet(LLM):
+class writesonicGPT3Internet(LLM):
     
     history_data: Optional[List[Mapping[str, Any]]] = []
     token: Optional[writesonic.Account] = writesonic.Account.create(logging = True)
@@ -40,7 +40,7 @@ class GPT3Internet(LLM):
         return {"conversation_id": self.token}
 
 
-#llm = GPT3Internet()
+#llm = writesonicGPT3Internet()
 
 #print(llm("Hello, how are you?"))
 #print(llm("what is AI?"))
