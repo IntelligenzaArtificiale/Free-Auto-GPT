@@ -1,8 +1,8 @@
 # TODO , I NEED YOUR HELP 
-- [x] Create free LLM langchain wrapperbased on [t3nsor now down](https://github.com/xtekky/gpt4free/tree/main/t3nsor) 
-- [x] Create free LLM langchain wrapperbased on [Quora](https://github.com/xtekky/gpt4free/tree/main/qoura) 
+- [x] Create free LLM langchain wrapper based on [t3nsor now down](https://github.com/xtekky/gpt4free/tree/main/t3nsor) 
+- [x] Create free LLM langchain wrapper based on [Quora](https://github.com/xtekky/gpt4free/tree/main/qoura) 
 - [x] Create a simple versione of AUTOGPT
-- [ ] Add other free CUstom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
+- [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
 - [ ] Add web search agent
 - [ ] Add file writer agent
 - [ ] Add long term memory
