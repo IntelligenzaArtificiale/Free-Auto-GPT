@@ -26,28 +26,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 [VIDEO DEMO](https://watch.screencastify.com/v/vSDUBdhfvh9yEwclHUyw)
 
-First, I searched everywhere for easily accessible and free websites or endpoints to use. Eventually, I came across this simple library: [T3nsor](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API/tree/main/t3nsor). This library allows us to use GPT3.5 APIs completely for free.
-
-Here's an example of how you can create a simple chatbot using this library in your local environment:
-```
-import t3nsor
-messages = []
-
-while True:
-    user = input('you: ')
-
-    t3nsor_cmpl = t3nsor.Completion.create(
-        prompt   = user,
-        messages = messages
-    )
-
-    print('gpt:', t3nsor_cmpl.completion.choices[0].text)
-    
-    messages.extend([
-        {'role': 'user', 'content': user }, 
-        {'role': 'assistant', 'content': t3nsor_cmpl.completion.choices[0].text}
-    ])
-```
+First, find everywhere for easily accessible and free websites or endpoints to use. Eventually, I came across this simple library: [T3nsor](https://github.com/xtekky/gpt4free). This library allows us to use GPT3.5 APIs completely for free. All credit to [xtekky](https://github.com/xtekky/gpt4free)
 
 After finding this free endpoint, **I had to create a custom wrapper for my LLM using Langchain**. This is because Langchain mostly offers LLM models that are only available for a fee. However, **we were able to create a custom component based on the t3nsor.tech endpoint.**
 
