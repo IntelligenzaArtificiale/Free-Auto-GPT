@@ -94,26 +94,31 @@ if st.button("Start Autonomus AI AGENT"):
     message(f"Specified task: {specified_task_msg}", allow_html=True, key="specified_task" , avatar_style="adventurer")
     
     specified_task = specified_task_msg
+    
+    #define the role system messages
+    assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
+
 
     #define the agents
-    """
-    for GPT4 + internet :  phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content) or phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content)
     
-    for YOU + internt :     youGPT3Internet()
+    #for GPT4 + internet :  phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content) or phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content)
     
-    for WRITESONIC + internt : writesonicGPT3Internet()
+    #for YOU + internt :     youGPT3Internet()
     
-    for sqlchat.ai + internt :   sqlchatGPT3()
+    #for WRITESONIC + internt : writesonicGPT3Internet()
     
-    for t3nsor gpt3NoInternet() - NOT WORKING BEST RESULT
+    #for sqlchat.ai + internt :   sqlchatGPT3()
     
-    for Quora GPT4QUORA() - WORKING 50%
+    #for t3nsor gpt3NoInternet() - NOT WORKING BEST RESULT
     
-    """
+    #for Quora GPT4QUORA() - WORKING 50%
     
+   
     
-    assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
+    #AI ASSISTANT setup                           |-> add the agent LLM MODEL HERE <-|
     assistant_agent = CAMELAgent(assistant_sys_msg, phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content))
+    
+    #AI USER setup                      |-> add the agent LLM MODEL HERE <-|
     user_agent = CAMELAgent(user_sys_msg, phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content))
 
     # Reset agents
