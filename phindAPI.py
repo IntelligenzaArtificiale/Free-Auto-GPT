@@ -3,8 +3,8 @@ from typing import Optional, List, Mapping, Any
 import phind
 
 class phindGPT4Internet(LLM):
-    messages: List[Mapping[str, Any]]
-    base_prompt: str 
+    messages: Optional[List[Mapping[str, Any]]] = []
+    base_prompt: Optional[str] = ""
     
     @property
     def _llm_type(self) -> str:
@@ -32,7 +32,7 @@ class phindGPT4Internet(LLM):
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
         """Get the identifying parameters."""
-        return {"messages": self.messages}
+        return {"model": "GPT4"}
 
 
 #llm = phindGPT4Internet(messages=[])

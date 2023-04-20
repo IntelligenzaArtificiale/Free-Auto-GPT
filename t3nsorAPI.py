@@ -3,7 +3,7 @@ from typing import Optional, List, Mapping, Any
 import t3nsor
 
 class gpt3NoInternet(LLM):
-    messages: List[Mapping[str, Any]]
+    messages: Optional[List[Mapping[str, Any]]] = []
     
     @property
     def _llm_type(self) -> str:
@@ -28,7 +28,7 @@ class gpt3NoInternet(LLM):
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
         """Get the identifying parameters."""
-        return {"messages": self.messages}
+        return {"model": "GPT3.5Turbo"}
 
 #llm = gpt3NoInternet()
 

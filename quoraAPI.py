@@ -31,7 +31,7 @@ class GPT4QUORA(LLM):
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
         """Get the identifying parameters."""
-        return {"conversation_id": self.token}
+        return {"model": "GPT4"}
 
 
 #llm = GPT4QUORA()

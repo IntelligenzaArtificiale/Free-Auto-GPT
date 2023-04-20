@@ -37,7 +37,7 @@ class writesonicGPT3Internet(LLM):
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
         """Get the identifying parameters."""
-        return {"conversation_id": self.token}
+        return {"model": "GPT3.5Turbo"}
 
 
 #llm = writesonicGPT3Internet()

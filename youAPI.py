@@ -32,7 +32,7 @@ class youGPT3Internet(LLM):
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
         """Get the identifying parameters."""
-        return {"model": "davinci"}
+        return {"model": "GPT3.5"}
 
 
 #llm = youGPT3Internet()

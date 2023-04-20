@@ -13,7 +13,7 @@ from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
 #from t3nsorAPI import gpt3NoInternet  not working the best
 #from quoraAPI import GPT4QUORA        not working
-#from sqlchatAPI import sqlchatGPT3    work but low result
+from sqlchatAPI import sqlchatGPT3    #work but low result
 from phindAPI import phindGPT4Internet
 from writesonicAPI import writesonicGPT3Internet
 from youAPI import youGPT3Internet
@@ -66,12 +66,34 @@ class CAMELAgent:
         self.update_messages(output_message)
         print(f"AI Assistant:\n\n{output_message}\n\n")
         return output_message
+
     
+
+
 col1, col2 = st.columns(2)
 assistant_role_name = col1.text_input("Assistant Role Name", "Python Programmer")
 user_role_name = col2.text_input("User Role Name", "Stock Trader")
 task = st.text_area("Task", "Develop a trading bot for the stock market")
 word_limit = st.number_input("Word Limit", 10, 1500, 50)
+
+#choose a model for agent 
+cola, colb = st.columns(2)
+assistant_model = cola.selectbox("Assistant Model", ["PHIND + Internet (GPT4)", "YOU + Internet (GPT3.5)", "WRITESONIC + Internet (GPT3.5)", "SQLCHAT.AI (GPT3.5 turbo)"])
+user_model = colb.selectbox("User Model", ["PHIND + Internet (GPT4)", "YOU + Internet (GPT3.5)", "WRITESONIC + Internet (GPT3.5)", "SQLCHAT.AI (GPT3.5 turbo)"])
+
+if assistant_model == "YOU + Internet (GPT3.5)":
+    assistant_model = youGPT3Internet()
+elif assistant_model == "WRITESONIC + Internet (GPT3.5)":
+    assistant_model = writesonicGPT3Internet()
+elif assistant_model == "SQLCHAT.AI (GPT3.5 turbo)":
+    assistant_model = sqlchatGPT3()
+
+if user_model == "YOU + Internet (GPT3.5)":
+    user_model = youGPT3Internet()
+elif user_model == "WRITESONIC + Internet (GPT3.5)":
+    user_model = writesonicGPT3Internet()
+elif user_model == "SQLCHAT.AI (GPT3.5 turbo)":
+    user_model = sqlchatGPT3()
 
 if st.button("Start Autonomus AI AGENT"):
     task_specifier_sys_msg = SystemMessage(content="You can make a task more specific.")
@@ -101,7 +123,7 @@ if st.button("Start Autonomus AI AGENT"):
 
     #define the agents
     
-    #for GPT4 + internet :  phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content) or phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content)
+    #for GPT4 + internet :  phindGPT4Internet(base_prompt=assistant_sys_msg.content) or phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content)
     
     #for YOU + internt :     youGPT3Internet()
     
@@ -113,7 +135,15 @@ if st.button("Start Autonomus AI AGENT"):
     
     #for Quora GPT4QUORA() - WORKING 50%
     
-   
+    if assistant_model == "PHIND + Internet (GPT4)":
+        assistant_model = phindGPT4Internet(base_prompt=assistant_sys_msg.content)
+
+    if user_model == "PHIND + Internet (GPT4)":
+        user_model = phindGPT4Internet(base_prompt=user_sys_msg.content)
+    
+    
+    message(f"Starting AI ASSISTANT '{assistant_role_name}' with assigned model: {assistant_model}", allow_html=True, key="assistant_model" , avatar_style="pixel-art-neutral")
+    message(f"Starting AI USER '{user_role_name}' with assigned model: {user_model}", allow_html=True, key="user_model" , avatar_style="fun-emoji")
     
     #AI ASSISTANT setup                           |-> add the agent LLM MODEL HERE <-|
     assistant_agent = CAMELAgent(assistant_sys_msg, phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content))
