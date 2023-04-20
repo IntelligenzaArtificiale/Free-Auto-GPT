@@ -35,7 +35,7 @@
 <source src="https://video.wixstatic.com/video/3c029f_363d7f30738147e5a43f5943757a0246/1080p/mp4/file.mp4"  type="video/webm" >
 </video> 
 
-![image|690x441](img/Schermata del 2023-04-20 16-55-37.png)
+![image|690x441](img/2.png)
 
 ---
 
@@ -45,7 +45,7 @@ Hello everyone :smiling_face_with_three_hearts: ,
 
 I wanted to start by **talking about how important it is to democratize AI**. Unfortunately, most new applications or discoveries in this field end up enriching some big companies, leaving behind small businesses or simple projects. One striking example of this is Autogpt, an autonomous AI agent capable of performing tasks.
 
-![image|690x441](1.png)
+![image|690x441](img/1.png)
 
 Autogpt and similar projects like BabyAGI **only work with paid APIs, which is not fair**. That's why I tried to recreate a simpler but very interesting and, above all, open-source version of Autogpt that **does not require any API and does not need any particular hardware.**
 
