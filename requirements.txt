@@ -4,3 +4,5 @@ tls-client
 langchain
 streamlit 
 streamlit-chat-media
+curl_cffi
+names
