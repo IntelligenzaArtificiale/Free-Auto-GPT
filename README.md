@@ -15,6 +15,10 @@
 - [ ] Find a way to replace PINECONE api
 - [ ] Find a way to replace official Google API
 
+
+-----
+
+
 # HOW TO RUN CAMEL
 - dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API) and extract
 - pip3 install -r requirements.txt
@@ -24,6 +28,10 @@
 </video> 
 
 ![image|690x441](img/1.png)
+
+
+-----
+
 
 
 # HOW TO RUN BABY AGI
@@ -54,7 +62,9 @@ Autogpt and similar projects like BabyAGI **only work with paid APIs, which is n
 I believe that by providing free and open-source AI tools, we can give small businesses and individuals the opportunity to create new and innovative projects without the need for significant financial investment. **This will allow for more equitable and diverse access to AI technology, which is essential for advancing society as a whole.**
 
 
+
 -----
+
 
 
 # HOW IT WORK ?
