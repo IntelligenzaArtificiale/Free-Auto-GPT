@@ -30,19 +30,25 @@ import numpy as np
 
 #embeddings_model = OpenAIEmbeddings()
 
-import sys
+import argparse
 
-if len(sys.argv) != 3:
-    print("Usage: python BabyAGI.py <goal> <huggingface_token>")
-    sys.exit(1)
+parser = argparse.ArgumentParser(description='Script description')
 
-goal = sys.argv[1]
-huggingface_token = sys.argv[2]
+parser.add_argument('--goal', type=str, help='The goal of babyAGI (e.g., learn to play chess)')
+parser.add_argument('--token', type=str, help='Your HuggingFace API token, required to use some of the models')
+parser.add_argument('--iterations', type=str, help='The number of iterations, if None, will keep on going forever')
+
+args = parser.parse_args()
+
+if args.goal is None or args.token is None or args.iterations is None:
+    parser.print_help()
+    exit(1)
+
 
 
 
 model_id = "sentence-transformers/all-MiniLM-L6-v2"
-hf_token = huggingface_token
+hf_token = args.token
 
 api_url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{model_id}"
 headers = {"Authorization": f"Bearer {hf_token}"}
@@ -97,14 +103,14 @@ llm = sqlchatGPT3()
 # Logging of LLMChains
 verbose = False
 # If None, will keep on going forever
-max_iterations: Optional[int] = 15
+max_iterations: Optional[int] = (int)(args.iterations)
 baby_agi = BabyAGI.from_llm(
     llm=llm, vectorstore=vectorstore, verbose=verbose, max_iterations=max_iterations
 )
 
 
 # DEFINE THE OBJECTIVE - MODIFY THIS
-OBJECTIVE = goal
+OBJECTIVE = args.goal
 
 
 baby_agi({"objective": OBJECTIVE})
