@@ -8,13 +8,14 @@ from typing import Dict, List, Optional, Any
 
 from langchain import LLMChain, PromptTemplate
 
-#from t3nsorAPI import gpt3NoInternet  not working the best
-#from quoraAPI import GPT4QUORA        not working
-from sqlchatAPI import sqlchatGPT3    #work but low result
-#from phindAPI import phindGPT4Internet
-#from writesonicAPI import writesonicGPT3Internet
-#from youAPI import youGPT3Internet
+#from t3nsorAPI import gpt3NoInternet  #not working the best
+#from quoraAPI import GPT4QUORA        #not working  
+#from phindAPI import phindGPT4Internet #not working
+#from writesonicAPI import writesonicGPT3Internet #not working
 
+
+#from youAPI import youGPT3Internet
+from sqlchatAPI import sqlchatGPT3  
 
 #from langchain.embeddings import OpenAIEmbeddings
 from langchain.llms import BaseLLM
@@ -89,14 +90,14 @@ llm = sqlchatGPT3()
 # Logging of LLMChains
 verbose = False
 # If None, will keep on going forever
-max_iterations: Optional[int] = 3
+max_iterations: Optional[int] = 15
 baby_agi = BabyAGI.from_llm(
     llm=llm, vectorstore=vectorstore, verbose=verbose, max_iterations=max_iterations
 )
 
 
 # DEFINE THE OBJECTIVE - MODIFY THIS
-OBJECTIVE = "Find best street in Rome for buy an house as an investment."
+OBJECTIVE = "make a business plan for an ecommerce business based on italy for sell 'carciofini sott'olio' in the world."
 
 
 baby_agi({"objective": OBJECTIVE})

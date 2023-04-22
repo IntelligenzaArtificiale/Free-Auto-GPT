@@ -104,7 +104,7 @@ if st.button("Start Autonomus AI AGENT"):
     )
     task_specifier_template = HumanMessagePromptTemplate.from_template(template=task_specifier_prompt)
     
-    task_specify_agent = CAMELAgent(task_specifier_sys_msg, writesonicGPT3Internet())
+    task_specify_agent = CAMELAgent(task_specifier_sys_msg, sqlchatGPT3())
     task_specifier_msg = task_specifier_template.format_messages(assistant_role_name=assistant_role_name,
                                                                 user_role_name=user_role_name,
                                                                 task=task, word_limit=word_limit)[0]
@@ -123,17 +123,17 @@ if st.button("Start Autonomus AI AGENT"):
 
     #define the agents
     
-    #for GPT4 + internet :  phindGPT4Internet(base_prompt=assistant_sys_msg.content) or phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content)
+    #for GPT4 + internet :  phindGPT4Internet(base_prompt=assistant_sys_msg.content) or phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content)  NOT WORKING 
     
-    #for YOU + internt :     youGPT3Internet()
-    
-    #for WRITESONIC + internt : writesonicGPT3Internet()
-    
-    #for sqlchat.ai + internt :   sqlchatGPT3()
+    #for WRITESONIC + internt : writesonicGPT3Internet() -  NOT WORKING 
     
     #for t3nsor gpt3NoInternet() - NOT WORKING BEST RESULT
     
-    #for Quora GPT4QUORA() - WORKING 50%
+    #for Quora GPT4QUORA() -  NOT WORKING 
+    
+    #for sqlchat.ai + internt :   sqlchatGPT3()
+    
+    #for YOU + internt :     youGPT3Internet()
     
     if assistant_model == "PHIND + Internet (GPT4)":
         assistant_model = phindGPT4Internet(base_prompt=assistant_sys_msg.content)
@@ -146,10 +146,10 @@ if st.button("Start Autonomus AI AGENT"):
     message(f"Starting AI USER '{user_role_name}' with assigned model: {user_model}", allow_html=True, key="user_model" , avatar_style="fun-emoji")
     
     #AI ASSISTANT setup                           |-> add the agent LLM MODEL HERE <-|
-    assistant_agent = CAMELAgent(assistant_sys_msg, phindGPT4Internet(messages=[],base_prompt=assistant_sys_msg.content))
+    assistant_agent = CAMELAgent(assistant_sys_msg, sqlchatGPT3())
     
     #AI USER setup                      |-> add the agent LLM MODEL HERE <-|
-    user_agent = CAMELAgent(user_sys_msg, phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content))
+    user_agent = CAMELAgent(user_sys_msg, sqlchatGPT3())
 
     # Reset agents
     assistant_agent.reset()

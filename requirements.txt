@@ -1,8 +1,10 @@
 websocket-client
 requests
 tls-client
+pypasser
+names
+colorama
+curl_cffi
 langchain
 streamlit 
 streamlit-chat-media
-curl_cffi
-names
