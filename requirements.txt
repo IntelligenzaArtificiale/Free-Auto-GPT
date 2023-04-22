@@ -9,4 +9,4 @@ langchain
 streamlit 
 streamlit-chat-media
 retry
-
+faiss
