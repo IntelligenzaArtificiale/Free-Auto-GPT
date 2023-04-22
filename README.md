@@ -1,9 +1,10 @@
 # TODO , I NEED YOUR HELP 
-- [x] Create free LLM langchain wrapper based on [t3nsor now down](https://github.com/xtekky/gpt4free/tree/main/t3nsor) 
-- [x] Create free LLM langchain wrapper based on [Quora now down](https://github.com/xtekky/gpt4free/tree/main/qoura) 
-- [x] Create free LLM langchain wrapper based on [WriteSonic with gpt3.5 and intenet access](https://github.com/xtekky/gpt4free/tree/main/writesonic) 
+- [x] Create free LLM langchain wrapper based on [t3nsor - NOT WORKING NOW](https://github.com/xtekky/gpt4free/tree/main/t3nsor) 
+- [x] Create free LLM langchain wrapper based on [Quora - NOT WORKING NOW](https://github.com/xtekky/gpt4free/tree/main/qoura) 
+- [x] Create free LLM langchain wrapper based on [WriteSonic with gpt3.5 and intenet access - NOT WORKING NOW](https://github.com/xtekky/gpt4free/tree/main/writesonic) 
+- [x] Create free LLM langchain wrapper based on [PHIND with gpt4 and intenet access - NOT WORKING NOW](https://github.com/xtekky/gpt4free/tree/main/you) 
 - [x] Create free LLM langchain wrapper based on [You with gpt3.5 and intenet access](https://github.com/xtekky/gpt4free/tree/main/you) 
-- [x] Create free LLM langchain wrapper based on [PHIND with gpt4 and intenet access](https://github.com/xtekky/gpt4free/tree/main/you) 
+- [x] Create free LLM langchain wrapper based on [SQLchat with gpt3.5 and intenet access](https://github.com/xtekky/gpt4free/tree/main/sqlchat) 
 - [x] Add web search agent
 - [x] Create a simple versione of AUTOGPT based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
 - [x] Find a way to replace OpenAIEmbeddings()
