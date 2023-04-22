@@ -12,11 +12,15 @@ from langchain.schema import (
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
 #from t3nsorAPI import gpt3NoInternet  not working the best
-#from quoraAPI import GPT4QUORA        not working
-from sqlchatAPI import sqlchatGPT3    #work but low result
-from phindAPI import phindGPT4Internet
-from writesonicAPI import writesonicGPT3Internet
+#from t3nsorAPI import gpt3NoInternet  #not working the best
+#from quoraAPI import GPT4QUORA        #not working  
+#from phindAPI import phindGPT4Internet #not working
+#from writesonicAPI import writesonicGPT3Internet #not working
+
+
 from youAPI import youGPT3Internet
+from sqlchatAPI import sqlchatGPT3  
+
 from message import get_sys_msgs 
 import streamlit as st
 from streamlit_chat_media import message
@@ -40,7 +44,7 @@ class CAMELAgent:
     def __init__(
         self,
         system_message: SystemMessage,
-        model: writesonicGPT3Internet,
+        model: sqlchatGPT3,
     ) -> None:
         self.system_message = system_message.content
         self.model = model
@@ -78,8 +82,8 @@ word_limit = st.number_input("Word Limit", 10, 1500, 50)
 
 #choose a model for agent 
 cola, colb = st.columns(2)
-assistant_model = cola.selectbox("Assistant Model", ["PHIND + Internet (GPT4)", "YOU + Internet (GPT3.5)", "WRITESONIC + Internet (GPT3.5)", "SQLCHAT.AI (GPT3.5 turbo)"])
-user_model = colb.selectbox("User Model", ["PHIND + Internet (GPT4)", "YOU + Internet (GPT3.5)", "WRITESONIC + Internet (GPT3.5)", "SQLCHAT.AI (GPT3.5 turbo)"])
+assistant_model = cola.selectbox("Assistant Model", ["YOU + Internet (GPT3.5)", "SQLCHAT.AI (GPT3.5 turbo)"])
+user_model = colb.selectbox("User Model", ["YOU + Internet (GPT3.5)", "SQLCHAT.AI (GPT3.5 turbo)"])
 
 if assistant_model == "YOU + Internet (GPT3.5)":
     assistant_model = youGPT3Internet()
