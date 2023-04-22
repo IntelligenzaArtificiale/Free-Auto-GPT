@@ -38,7 +38,8 @@
 # HOW TO RUN BABY AGI
 - dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
-- Usage: **python BabyAGI.py --goal <goal_text> --token <huggingface_token> --iterations <max_iterations>**
+- set the GOAL
+- Usage: **python BabyAGI.py**
 <video  width="100%" height="240" controls autoplay>
 <source src="https://video.wixstatic.com/video/3c029f_363d7f30738147e5a43f5943757a0246/1080p/mp4/file.mp4"  type="video/webm" >
 </video> 
