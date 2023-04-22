@@ -18,7 +18,7 @@ class Completion:
         chat            : list = [],
         includelinks    : bool = False,
         detailed        : bool = False,
-        debug           : bool = True ) -> dict:
+        debug           : bool = False ) -> dict:
         
         client         = Session(client_identifier="chrome_108")
         client.headers = {
@@ -57,37 +57,21 @@ class Completion:
             print(response.text)
             print('\n\n------------------\n\n')
 
-        try:
-            youChatSerpResults      = findall(r'youChatSerpResults\ndata: (.*)\n\nevent', response.text)[0]
-            thirdPartySearchResults = findall(r"thirdPartySearchResults\ndata: (.*)\n\nevent", response.text)[0]
-            slots                   = findall(r"slots\ndata: (.*)\n\nevent", response.text)[0]
-            text = response.text.split('}]}\n\nevent: youChatToken\ndata: {"youChatToken": "')[-1]
-            text = text.replace('"}\n\nevent: youChatToken\ndata: {"youChatToken": "', '')
-            text = text.replace('event: done\ndata: I\'m Mr. Meeseeks. Look at me.\n\n', '')
-            
-            extra = {
-                'youChatSerpResults'      : loads(youChatSerpResults),
-                'slots'                   : loads(slots)
-            }
-
-            return {
-                'response': text,
-                'links'   : loads(thirdPartySearchResults)['search']["third_party_search_results"] if includelinks else None,
-                'extra'   : extra if detailed else None,
-            }
+        youChatSerpResults      = findall(r'youChatSerpResults\ndata: (.*)\n\nevent', response.text)[0]
+        thirdPartySearchResults = findall(r"thirdPartySearchResults\ndata: (.*)\n\nevent", response.text)[0]
+        #slots                   = findall(r"slots\ndata: (.*)\n\nevent", response.text)[0]
         
-        except IndexError:
-            youChatSerpResults      = ""
-            thirdPartySearchResults = ""
-            slots                   = ""
-            
-            text = response.text.split('}]}\n\nevent: youChatToken\ndata: {"youChatToken": "')[-1]
-            text = text.replace('"}\n\nevent: youChatToken\ndata: {"youChatToken": "', '')
-            text = text.replace('event: done\ndata: I\'m Mr. Meeseeks. Look at me.\n\n', '')
+        text = response.text.split('}]}\n\nevent: youChatToken\ndata: {"youChatToken": "')[-1]
+        text = text.replace('"}\n\nevent: youChatToken\ndata: {"youChatToken": "', '')
+        text = text.replace('event: done\ndata: I\'m Mr. Meeseeks. Look at me.\n\n', '')
+        
+        extra = {
+            'youChatSerpResults'      : loads(youChatSerpResults),
+            #'slots'                   : loads(slots)
+        }
 
-
-            return {
-                'response': text,
-                'links'   : None,
-                'extra'   : None
-            }
+        return {
+            'response': text,
+            'links'   : loads(thirdPartySearchResults)['search']["third_party_search_results"] if includelinks else None,
+            'extra'   : extra if detailed else None,
+        }

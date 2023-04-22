@@ -2,27 +2,20 @@ from requests import post
 from time     import time
 
 headers = {
-    'authority': 'www.t3nsor.tech',
-    'accept': '*/*',
+    'authority'      : 'www.sqlchat.ai',
+    'accept'         : '*/*',
     'accept-language': 'en,fr-FR;q=0.9,fr;q=0.8,es-ES;q=0.7,es;q=0.6,en-US;q=0.5,am;q=0.4,de;q=0.3',
-    'cache-control': 'no-cache',
-    'content-type': 'application/json',
-    'origin': 'https://www.t3nsor.tech',
-    'pragma': 'no-cache',
-    'referer': 'https://www.t3nsor.tech/',
-    'sec-ch-ua': '"Chromium";v="112", "Google Chrome";v="112", "Not:A-Brand";v="99"',
-    'sec-ch-ua-mobile': '?0',
-    'sec-ch-ua-platform': '"macOS"',
-    'sec-fetch-dest': 'empty',
-    'sec-fetch-mode': 'cors',
-    'sec-fetch-site': 'same-origin',
-    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
+    'content-type'   : 'text/plain;charset=UTF-8',
+    'origin'         : 'https://www.sqlchat.ai',
+    'referer'        : 'https://www.sqlchat.ai/',
+    'sec-fetch-dest' : 'empty',
+    'sec-fetch-mode' : 'cors',
+    'sec-fetch-site' : 'same-origin',
+    'user-agent'     : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36',
 }
 
-class T3nsorResponse:
-    
+class SqlchatResponse:
     class Completion:
-        
         class Choices:
             def __init__(self, choice: dict) -> None:
                 self.text           = choice['text']
@@ -60,28 +53,20 @@ class T3nsorResponse:
         return self.response_dict
 
 class Completion:
-    model = {
-        'model': {
-                'id'   : 'gpt-3.5-turbo', 
-                'name' : 'Default (GPT-3.5)'
-        }
-    }
-
     def create(
         prompt: str    = 'hello world',
-        messages: list = []) -> T3nsorResponse:
+        messages: list = []) -> SqlchatResponse:
         
-        response = post('https://www.t3nsor.tech/api/chat', headers = headers, json = Completion.model | {
-            'messages'  : messages,
-            'key'       : '',
-            'prompt'    : prompt
-        })
+        response = post('https://www.sqlchat.ai/api/chat', headers=headers, stream=True,
+            json = {
+                'messages': messages,
+                'openAIApiConfig':{'key':'','endpoint':''}})
 
-        return T3nsorResponse({
+        return SqlchatResponse({
             'id'     : f'cmpl-1337-{int(time())}', 
             'object' : 'text_completion', 
             'created': int(time()), 
-            'model'  : Completion.model, 
+            'model'  : 'gpt-3.5-turbo', 
             'choices': [{
                     'text'          : response.text, 
                     'index'         : 0, 
@@ -96,31 +81,26 @@ class Completion:
         })
 
 class StreamCompletion:
-    model = {
-        'model': {
-            'id'   : 'gpt-3.5-turbo', 
-            'name' : 'Default (GPT-3.5)'
-        }
-    }
-
     def create(
-        prompt: str    = 'hello world',
-        messages: list = [])  -> T3nsorResponse:
+        prompt  : str    = 'hello world',
+        messages: list = [])  -> SqlchatResponse:
         
-        print('t3nsor api is down, this may not work, refer to another module')
-
-        response = post('https://www.t3nsor.tech/api/chat', headers = headers, stream = True, json = Completion.model | {
-            'messages'  : messages,
-            'key'       : '',
-            'prompt'    : prompt
+        messages.append({
+            'role':'user',
+            'content':prompt
         })
+
+        response = post('https://www.sqlchat.ai/api/chat', headers=headers, stream=True,
+            json = {
+                'messages': messages,
+                'openAIApiConfig':{'key':'','endpoint':''}})
         
         for chunk in response.iter_content(chunk_size = 2046):
-            yield T3nsorResponse({
+            yield SqlchatResponse({
                 'id'     : f'cmpl-1337-{int(time())}', 
                 'object' : 'text_completion', 
                 'created': int(time()), 
-                'model'  : Completion.model, 
+                'model'  : 'gpt-3.5-turbo', 
                 
                 'choices': [{
                         'text'          : chunk.decode(), 
