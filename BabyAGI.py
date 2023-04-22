@@ -103,7 +103,7 @@ llm = sqlchatGPT3()
 # Logging of LLMChains
 verbose = False
 # If None, will keep on going forever
-max_iterations: Optional[int] = args.iterations
+max_iterations: Optional[int] = 5
 baby_agi = BabyAGI.from_llm(
     llm=llm, vectorstore=vectorstore, verbose=verbose, max_iterations=max_iterations
 )
