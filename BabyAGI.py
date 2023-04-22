@@ -2,10 +2,6 @@ import os
 from collections import deque
 from typing import Dict, List, Optional, Any
 
-import os
-from collections import deque
-from typing import Dict, List, Optional, Any
-
 from langchain import LLMChain, PromptTemplate
 
 #from t3nsorAPI import gpt3NoInternet  #not working the best
@@ -34,8 +30,19 @@ import numpy as np
 
 #embeddings_model = OpenAIEmbeddings()
 
+import sys
+
+if len(sys.argv) != 3:
+    print("Usage: python BabyAGI.py <goal> <huggingface_token>")
+    sys.exit(1)
+
+goal = sys.argv[1]
+huggingface_token = sys.argv[2]
+
+
+
 model_id = "sentence-transformers/all-MiniLM-L6-v2"
-hf_token = "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"
+hf_token = huggingface_token
 
 api_url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{model_id}"
 headers = {"Authorization": f"Bearer {hf_token}"}
@@ -97,7 +104,7 @@ baby_agi = BabyAGI.from_llm(
 
 
 # DEFINE THE OBJECTIVE - MODIFY THIS
-OBJECTIVE = "make a business plan for an ecommerce business based on italy for sell 'carciofini sott'olio' in the world."
+OBJECTIVE = goal
 
 
 baby_agi({"objective": OBJECTIVE})
