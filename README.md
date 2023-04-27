@@ -16,6 +16,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 - **HUGGINGFACE** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
 - **CHATGPT** : visit this [site](https://chat.openai.com/api/auth/session) and copy the "accessToken"
+
 ![CHATGPT_TOKEN](https://user-images.githubusercontent.com/108482353/234968090-b724e277-566c-4e42-9936-7592043f70fa.png)
 
 
