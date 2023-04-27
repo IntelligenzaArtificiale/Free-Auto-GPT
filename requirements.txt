@@ -4,3 +4,4 @@ streamlit
 streamlit-chat-media
 numpy
 retry
+revChatGPT
