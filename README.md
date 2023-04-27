@@ -1,3 +1,5 @@
+
+
 # USE AI AGENTs, like AUTOGPT or BABYAGI, without paids API 😤 . **TOTALLY FOR FREE🤑**
 
 Tired of paying for OPENAI, PINECONE, GOOGLESEARCH APIs to try out the latest developments in the AI field?
@@ -7,7 +9,7 @@ For any problem open an ISSUE 🚬, the project is very simple so any help is we
 
 <img width="1383" height="250" alt="image" src="img/GH2.gif">
 
-
+By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API?style=social)](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API/stargazers) and all the support!!
 
 ## WHY THIS REPOSITORY ? 🤔
 
