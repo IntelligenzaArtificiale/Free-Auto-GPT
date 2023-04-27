@@ -12,24 +12,15 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 -----
 
+# HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE
 
-# TODO , I NEED YOUR HELP 
-- [x] Create free LLM langchain wrapper based on [Reverse Engineered ChatGPT API by OpenAI](https://github.com/acheong08/ChatGPT) 
-- [x] Create a simple versione of AUTOGPT based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
-- [x] Find a way to replace OpenAIEmbeddings()
-- [x] Create a simple version of AUTOGPT based on [Baby AGI](https://alumni.media.mit.edu/~kris/ftp/SafeBabyAGI-J.BiegerEtAl2015.pdf)
-- [x] Add web search agent
-- [x] Add file writer agent
-- [x] Finally AUTOGPT without paids API
+- **HUGGINGFACE** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
+- **CHATGPT** : visit this [site](https://chat.openai.com/api/auth/session) and copy the "accessToken"
+![CHATGPT_TOKEN](https://user-images.githubusercontent.com/108482353/234968090-b724e277-566c-4e42-9936-7592043f70fa.png)
 
-- [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
-- [ ] Add long term memory
-- [ ] Find a way to replace PINECONE api
-- [ ] Find a way to replace official Google API
 
 
 -----
-
 
 # HOW TO RUN CAMEL
 - dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API) and extract
@@ -108,12 +99,35 @@ We believe that our open-source version of Autogpt will promote equitable and di
 
 ### With this "CUSTOM LLM WRAPPER" now u can build or test your LLM APP's WITHOUT PAYing
 
-LINK : 
+-----
+
+#### LINK : 
 - [VIDEO DEMO](https://watch.screencastify.com/v/vSDUBdhfvh9yEwclHUyw)
 - [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - [Camel project](https://www.camel-ai.org/)
+- [BABY AGI](https://python.langchain.com/en/latest/use_cases/agents/baby_agi_with_agent.html)
+- [AutoGPT](https://python.langchain.com/en/latest/use_cases/autonomous_agents/autogpt.html?highlight=autogpt#setup-model-and-autogpt)
 - [langchain for custom llm wrapper](https://python.langchain.com/en/latest/modules/models/llms/examples/custom_llm.html)
 
 
 # **🤗 Democratize AI 🤗**
+
+-----
+
+# TODO , I NEED YOUR HELP 
+- [x] Create free LLM langchain wrapper based on [Reverse Engineered ChatGPT API by OpenAI](https://github.com/acheong08/ChatGPT) 
+- [x] Create a simple versione of AUTOGPT based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
+- [x] Find a way to replace OpenAIEmbeddings()
+- [x] Create a simple version of AUTOGPT based on [Baby AGI](https://alumni.media.mit.edu/~kris/ftp/SafeBabyAGI-J.BiegerEtAl2015.pdf)
+- [x] Add web search agent
+- [x] Add file writer agent
+- [x] Finally AUTOGPT without paids API
+
+- [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
+- [ ] Add long term memory
+- [ ] Find a way to replace PINECONE api
+- [ ] Find a way to replace official Google API
+
+
+-----
 
