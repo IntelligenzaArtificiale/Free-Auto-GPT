@@ -124,7 +124,7 @@ We believe that our open-source version of Autogpt will promote equitable and di
 - [langchain for custom llm wrapper](https://python.langchain.com/en/latest/modules/models/llms/examples/custom_llm.html)
 
 
-# **🤗 Democratize AI 🤗** <a name="star-history"></a>
+# **🤗 Democratize AI 🤗** 
 [![Star History Chart](https://api.star-history.com/svg?repos=IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API&type=Date)](https://star-history.com/#IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 -----
 
