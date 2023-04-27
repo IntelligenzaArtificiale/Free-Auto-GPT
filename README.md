@@ -5,7 +5,7 @@ Perfect, **this is the repository for you! 🎁**
 
 For any problem open an ISSUE 🚬, the project is very simple so any help is welcome💸.
 
-<img width="1383" height="400" alt="image" src="img/GH2.gif">
+<img width="1383" height="250" alt="image" src="img/GH2.gif">
 
 
 
