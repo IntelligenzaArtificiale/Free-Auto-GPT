@@ -8,22 +8,13 @@ from langchain.schema import (
     SystemMessage,
     BaseMessage,
 )
-
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
-#from t3nsorAPI import gpt3NoInternet  not working the best
-#from t3nsorAPI import gpt3NoInternet  #not working the best
-#from quoraAPI import GPT4QUORA        #not working  
-#from phindAPI import phindGPT4Internet #not working
-#from writesonicAPI import writesonicGPT3Internet #not working
-
-
-from youAPI import youGPT3Internet
-from sqlchatAPI import sqlchatGPT3  
-
+from ChatGPTAPI import ChatGPT
 from message import get_sys_msgs 
 import streamlit as st
 from streamlit_chat_media import message
+import os
 
 st.set_page_config(
     page_title="FREE AUTOGPT 🚀 by Intelligenza Artificiale Italia",
@@ -38,13 +29,15 @@ st.set_page_config(
 
 
 st.markdown("<style> iframe > div {    text-align: left;} </style>", unsafe_allow_html=True)
-    
+ 
+
+  
 class CAMELAgent:
 
     def __init__(
         self,
         system_message: SystemMessage,
-        model: sqlchatGPT3,
+        model: None,
     ) -> None:
         self.system_message = system_message.content
         self.model = model
@@ -80,26 +73,12 @@ user_role_name = col2.text_input("User Role Name", "Stock Trader")
 task = st.text_area("Task", "Develop a trading bot for the stock market")
 word_limit = st.number_input("Word Limit", 10, 1500, 50)
 
-#choose a model for agent 
-cola, colb = st.columns(2)
-assistant_model = cola.selectbox("Assistant Model", ["YOU + Internet (GPT3.5)", "SQLCHAT.AI (GPT3.5 turbo)"])
-user_model = colb.selectbox("User Model", ["YOU + Internet (GPT3.5)", "SQLCHAT.AI (GPT3.5 turbo)"])
+token_CG = st.text_input("Insert your ChatGPT token", "")
+with st.expander("How to get your ChatGPT token"):
+    st.markdown("Click [here](https://chat.openai.com/api/auth/session) <br>Login with your OpenAI account if you are not already logged in <br>Copy the token called 'accessToken' and paste it in the text box above", unsafe_allow_html=True)
 
-if assistant_model == "YOU + Internet (GPT3.5)":
-    assistant_model = youGPT3Internet()
-elif assistant_model == "WRITESONIC + Internet (GPT3.5)":
-    assistant_model = writesonicGPT3Internet()
-elif assistant_model == "SQLCHAT.AI (GPT3.5 turbo)":
-    assistant_model = sqlchatGPT3()
-
-if user_model == "YOU + Internet (GPT3.5)":
-    user_model = youGPT3Internet()
-elif user_model == "WRITESONIC + Internet (GPT3.5)":
-    user_model = writesonicGPT3Internet()
-elif user_model == "SQLCHAT.AI (GPT3.5 turbo)":
-    user_model = sqlchatGPT3()
-
-if st.button("Start Autonomus AI AGENT"):
+if st.button("Start Autonomus AI AGENT") and token_CG != "":
+    os.environ["CHATGPT_TOKEN"] = token_CG
     task_specifier_sys_msg = SystemMessage(content="You can make a task more specific.")
     task_specifier_prompt = (
     """Here is a task that {assistant_role_name} will help {user_role_name} to complete: {task}.
@@ -108,7 +87,7 @@ if st.button("Start Autonomus AI AGENT"):
     )
     task_specifier_template = HumanMessagePromptTemplate.from_template(template=task_specifier_prompt)
     
-    task_specify_agent = CAMELAgent(task_specifier_sys_msg, sqlchatGPT3())
+    task_specify_agent = CAMELAgent(task_specifier_sys_msg, ChatGPT(token=os.environ["CHATGPT_TOKEN"]))
     task_specifier_msg = task_specifier_template.format_messages(assistant_role_name=assistant_role_name,
                                                                 user_role_name=user_role_name,
                                                                 task=task, word_limit=word_limit)[0]
@@ -124,36 +103,11 @@ if st.button("Start Autonomus AI AGENT"):
     #define the role system messages
     assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
 
-
-    #define the agents
-    
-    #for GPT4 + internet :  phindGPT4Internet(base_prompt=assistant_sys_msg.content) or phindGPT4Internet(messages=[], base_prompt=user_sys_msg.content)  NOT WORKING 
-    
-    #for WRITESONIC + internt : writesonicGPT3Internet() -  NOT WORKING 
-    
-    #for t3nsor gpt3NoInternet() - NOT WORKING BEST RESULT
-    
-    #for Quora GPT4QUORA() -  NOT WORKING 
-    
-    #for sqlchat.ai + internt :   sqlchatGPT3()
-    
-    #for YOU + internt :     youGPT3Internet()
-    
-    if assistant_model == "PHIND + Internet (GPT4)":
-        assistant_model = phindGPT4Internet(base_prompt=assistant_sys_msg.content)
-
-    if user_model == "PHIND + Internet (GPT4)":
-        user_model = phindGPT4Internet(base_prompt=user_sys_msg.content)
-    
-    
-    message(f"Starting AI ASSISTANT '{assistant_role_name}' with assigned model: {assistant_model}", allow_html=True, key="assistant_model" , avatar_style="pixel-art-neutral")
-    message(f"Starting AI USER '{user_role_name}' with assigned model: {user_model}", allow_html=True, key="user_model" , avatar_style="fun-emoji")
-    
     #AI ASSISTANT setup                           |-> add the agent LLM MODEL HERE <-|
-    assistant_agent = CAMELAgent(assistant_sys_msg, sqlchatGPT3())
+    assistant_agent = CAMELAgent(assistant_sys_msg,ChatGPT(token=os.environ["CHATGPT_TOKEN"]))
     
     #AI USER setup                      |-> add the agent LLM MODEL HERE <-|
-    user_agent = CAMELAgent(user_sys_msg, sqlchatGPT3())
+    user_agent = CAMELAgent(user_sys_msg,ChatGPT(token=os.environ["CHATGPT_TOKEN"]))
 
     # Reset agents
     assistant_agent.reset()

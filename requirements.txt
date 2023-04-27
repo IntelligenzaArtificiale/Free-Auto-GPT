@@ -1,12 +1,6 @@
-websocket-client
 requests
-tls-client
-pypasser
-names
-colorama
-curl_cffi
 langchain
 streamlit 
 streamlit-chat-media
+numpy
 retry
-faiss
