@@ -1,15 +1,10 @@
 # TODO , I NEED YOUR HELP 
-- [x] Create free LLM langchain wrapper based on [t3nsor - NOT WORKING NOW](https://github.com/xtekky/gpt4free/tree/main/t3nsor) 
-- [x] Create free LLM langchain wrapper based on [Quora - NOT WORKING NOW](https://github.com/xtekky/gpt4free/tree/main/qoura) 
-- [x] Create free LLM langchain wrapper based on [WriteSonic with gpt3.5 and intenet access - NOT WORKING NOW](https://github.com/xtekky/gpt4free/tree/main/writesonic) 
-- [x] Create free LLM langchain wrapper based on [PHIND with gpt4 and intenet access - NOT WORKING NOW](https://github.com/xtekky/gpt4free/tree/main/you) 
-- [x] Create free LLM langchain wrapper based on [You with gpt3.5 and intenet access](https://github.com/xtekky/gpt4free/tree/main/you) 
-- [x] Create free LLM langchain wrapper based on [SQLchat with gpt3.5 and intenet access](https://github.com/xtekky/gpt4free/tree/main/sqlchat) 
-- [x] Add web search agent
+- [x] Create free LLM langchain wrapper based on [Reverse Engineered ChatGPT API by OpenAI](https://github.com/acheong08/ChatGPT) 
 - [x] Create a simple versione of AUTOGPT based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
 - [x] Find a way to replace OpenAIEmbeddings()
 - [x] Create a simple version of AUTOGPT based on [Baby AGI](https://alumni.media.mit.edu/~kris/ftp/SafeBabyAGI-J.BiegerEtAl2015.pdf)
 
+- [ ] Add web search agent
 - [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
 - [ ] Add file writer agent
 - [ ] Add long term memory
@@ -24,6 +19,7 @@
 - dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API) and extract
 - pip3 install -r requirements.txt
 - streamlit run Camel.py
+- get your free token on [this link](https://chat.openai.com/api/auth/session)
 <video  width="100%" height="240" controls autoplay>
 <source src="https://video.wixstatic.com/video/3c029f_363d7f30738147e5a43f5943757a0246/1080p/mp4/file.mp4"  type="video/webm" >
 </video> 
@@ -38,8 +34,7 @@
 # HOW TO RUN BABY AGI
 - dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
-- set the GOAL
-- Usage: **python BabyAGI.py**
+- Usage: **python main_BABYAGI.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG**
 <video  width="100%" height="240" controls autoplay>
 <source src="https://video.wixstatic.com/video/3c029f_363d7f30738147e5a43f5943757a0246/1080p/mp4/file.mp4"  type="video/webm" >
 </video> 
@@ -72,34 +67,30 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 [VIDEO DEMO](https://watch.screencastify.com/v/vSDUBdhfvh9yEwclHUyw)
 
-First, find everywhere for easily accessible and free websites or endpoints to use. Eventually, I came across this simple library: [T3nsor](https://github.com/xtekky/gpt4free). This library allows us to use GPT3.5 APIs completely for free. All credit to [xtekky](https://github.com/xtekky/gpt4free)
+To create an open-source version of Autogpt that does not require paid APIs or specific hardware, we performed a reverse engineering process on ChatGPT, a language model developed by OpenAI. By doing so, we were able to use the agents and new technologies of langchain for free.
 
-After finding this free library, **I had to create a custom wrapper for my LLM using Langchain**. This is because Langchain mostly offers LLM models that are only available for a fee. However, **we were able to create a custom component based on the t3nsor.tech endpoint.**
+We then created a custom LLM wrapper with langchain, which can be used as a plug-and-play solution with any langchain function or tool.
 
-All ...API.py file contain **FREE CUSTOM LLM WRAPPER for LANGCHAIN** . Use is very simple :
+"""
+from ChatGPTAPI import ChatGPT
 
-```
-from t3nsorAPI import gpt3NoInternet  not working the best
-from quoraAPI import GPT4QUORA        not working
+# Instantiate a ChatGPT object with your token
+llm = ChatGPT(token="YOURTOKEN")
 
-from sqlchatAPI import sqlchatGPT3   
-from phindAPI import phindGPT4Internet
-from writesonicAPI import writesonicGPT3Internet
-from youAPI import youGPT3Internet
+# Generate a response based on the given prompt
+response = llm("Hello, how are you?")
 
-llm1 = youGPT3Internet()
-llm2 = writesonicGPT3Internet()
-llm3 = sqlchatGPT3()
-llm4 = GPT4QUORA()
-llm5 = phindGPT4Internet()
-llm6 = gpt3NoInternet()
+# Print the response
+print(response)
+"""
 
-print(llm1("Hello, how are you?"))
-print(llm5("what is AI?"))
-print(llm6("how have i question in before?"))
+The code snippet provided above shows how to use our custom ChatGPT LLM class to interact with the language model. It requires a token from the ChatGPT API, which can be obtained from [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session). O
+
+Please note that there is a limit of 50 requests per hour for each account on the ChatGPT API. Therefore, we implemented a call counter in our ChatGPT class to prevent exceeding this limit.
+
+We believe that our open-source version of Autogpt will promote equitable and diverse access to AI technology and empower individuals and small businesses to create innovative AI projects without significant financial investment.
 
 
-```
 
 ### With this "CUSTOM LLM WRAPPER" now u can build or test your LLM APP's WITHOUT PAYing
 
