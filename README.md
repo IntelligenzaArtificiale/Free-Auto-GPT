@@ -69,9 +69,8 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 
 -----
 
-# HOW IT WORK ?
 
-[VIDEO DEMO](https://watch.screencastify.com/v/vSDUBdhfvh9yEwclHUyw)
+# HOW IT WORK ?
 
 To create an open-source version of Autogpt that does not require paid APIs or specific hardware, we performed a reverse engineering process on ChatGPT, a language model developed by OpenAI. By doing so, we were able to use the agents and new technologies of langchain for free.
 
