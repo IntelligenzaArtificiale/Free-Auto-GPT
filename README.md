@@ -1,4 +1,15 @@
-# WHY THIS REPOSITORY ?
+# USE AI AGENTs, like AUTOGPT or BABYAGI, without paids API 😤 . **TOTALLY FOR FREE🤑**
+
+Tired of paying for OPENAI, PINECONE, GOOGLESEARCH APIs to try out the latest developments in the AI field?
+Perfect, **this is the repository for you! 🎁**
+
+For any problem open an ISSUE 🚬, the project is very simple so any help is welcome💸.
+
+![GH](https://user-images.githubusercontent.com/108482353/234973544-427cbd59-93a0-4bfc-b9c9-eeddf7134a11.gif)
+
+
+
+## WHY THIS REPOSITORY ? 🤔
 
 Hello everyone :smiling_face_with_three_hearts: ,
 
@@ -12,10 +23,10 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 -----
 
-# HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE
+## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
-- **HUGGINGFACE** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
-- **CHATGPT** : visit this [site](https://chat.openai.com/api/auth/session) and copy the "accessToken"
+- **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
+- **CHATGPT🖥** : visit this [site](https://chat.openai.com/api/auth/session) and copy the "accessToken"
 
 ![CHATGPT_TOKEN](https://user-images.githubusercontent.com/108482353/234968090-b724e277-566c-4e42-9936-7592043f70fa.png)
 
@@ -23,7 +34,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 -----
 
-# HOW TO RUN CAMEL
+## HOW TO RUN CAMEL 🐫
 - dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API) and extract
 - pip3 install -r requirements.txt
 - streamlit run Camel.py
@@ -39,7 +50,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 
 
-# HOW TO RUN BABY AGI
+## HOW TO RUN BABY AGI 👶
 - dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
 - Usage: **python BABYAGI.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG**
@@ -56,7 +67,7 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 
 -----
 
-# HOW TO RUN AUTOGPT
+## HOW TO RUN AUTOGPT 🤖
 - dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
 - Usage: **python AUTOGPT.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG**
@@ -70,11 +81,11 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 -----
 
 
-# HOW IT WORK ?
+## HOW IT WORK ? 🔨🔩
 
-To create an open-source version of Autogpt that does not require paid APIs or specific hardware, we performed a reverse engineering process on ChatGPT, a language model developed by OpenAI. By doing so, we were able to use the agents and new technologies of langchain for free.
+To create an open-source version of Autogpt that does not require paid APIs or specific hardware, **we performed a reverse engineering process on ChatGPT**, a language model developed by OpenAI. By doing so, we were able to use the agents and new technologies of langchain for free.
 
-We then created a custom LLM wrapper with langchain, which can be used as a plug-and-play solution with any langchain function or tool.
+We then created a custom LLM wrapper with langchain, **which can be used as a plug-and-play solution with any langchain function or tool 💡**.
 
 ```python
 from ChatGPTAPI import ChatGPT
@@ -87,11 +98,12 @@ response = llm("Hello, how are you?")
 
 # Print the response
 print(response)
+
 ```
 
-The code snippet provided above shows how to use our custom ChatGPT LLM class to interact with the language model. It requires a token from the ChatGPT API, which can be obtained from [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session). O
+The code snippet provided above shows how to use our custom ChatGPT LLM class to interact with the language model. It requires a token from the ChatGPT API, which can be obtained from [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session). 
 
-Please note that there is a limit of 50 requests per hour for each account on the ChatGPT API. Therefore, we implemented a call counter in our ChatGPT class to prevent exceeding this limit.
+Please note that there is a limit of 50 requests per hour for each account on the ChatGPT API 💣. Therefore, we implemented a call counter in our ChatGPT class to prevent exceeding this limit.
 
 We believe that our open-source version of Autogpt will promote equitable and diverse access to AI technology and empower individuals and small businesses to create innovative AI projects without significant financial investment.
 
@@ -114,7 +126,7 @@ We believe that our open-source version of Autogpt will promote equitable and di
 
 -----
 
-# TODO , I NEED YOUR HELP 
+## TODO , I NEED YOUR HELP 
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered ChatGPT API by OpenAI](https://github.com/acheong08/ChatGPT) 
 - [x] Create a simple versione of AUTOGPT based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
 - [x] Find a way to replace OpenAIEmbeddings()
