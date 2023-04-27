@@ -69,7 +69,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 <source src="https://video.wixstatic.com/video/3c029f_363d7f30738147e5a43f5943757a0246/1080p/mp4/file.mp4"  type="video/webm" >
 </video> 
 
-![image|690x441](img/2.png)
+![video|690x441](img/AUTOGPT.mp4)
 
 
 
