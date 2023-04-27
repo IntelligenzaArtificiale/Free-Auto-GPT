@@ -71,7 +71,7 @@ To create an open-source version of Autogpt that does not require paid APIs or s
 
 We then created a custom LLM wrapper with langchain, which can be used as a plug-and-play solution with any langchain function or tool.
 
-"""
+'''
 from ChatGPTAPI import ChatGPT
 
 # Instantiate a ChatGPT object with your token
@@ -82,7 +82,7 @@ response = llm("Hello, how are you?")
 
 # Print the response
 print(response)
-"""
+'''
 
 The code snippet provided above shows how to use our custom ChatGPT LLM class to interact with the language model. It requires a token from the ChatGPT API, which can be obtained from [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session). O
 
