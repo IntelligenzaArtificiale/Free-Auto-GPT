@@ -10,6 +10,7 @@ For any problem open an ISSUE 🚬, the project is very simple so any help is we
 **Are you bored reading😴? Do you want to try our project now⏳? Open the notebook on Colab everything is ready!** 
 
 **RUN NOW ON COLAB 😮👉** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
 <img width="1383" height="250" alt="image" src="img/GH2.gif">
 
@@ -32,7 +33,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 ## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
 - **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
-- **CHATGPT🖥** : visit this [site](https://chat.openai.com/api/auth/session) and copy the "accessToken"
+- **CHATGPT🖥** : visit this [site](https://chat.openai.com/api/auth/session) and copy the "accessToken" only the token!
 
 ![CHATGPT_TOKEN](https://user-images.githubusercontent.com/108482353/234968090-b724e277-566c-4e42-9936-7592043f70fa.png)
 
@@ -42,7 +43,8 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 ## HOW TO RUN CAMEL 🐫
 
-**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing))
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
@@ -62,7 +64,8 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 ## HOW TO RUN BABY AGI 👶
 
-**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing))
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
@@ -82,7 +85,8 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 -----
 
 ## HOW TO RUN AUTOGPT 🤖
-**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing))
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
