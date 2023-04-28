@@ -16,6 +16,8 @@ class ChatGPT(LLM):
     token : Optional[str]
     chatbot : Optional[Chatbot] = None
     call : int = 0
+    conversation : str = ""
+    prev_message : str = ""
     
     #### WARNING : for each api call this library will create a new chat on chat.openai.com
     
@@ -31,7 +33,13 @@ class ChatGPT(LLM):
         if self.token is None:
             raise ValueError("Need a token , check https://chat.openai.com/api/auth/session for get your token")
         else:
-            self.chatbot = Chatbot(config={"access_token": self.token})
+            if self.conversation == "":
+                self.chatbot = Chatbot(config={"access_token": self.token})
+            else:
+                if self.prev_message == "":
+                    self.chatbot = Chatbot(config={"access_token": self.token}, conversation_id=self.conversation)
+                else:
+                    self.chatbot = Chatbot(config={"access_token": self.token}, conversation_id=self.conversation, parent_id=self.prev_message)
             
         response = ""
         # OpenAI: 50 requests / hour for each account
@@ -39,9 +47,12 @@ class ChatGPT(LLM):
             raise ValueError("You have reached the maximum number of requests per hour ! Help me to Improve. Abusing this tool is at your own risk")
         else:
             sleep(2)
-            for data in self.chatbot.ask( prompt ):
+            for data in self.chatbot.ask( prompt , conversation_id=self.conversation, parent_id=self.prev_message):
                 response = data["message"]
+                FullResponse = data
             
+            self.conversation = FullResponse["conversation_id"]
+            self.prev_message = FullResponse["parent_id"]
             self.call += 1
         
         #add to history
@@ -59,4 +70,4 @@ class ChatGPT(LLM):
 
 #print(llm("Hello, how are you?"))
 #print(llm("what is AI?"))
-#print(llm("how have i question in before?"))
+#print(llm("Can you resume your previus answer?"))
