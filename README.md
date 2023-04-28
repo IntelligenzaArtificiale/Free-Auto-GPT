@@ -50,12 +50,11 @@ I believe that by providing free and open-source AI tools, we can give small bus
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
 - streamlit run Camel.py
-- get your free token on [this link](https://chat.openai.com/api/auth/session), paste it in input and start
-<video  width="100%" height="240" controls autoplay>
-<source src="https://video.wixstatic.com/video/3c029f_363d7f30738147e5a43f5943757a0246/1080p/mp4/file.mp4"  type="video/webm" >
-</video> 
+- Get your free token on [this link](https://chat.openai.com/api/auth/session), paste it in input and start
 
-![image|690x441](img/ok.png)
+
+https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950-9cc6-7f140890f386.mp4
+
 
 
 -----
