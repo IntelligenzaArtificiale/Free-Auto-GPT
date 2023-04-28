@@ -6,3 +6,4 @@ numpy
 retry
 revChatGPT
 duckduckgo-search
+transformers
