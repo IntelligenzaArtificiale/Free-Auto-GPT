@@ -1,6 +1,6 @@
 
 
-# USE AI AGENTs, like AUTOGPT or BABYAGI, without paids API 😤 . **TOTALLY FOR FREE🤑**
+# USE AI AGENTs, like AUTO-GPT or BABYAGI, without paids API 😤 . **TOTALLY FOR FREE🤑**
 
 Tired of paying for OPENAI, PINECONE, GOOGLESEARCH APIs to try out the latest developments in the AI field?
 Perfect, **this is the repository for you! 🎁**
