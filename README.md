@@ -37,10 +37,14 @@ I believe that by providing free and open-source AI tools, we can give small bus
 -----
 
 ## HOW TO RUN CAMEL 🐫
-- dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API) and extract
+
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing))
+
+**Or use Locally :**
+- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
 - streamlit run Camel.py
-- get your free token on [this link](https://chat.openai.com/api/auth/session)
+- get your free token on [this link](https://chat.openai.com/api/auth/session), paste it in input and start
 <video  width="100%" height="240" controls autoplay>
 <source src="https://video.wixstatic.com/video/3c029f_363d7f30738147e5a43f5943757a0246/1080p/mp4/file.mp4"  type="video/webm" >
 </video> 
@@ -53,7 +57,11 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 
 ## HOW TO RUN BABY AGI 👶
-- dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
+
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing))
+
+**Or use Locally :**
+- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
 - Usage: **python BABYAGI.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG**
 
@@ -70,7 +78,10 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 -----
 
 ## HOW TO RUN AUTOGPT 🤖
-- dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing))
+
+**Or use Locally :**
+- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
 - Usage: **python AUTOGPT.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG**
 
