@@ -48,9 +48,11 @@ llm = ChatGPT(token=os.environ["CHATGPT_TOKEN"])
 # Logging of LLMChains
 verbose = False
 
+int_max_iterations = input("Enter the maximum number of iterations: (Suggest from 3 and 5) ")
+max_iterations = int(int_max_iterations)
 
 # If None, will keep on going forever
-max_iterations: Optional[int] = 2
+max_iterations: Optional[int] =   max_iterations
 baby_agi = BabyAGI.from_llm(
     llm=llm, vectorstore=vectorstore, verbose=verbose, max_iterations=max_iterations
 )
