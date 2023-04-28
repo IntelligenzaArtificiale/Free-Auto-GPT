@@ -138,6 +138,7 @@ We believe that our open-source version of Autogpt will promote equitable and di
 
 [![Star History Chart](https://api.star-history.com/svg?repos=IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API&type=Date)](https://star-history.com/#IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 
+By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API?style=social)](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API/stargazers) and all the support!!
 
 -----
 
@@ -170,4 +171,9 @@ We believe that our open-source version of Autogpt will promote equitable and di
 
 
 -----
+
+### Inspiration and Credits 🤗
+- [https://github.com/hwchase17/langchain](https://github.com/hwchase17/langchain)
+- [https://github.com/acheong08/ChatGPT](https://github.com/acheong08/ChatGPT)
+- [https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
 
