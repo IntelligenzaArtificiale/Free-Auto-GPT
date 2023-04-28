@@ -6,7 +6,7 @@ from langchain import HuggingFaceHub
 from langchain.docstore import InMemoryDocstore
 from langchain import LLMChain, PromptTemplate
 from langchain.llms import BaseLLM
-from ChatGPTAPI import ChatGPT # API MOTOR
+from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
 from langchain.vectorstores.base import VectorStore
 from pydantic import BaseModel, Field
 from langchain.chains.base import Chain
@@ -25,14 +25,14 @@ if args.hf_token is None or args.chatgpt_token is None:
 
 #set the tokens
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = args.hf_token
-from MyEmbeddings import newEmbeddingFunction # EMBEDDING FUNCTION 
+from Embedding import HuggingFaceEmbedding # EMBEDDING FUNCTION
 
 #set the chatgpt token
 os.environ["CHATGPT_TOKEN"] = args.chatgpt_token
 
 
 # Define your embedding model
-embeddings_model = newEmbeddingFunction
+embeddings_model = HuggingFaceEmbedding.newEmbeddingFunction
 
 embedding_size = 1536
 index = faiss.IndexFlatL2(embedding_size)
@@ -41,7 +41,7 @@ vectorstore = FAISS(embeddings_model, index, InMemoryDocstore({}), {})
 print(vectorstore)
 
 
-llm = ChatGPT(token=os.environ["CHATGPT_TOKEN"])
+llm = ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
 
 # START
 

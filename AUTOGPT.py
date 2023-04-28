@@ -5,7 +5,7 @@
 import os
 import pandas as pd
 from langchain.experimental.autonomous_agents.autogpt.agent import AutoGPT
-from ChatGPTAPI import ChatGPT
+from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
 
 from langchain.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
 from langchain.docstore.document import Document
@@ -29,7 +29,8 @@ if args.hf_token is None or args.chatgpt_token is None:
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = args.hf_token
 os.environ["CHATGPT_TOKEN"] = args.chatgpt_token
 
-llm= ChatGPT(token=os.environ["CHATGPT_TOKEN"])
+llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
+
 
 # Tools
 import os
@@ -159,11 +160,13 @@ query_website_tool = WebpageQATool(qa_chain=load_qa_with_sources_chain(llm))
 import faiss
 from langchain.vectorstores import FAISS
 from langchain.docstore import InMemoryDocstore
-from MyEmbeddings import newEmbeddingFunction
+from Embedding import HuggingFaceEmbedding # EMBEDDING FUNCTION
+
 from langchain.tools.human.tool import HumanInputRun
 
-embeddings_model = newEmbeddingFunction
-embedding_size = 1536
+# Define your embedding model
+embeddings_model = HuggingFaceEmbedding.newEmbeddingFunction
+embedding_size = 1536 # if you change this you need to change also in Embedding/HuggingFaceEmbedding.py
 index = faiss.IndexFlatL2(embedding_size)
 vectorstore = FAISS(embeddings_model, index, InMemoryDocstore({}), {})
 
