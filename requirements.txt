@@ -5,3 +5,4 @@ streamlit-chat-media
 numpy
 retry
 revChatGPT
+duckduckgo-search
