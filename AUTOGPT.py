@@ -191,4 +191,4 @@ agent = AutoGPT.from_llm_and_tools(
 )
 # agent.chain.verbose = True
 
-agent.run(["What were the winning boston marathon times for the past 5 years (ending in 2022)? Generate a table of the year, name, country of origin, and times."])
+agent.run([input("Enter the objective of the AI system: (Be realistic!) ")])
