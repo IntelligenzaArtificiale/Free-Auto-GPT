@@ -7,3 +7,5 @@ retry
 revChatGPT
 duckduckgo-search
 transformers
+tabulate
+wikipedia
