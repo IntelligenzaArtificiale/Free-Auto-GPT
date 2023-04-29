@@ -176,8 +176,8 @@ web_search = DuckDuckGoSearchRun()
 
 tools = [
     web_search,
-    WriteFileTool(root_dir="/data"),
-    ReadFileTool(root_dir="/data"),
+    WriteFileTool(root_dir="./data"),
+    ReadFileTool(root_dir="./data"),
     process_csv,
     query_website_tool,
     # HumanInputRun(), # Activate if you want the permit asking for help from the human
