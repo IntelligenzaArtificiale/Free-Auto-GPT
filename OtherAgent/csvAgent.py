@@ -25,7 +25,7 @@ agent = create_csv_agent(llm=llm, tool=PythonREPL(), path=path_csv, verbose=True
 #todo : ADD MEMORY
 
 
-print(">> STRAT CSV AGENT")
+print(">> START CSV AGENT")
 print("> Digit 'exit' for exit or 'your task or question' for start\n\n")
 prompt = input("(Enter your task or question) >> ")
 while prompt.toLowerCase() != "exit":

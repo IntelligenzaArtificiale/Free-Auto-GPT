@@ -63,7 +63,7 @@ class ChatGPT(LLM):
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
         """Get the identifying parameters."""
-        return {"model": "CHatGPT", "token": self.token}
+        return {"model": "ChatGPT", "token": self.token}
 
 
 #llm = ChatGPT(token = "YOUR_TOKEN")
