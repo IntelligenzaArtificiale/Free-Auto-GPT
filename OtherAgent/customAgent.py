@@ -78,4 +78,10 @@ zero_shot_agent = initialize_agent(
     max_iterations=iteration,
 )
 
-zero_shot_agent.run("Whats the current price of Telecom Italia Stock in euro ? ")
+
+print(">> STRAT CUSTOM AGENT")
+print("> Digit 'exit' for exit or 'your task or question' for start\n\n")
+prompt = input("(Enter your task or question) >> ")
+while prompt.toLowerCase() != "exit":
+    zero_shot_agent.run(prompt)
+    prompt = input("(Enter your task or question) >> ")

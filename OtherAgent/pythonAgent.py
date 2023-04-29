@@ -26,6 +26,11 @@ agent_executor = create_python_agent(
     verbose=True
 )
 
-agent_executor.run("""Understand, write a single neuron neural network in PyTorch.
-Take synthetic data for y=2x. Train for 1000 epochs and print every 100 epochs.
-Return prediction for x = 5""")
+#todo : ADD MEMORY
+
+print(">> STRAT Python AGENT")
+print("> Digit 'exit' for exit or 'your task or question' for start\n\n")
+prompt = input("(Enter your task or question) >> ")
+while prompt.toLowerCase() != "exit":
+    agent_executor.run(prompt)
+    prompt = input("(Enter your task or question) >> ")
