@@ -133,7 +133,11 @@ We then created a custom LLM wrapper with langchain, **which can be used as a pl
 from FreeLLM import ChatGPTAPI 
 
 # Instantiate a ChatGPT object with your token
-llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")
+llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")  #for start new chat
+
+# or if if u would to start from an existing chat 
+# llm = ChatGPT(token = "YOUR-TOKEN", conversation = "Add-XXXX-XXXX-Convesation-ID")
+
 
 # Generate a response based on the given prompt
 response = llm("Hello, how are you?")
