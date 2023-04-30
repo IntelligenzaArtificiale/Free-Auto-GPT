@@ -16,7 +16,7 @@ class ChatGPT(LLM):
     token : Optional[str]
     chatbot : Optional[Chatbot] = None
     call : int = 0
-    conversation : str = ""
+    conversation : Optional[str] = ""
     prev_message : str = ""
     
     #### WARNING : for each api call this library will create a new chat on chat.openai.com
@@ -35,11 +35,12 @@ class ChatGPT(LLM):
         else:
             if self.conversation == "":
                 self.chatbot = Chatbot(config={"access_token": self.token})
-            else:
-                if self.prev_message == "":
-                    self.chatbot = Chatbot(config={"access_token": self.token}, conversation_id=self.conversation)
-                else:
+            elif self.conversation != "" and self.prev_message == "":
+                self.chatbot = Chatbot(config={"access_token": self.token}, conversation_id=self.conversation)
+            elif self.conversation != "" and self.prev_message != "":
                     self.chatbot = Chatbot(config={"access_token": self.token}, conversation_id=self.conversation, parent_id=self.prev_message)
+            else:
+                raise ValueError("Something went wrong")
             
         response = ""
         # OpenAI: 50 requests / hour for each account
@@ -66,8 +67,9 @@ class ChatGPT(LLM):
         return {"model": "ChatGPT", "token": self.token}
 
 
-#llm = ChatGPT(token = "YOUR_TOKEN")
+#llm = ChatGPT(token = "YOUR_TOKEN") #for start new chat
+#llm = ChatGPT(token = "YOUR-TOKEN", conversation = "Add-XXXX-XXXX-Convesation-ID") #for use a chat already started
 
 #print(llm("Hello, how are you?"))
 #print(llm("what is AI?"))
-#print(llm("Can you resume your previus answer?"))
+#print(llm("Can you resume your previus answer?")) #now memory work well
