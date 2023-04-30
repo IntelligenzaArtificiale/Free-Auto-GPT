@@ -31,6 +31,6 @@ agent_executor = create_python_agent(
 print(">> STRAT Python AGENT")
 print("> Digit 'exit' for exit or 'your task or question' for start\n\n")
 prompt = input("(Enter your task or question) >> ")
-while prompt.toLowerCase() != "exit":
+while prompt != "exit":
     agent_executor.run(prompt)
     prompt = input("(Enter your task or question) >> ")
