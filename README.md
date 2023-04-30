@@ -149,6 +149,74 @@ Please note that there is a limit of 50 requests per hour for each account on th
 
 We believe that our open-source version of Autogpt will promote equitable and diverse access to AI technology and empower individuals and small businesses to create innovative AI projects without significant financial investment.
 
+**This is an example of CUSTOM agent, in less of 60 line of code and totally for free, with:**
+- **Internet** access
+- Python **code execution**
+- **Wikipedia** knowledge
+
+```python
+from langchain.agents import initialize_agent #use for create new agent
+from langchain.agents import initialize_agent, Tool
+
+from langchain.utilities import PythonREPL #tool for execute python script
+from langchain.utilities import WikipediaAPIWrapper #tool get wiki info
+from langchain.tools import DuckDuckGoSearchTool #tool get interet live info
+
+from FreeLLM import ChatGPTAPI # FREE CHATGPT API
+
+
+# Instantiate a ChatGPT object with your token
+llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")
+
+# Define the tools
+wikipedia = WikipediaAPIWrapper()
+python_repl = PythonREPL()
+search = DuckDuckGoSearchTool()
+
+tools = [
+    Tool(
+        name = "python repl",
+        func=python_repl.run,
+        description="useful for when you need to use python to answer a question. You should input python code"
+    )
+]
+
+wikipedia_tool = Tool(
+    name='wikipedia',
+    func= wikipedia.run,
+    description="Useful for when you need to look up a topic, country or person on wikipedia"
+)
+
+duckduckgo_tool = Tool(
+    name='DuckDuckGo Search',
+    func= search.run,
+    description="Useful for when you need to do a search on the internet to find information that another tool can't find. be specific with your input."
+)
+
+tools.append(duckduckgo_tool)
+tools.append(wikipedia_tool)
+
+
+#Create the Agent
+iteration = (int(input("Enter the number of iterations: ")) if input("Do you want to set the number of iterations? (y/n): ") == "y" else 3)
+
+zero_shot_agent = initialize_agent(
+    agent="zero-shot-react-description", 
+    tools=tools, 
+    llm=llm,
+    verbose=True,
+    max_iterations=iteration,
+)
+
+# Start your Custom Agent in loop
+print(">> STRAT CUSTOM AGENT")
+print("> Digit 'exit' for exit or 'your task or question' for start\n\n")
+prompt = input("(Enter your task or question) >> ")
+while prompt.toLowerCase() != "exit":
+    zero_shot_agent.run(prompt)
+    prompt = input("(Enter your task or question) >> ")
+
+```
 
 
 ### With this "CUSTOM LLM WRAPPER" now u can build or test your LLM APP's WITHOUT PAYing
