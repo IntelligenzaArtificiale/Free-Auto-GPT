@@ -147,6 +147,9 @@ print(response)
 
 ```
 
+![exixstingchat](https://user-images.githubusercontent.com/108482353/235359284-c908afe6-1f18-41ff-aa30-8216a1b9f19a.png)
+
+
 The code snippet provided above shows how to use our custom ChatGPT LLM class to interact with the language model. It requires a token from the ChatGPT API, which can be obtained from [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session). 
 
 Please note that there is a limit of 50 requests per hour for each account on the ChatGPT API 💣. Therefore, we implemented a call counter in our ChatGPT class to prevent exceeding this limit.
