@@ -108,10 +108,10 @@ To create an open-source version of Autogpt that does not require paid APIs or s
 We then created a custom LLM wrapper with langchain, **which can be used as a plug-and-play solution with any langchain function or tool 💡**.
 
 ```python
-from ChatGPTAPI import ChatGPT
+from FreeLLM import ChatGPTAPI 
 
 # Instantiate a ChatGPT object with your token
-llm = ChatGPT(token="YOURTOKEN")
+llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")
 
 # Generate a response based on the given prompt
 response = llm("Hello, how are you?")
