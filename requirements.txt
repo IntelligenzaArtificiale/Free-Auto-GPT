@@ -1,5 +1,5 @@
 requests
-langchain>==0.0.150
+langchain
 streamlit 
 streamlit-chat-media
 numpy
