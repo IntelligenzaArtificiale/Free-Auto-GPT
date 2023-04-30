@@ -218,6 +218,8 @@ while prompt.toLowerCase() != "exit":
 
 ```
 
+![Schermata del 2023-04-30 16-25-11](https://user-images.githubusercontent.com/108482353/235358379-dfd7dbba-74ff-48a1-b23c-c51b63d4c181.png)
+
 
 ### With this "CUSTOM LLM WRAPPER" now u can build or test your LLM APP's WITHOUT PAYing
 
