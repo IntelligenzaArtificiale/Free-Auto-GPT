@@ -33,10 +33,13 @@ I believe that by providing free and open-source AI tools, we can give small bus
 ## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
 - **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
-- **CHATGPT🖥** : visit this [site](https://chat.openai.com/api/auth/session) and copy the "accessToken" only the token!
+- **CHATGPT🖥** : 
 
-![CHATGPT_TOKEN](https://user-images.githubusercontent.com/108482353/234968090-b724e277-566c-4e42-9936-7592043f70fa.png)
+1. Go to https://chat.openai.com/chat and open the developer tools by `F12`.
+2. Find the `__Secure-next-auth.session-token` cookie in `Application` > `Storage` > `Cookies` > `https://chat.openai.com`.
+3. Copy the value in the `Cookie Value` field.
 
+![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
 
 
 -----
