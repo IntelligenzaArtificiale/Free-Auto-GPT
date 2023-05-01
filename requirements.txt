@@ -16,3 +16,5 @@ torch
 # tensorflow >= 2.0 -- For other future models
 # flax -- For other future models
 pytest-playwright
+undetected-chromedriver>=3.2.1
+markdownify>=0.11.6

@@ -21,7 +21,10 @@ try :
     import argparse
     parser = argparse.ArgumentParser()
     parser.add_argument("--hf_token", help="huggingface token, check https://huggingface.co/settings/tokens for get your token")
-    parser.add_argument("--chatgpt_token", help="chatgpt token, check https://chat.openai.com/api/auth/session for get your token")
+    parser.add_argument("--chatgpt_token", help="chatgpt token: \n \
+    Go to https://chat.openai.com/chat and open the developer tools by F12. \n \
+    Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com \n \
+    Copy the value in the Cookie Value field.")
     args = parser.parse_args()
 
     if args.hf_token is None or args.chatgpt_token is None:
@@ -34,7 +37,10 @@ except:
     print("Huggingface token, check https://huggingface.co/settings/tokens for get your token")
     HF_TOKEN = input("Insert huggingface token >>> ")
     os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
-    print("Chatgpt token, check https://chat.openai.com/api/auth/session for get your token")
+    print("Chatgpt token : \n \
+    Go to https://chat.openai.com/chat and open the developer tools by F12. \n \
+    Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com \n \
+    Copy the value in the Cookie Value field.")
     CG_TOKEN = input("Insert chatgpt token >>> ")
     os.environ["CHATGPT_TOKEN"] = CG_TOKEN
 

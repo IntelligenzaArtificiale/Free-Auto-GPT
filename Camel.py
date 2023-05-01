@@ -75,7 +75,10 @@ word_limit = st.number_input("Word Limit", 10, 1500, 50)
 
 token_CG = st.text_input("Insert your ChatGPT token", "")
 with st.expander("How to get your ChatGPT token"):
-    st.markdown("Click [here](https://chat.openai.com/api/auth/session) <br>Login with your OpenAI account if you are not already logged in <br>Copy the token called 'accessToken' and paste it in the text box above", unsafe_allow_html=True)
+    st.markdown("chatgpt token: \n \
+    Go to https://chat.openai.com/chat and open the developer tools by F12. \n \
+    Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com \n \
+    Copy the value in the Cookie Value field.", unsafe_allow_html=True)
 
 if st.button("Start Autonomus AI AGENT") and token_CG != "":
     os.environ["CHATGPT_TOKEN"] = token_CG
