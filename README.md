@@ -50,7 +50,6 @@ I believe that by providing free and open-source AI tools, we can give small bus
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
 - streamlit run Camel.py
-- Get your free token on [this link](https://chat.openai.com/api/auth/session), paste it in input and start
 
 
 https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950-9cc6-7f140890f386.mp4
@@ -69,8 +68,8 @@ https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
-- Usage: **python BABYAGI.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG**
-
+- Usage: **python BABYAGI.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** or **python BABYAGI.py**
+- 
 
 
 
@@ -90,7 +89,7 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
-- Usage: **python AUTOGPT.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG**
+- Usage: **python AUTOGPT.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** or **python AUTOGPT.py**
 
 
 https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9-be1d-3257a46eacf3.mp4
@@ -110,7 +109,7 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 - pip3 install -r requirements.txt
 - cd OtherAgent/
 - Choose or develop your agent [ csvAgent.py  ;  pythonAgent.py  ; customAgent.py ]
-- Usage: **python YourAgent.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG**
+- Usage: **python YourAgent.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** or **python YourAgent.py**
 
 
 
