@@ -4,7 +4,6 @@ streamlit
 streamlit-chat-media
 numpy
 retry
-revChatGPT
 duckduckgo-search
 transformers
 tabulate
@@ -18,3 +17,4 @@ torch
 pytest-playwright
 undetected-chromedriver>=3.2.1
 markdownify>=0.11.6
+hugchat

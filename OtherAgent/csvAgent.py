@@ -1,33 +1,32 @@
 from langchain.agents import create_csv_agent
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API
+from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
+
 from langchain.utilities import PythonREPL
 import os
 
 #### LOG IN FOR CHATGPT FREE LLM
-try :
-    #read from args the hf token and chatgpt token 
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--chatgpt_token", help="Chatgpt token : \n \
+select_model = input("Select the model you want to use (1 or 2) \n \
+1) ChatGPT \n \
+2) HuggingChat \n \
+>>> ")
+
+if select_model == "1":
+    print("Chatgpt token : \n \
     Go to https://chat.openai.com/chat and open the developer tools by F12. \n \
     Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com \n \
-    Copy the value in the Cookie Value field.")
-    args = parser.parse_args()
-
-    if args.chatgpt_token is None:
-        raise Exception("You must provide the huggingface token and chatgpt token")
-
-    os.environ["CHATGPT_TOKEN"] = args.chatgpt_token
-except:
-    print("You must provide the chatgpt token")
-    print("chatgpt token: \n \
-    Go to https://chat.openai.com/chat and open the developer tools by F12. \n \
-    Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com \n \
-    Copy the value in the Cookie Value field.")
+    Copy the value in the Cooki2e Value field.")
     CG_TOKEN = input("Insert chatgpt token >>> ")
     os.environ["CHATGPT_TOKEN"] = CG_TOKEN
+    start_chat = input("Do you want start a chat from existing chat? (y/n): ") # ask if you want start a chat from existing chat
+    if start_chat == "y":
+        chat_id = input("Insert chat-id (chat.openai.com/c/(IS THIS ->)58XXXX0f-XXXX-XXXX-XXXX-faXXXXd2b50f)  ->") # ask the chat id
+        llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], conversation=chat_id)
+    else:
+        llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
+elif select_model == "2":
+    llm=HuggingChatAPI.HuggingChat() 
 
-llm = ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
 ####
 
 path_csv = input("Enter the path of the csv file: ")
