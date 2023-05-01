@@ -5,17 +5,24 @@ import os
 
 
 #### LOG IN FOR CHATGPT FREE LLM
-import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument("--chatgpt_token", help="chatgpt token, check https://chat.openai.com/api/auth/session for get your token")
-args = parser.parse_args()
+try :
+    #read from args the hf token and chatgpt token 
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--chatgpt_token", help="chatgpt token, check https://chat.openai.com/api/auth/session for get your token")
+    args = parser.parse_args()
 
-if args.chatgpt_token is None:
-    raise Exception("You must provide the huggingface token and chatgpt token")
+    if args.chatgpt_token is None:
+        raise Exception("You must provide the huggingface token and chatgpt token")
 
-os.environ["CHATGPT_TOKEN"] = args.chatgpt_token
+    os.environ["CHATGPT_TOKEN"] = args.chatgpt_token
+except:
+    print("You must provide the chatgpt token")
+    print("Chatgpt token, check https://chat.openai.com/api/auth/session for get your token")
+    CG_TOKEN = input("Insert chatgpt token >>> ")
+    os.environ["CHATGPT_TOKEN"] = CG_TOKEN
 
-llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
+llm = ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
 ####
 
 
