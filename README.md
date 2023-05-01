@@ -32,10 +32,11 @@ I believe that by providing free and open-source AI tools, we can give small bus
 ## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
 - **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
-- **CHATGPT🖥** : 
+- **(OPTIONAL BUT BETTER RESUKT) CHATGPT🖥** : 
     1. Go to https://chat.openai.com/chat and open the developer tools by `F12`.
     2. Find the `__Secure-next-auth.session-token` cookie in `Application` > `Storage` > `Cookies` > `https://chat.openai.com`.
     3. Copy the value in the `Cookie Value` field.
+- **Now Running also with HuggingCHAT**
 
 ![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
 
@@ -68,8 +69,7 @@ https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
-- Usage: **python BABYAGI.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** 
-- or **python BABYAGI.py**
+- Usage: **python BABYAGI.py**
 
 
 
@@ -89,8 +89,7 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
-- Usage: **python AUTOGPT.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** 
-- or **python AUTOGPT.py**
+- Usage: **python AUTOGPT.py**
 
 
 https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9-be1d-3257a46eacf3.mp4
@@ -110,8 +109,7 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 - pip3 install -r requirements.txt
 - cd OtherAgent/
 - Choose or develop your agent [ csvAgent.py  ;  pythonAgent.py  ; customAgent.py ]
-- Usage: **python YourAgent.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** 
-- or **python YourAgent.py**
+- Usage: **python YourAgent.py**
 
 
 
@@ -148,6 +146,22 @@ print(response)
 
 ```
 
+### Now support HuggingCHAT LLM 
+
+```python
+from FreeLLM import HuggingChatAPI 
+
+# Instantiate a ChatGPT object with your token
+llm = HuggingChatAPI.HuggingChat()  #for start new chat
+
+# Generate a response based on the given prompt
+response = llm("Hello, how are you?")
+
+# Print the response
+print(response)
+
+```
+
 ![exixstingchat](https://user-images.githubusercontent.com/108482353/235359284-c908afe6-1f18-41ff-aa30-8216a1b9f19a.png)
 
 
@@ -163,6 +177,7 @@ We believe that our open-source version of Autogpt will promote equitable and di
 - **Wikipedia** knowledge
 
 ```python
+#pip install langchain==0.0.150
 from langchain.agents import initialize_agent #use for create new agent
 from langchain.agents import initialize_agent, Tool
 
@@ -171,10 +186,16 @@ from langchain.utilities import WikipediaAPIWrapper #tool get wiki info
 from langchain.tools import DuckDuckGoSearchTool #tool get interet live info
 
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API
+#or
+from FreeLLM import HuggingChatAPI 
 
 
 # Instantiate a ChatGPT object with your token
 llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")
+
+# or use HuggingChatAPI if u dont have CHATGPT account
+# llm = HuggingChatAPI.HuggingChat() 
+
 
 # Define the tools
 wikipedia = WikipediaAPIWrapper()
@@ -278,6 +299,7 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 ### Inspiration and Credits 🤗
 - [https://github.com/hwchase17/langchain](https://github.com/hwchase17/langchain)
 - [https://github.com/terry3041/pyChatGPT](https://github.com/terry3041/pyChatGPT)
+- [https://github.com/Soulter/hugging-chat-api](https://github.com/Soulter/hugging-chat-api)
 - [https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
 
 
