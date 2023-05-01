@@ -9,7 +9,8 @@ duckduckgo-search
 transformers
 tabulate
 wikipedia
-faiss-gpu
+faiss-gpu # if u have a GPU
+#faiss-cpu # if u dont have a GPU
 nest_asyncio
 torch
 # tensorflow >= 2.0 -- For other future models
