@@ -8,7 +8,8 @@ Perfect, **this is the repository for you! 🎁**
 For any problem open an ISSUE 🚬, the project is very simple so any help is welcome💸.
 
 **Are you bored reading😴? Do you want to try our project now⏳? Open the notebook on Colab everything is ready!** 
-⚠️ The Notebook on Google Colab is currently under maintenance ⚠️  Abusing this tool is at your own risk
+
+**⚠️ The Notebook on Google Colab is currently under maintenance ⚠️**  Abusing this tool is at your own risk
 
 <img width="1383" height="250" alt="image" src="img/GH2.gif">
 
