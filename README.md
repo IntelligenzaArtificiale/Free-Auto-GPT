@@ -8,9 +8,7 @@ Perfect, **this is the repository for you! 🎁**
 For any problem open an ISSUE 🚬, the project is very simple so any help is welcome💸.
 
 **Are you bored reading😴? Do you want to try our project now⏳? Open the notebook on Colab everything is ready!** 
-
-**RUN NOW ON COLAB 😮👉** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
-⚠️ Abusing this tool is at your own risk
+⚠️ The Notebook on Google Colab is currently under maintenance ⚠️  Abusing this tool is at your own risk
 
 <img width="1383" height="250" alt="image" src="img/GH2.gif">
 
@@ -45,8 +43,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 ## HOW TO RUN CAMEL 🐫
 
-**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
-⚠️ Abusing this tool is at your own risk
+⚠️ The Notebook on Google Colab is currently under maintenance ⚠️  Abusing this tool is at your own risk
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
@@ -64,14 +61,14 @@ https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950
 
 ## HOW TO RUN BABY AGI 👶
 
-**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
-⚠️ Abusing this tool is at your own risk
+⚠️ The Notebook on Google Colab is currently under maintenance ⚠️  Abusing this tool is at your own risk
+
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
-- Usage: **python BABYAGI.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** or **python BABYAGI.py**
-- 
+- Usage: **python BABYAGI.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** 
+- or **python BABYAGI.py**
 
 
 
@@ -85,13 +82,14 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 -----
 
 ## HOW TO RUN AUTOGPT 🤖
-**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
-⚠️ Abusing this tool is at your own risk
+
+⚠️ The Notebook on Google Colab is currently under maintenance ⚠️  Abusing this tool is at your own risk
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
-- Usage: **python AUTOGPT.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** or **python AUTOGPT.py**
+- Usage: **python AUTOGPT.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** 
+- or **python AUTOGPT.py**
 
 
 https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9-be1d-3257a46eacf3.mp4
@@ -111,7 +109,8 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 - pip3 install -r requirements.txt
 - cd OtherAgent/
 - Choose or develop your agent [ csvAgent.py  ;  pythonAgent.py  ; customAgent.py ]
-- Usage: **python YourAgent.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** or **python YourAgent.py**
+- Usage: **python YourAgent.py --hf_token YoUrHFtOkEn --chatgpt_token YoUrChATgPTtOkENisSOlOnG** 
+- or **python YourAgent.py**
 
 
 
@@ -277,6 +276,10 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 
 ### Inspiration and Credits 🤗
 - [https://github.com/hwchase17/langchain](https://github.com/hwchase17/langchain)
-- [https://github.com/acheong08/ChatGPT](https://github.com/acheong08/ChatGPT)
+- [https://github.com/terry3041/pyChatGPT](https://github.com/terry3041/pyChatGPT)
 - [https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
+
+
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
