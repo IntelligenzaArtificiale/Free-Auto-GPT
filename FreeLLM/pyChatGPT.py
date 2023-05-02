@@ -413,10 +413,18 @@ class ChatGPT:
         self.__ensure_cf()
         self.__check_blocking_elements()
         self.logger.debug('Sending message...')
-        textbox = WebDriverWait(self.driver, 5).until(
-            EC.element_to_be_clickable(chatgpt_textbox)
-        )
-        textbox.click()
+        try:
+            textbox = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable(chatgpt_textbox)
+            )
+            textbox.click()
+        except SeleniumExceptions.ElementClickInterceptedException():
+            self.__check_blocking_elements()
+            textbox = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable(chatgpt_textbox)
+            )
+            textbox.click()
+            
         self.driver.execute_script(
             '''
         var element = arguments[0], txt = arguments[1];
@@ -460,9 +468,9 @@ class ChatGPT:
             time.sleep(1)
             self.__check_blocking_elements()
             time.sleep(1)
-            WebDriverWait(self.driver, 5).until(
+            self.driver.execute_script("arguments[0].click();", WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable(chatgpt_chats_list_first_node)
-            ).click()
+            ))
             time.sleep(1)
             #print(self.driver.current_url)
             matches = pattern.search(self.driver.current_url)
