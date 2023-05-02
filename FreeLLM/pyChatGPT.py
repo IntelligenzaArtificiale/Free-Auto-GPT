@@ -186,7 +186,7 @@ class ChatGPT:
         for arg in self.__chrome_args:
             options.add_argument(arg)
         try:
-            self.driver = uc.Chrome(options=options)
+            self.driver = uc.Chrome(options=options, version_main=112)
         except TypeError as e:
             if str(e) == 'expected str, bytes or os.PathLike object, not NoneType':
                 raise ValueError('Chrome installation not found')
