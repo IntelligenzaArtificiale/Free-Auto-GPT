@@ -46,7 +46,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 -----
 
 
-## HOW TO FAST INSTALL local with using Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)🚀
+## HOW TO FAST INSTALL local using Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)🚀
 
 🚀Added the possibility to use Docker image using Dev Container in VSCode. How to run it :
 - Install [Docker Desktop](https://docs.docker.com/desktop/)
