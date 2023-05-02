@@ -4,6 +4,7 @@
 # General 
 import os
 import pandas as pd
+from dotenv import load_dotenv
 from langchain.experimental.autonomous_agents.autogpt.agent import AutoGPT
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
@@ -17,6 +18,7 @@ import nest_asyncio
 # Needed synce jupyter runs an async eventloop
 nest_asyncio.apply()
 
+load_dotenv()
 
 select_model = input("Select the model you want to use (1 or 2) \n \
 1) ChatGPT \n \
@@ -24,12 +26,13 @@ select_model = input("Select the model you want to use (1 or 2) \n \
 >>> ")
 
 if select_model == "1":
-    print("Chatgpt token : \n \
-    Go to https://chat.openai.com/chat and open the developer tools by F12. \n \
-    Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com \n \
-    Copy the value in the Cooki2e Value field.")
-    CG_TOKEN = input("Insert chatgpt token >>> ")
-    os.environ["CHATGPT_TOKEN"] = CG_TOKEN
+    CG_TOKEN = os.getenv("CHATGPT_TOKEN", "your-chatgpt-token")
+
+    if (CG_TOKEN != "your-chatgpt-token"):
+        os.environ["CHATGPT_TOKEN"] = CG_TOKEN
+    else:
+        raise ValueError("ChatGPT Token EMPTY. Edit the .env file and put your ChatGPT token")
+
     start_chat = input("Do you want start a chat from existing chat? (y/n): ") # ask if you want start a chat from existing chat
     if start_chat == "y":
         chat_id = input("Insert chat-id (chat.openai.com/c/(IS THIS ->)58XXXX0f-XXXX-XXXX-XXXX-faXXXXd2b50f)  ->") # ask the chat id
@@ -38,13 +41,15 @@ if select_model == "1":
         llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
 elif select_model == "2":
     llm=HuggingChatAPI.HuggingChat() 
-    
-    
 
-print("You must provide the huggingface token and chatgpt token")
-print("Huggingface token, check https://huggingface.co/settings/tokens for get your token")
-HF_TOKEN = input("Insert huggingface token >>> ")
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
+
+
+HF_TOKEN = os.getenv("HUGGINGFACE_TOKEN", "your-huggingface-token")
+
+if (HF_TOKEN != "your-huggingface-token"):
+    os.environ["HUGGINGFACEHUB_API_TOKEN"] = HF_TOKEN
+else:
+    raise ValueError("HuggingFace Token EMPTY. Edit the .env file and put your HuggingFace token")
 
 # Tools
 import os
