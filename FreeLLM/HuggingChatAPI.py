@@ -1,3 +1,4 @@
+
 from hugchat import hugchat
 import requests
 from langchain.llms.base import LLM
@@ -35,7 +36,7 @@ class HuggingChat(LLM):
             
         
         sleep(2)
-        data = self.chatbot.chat(prompt)
+        data = self.chatbot.chat(prompt, temperature=0.5, stream=False)
         #conversation_list = self.chatbot.get_conversation_list()
         #print(conversation_list)
         
@@ -57,3 +58,4 @@ class HuggingChat(LLM):
 #print(llm("Hello, how are you?"))
 #print(llm("what is AI?"))
 #print(llm("Can you resume your previus answer?")) #now memory work well
+
