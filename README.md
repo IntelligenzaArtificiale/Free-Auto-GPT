@@ -45,23 +45,20 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 -----
 
-## HOW TO RUN CAMEL 🐫
 
-**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
-⚠️ Abusing this tool is at your own risk
+## HOW TO FAST INSTALL local with using Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)🚀
 
-**Or use Locally :**
-- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- pip3 install -r requirements.txt
-- streamlit run Camel.py
-
-
-https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950-9cc6-7f140890f386.mp4
-
+🚀Added the possibility to use Docker image using Dev Container in VSCode. How to run it :
+- Install [Docker Desktop](https://docs.docker.com/desktop/)
+- Install Visual Studio Code
+- Open Visual Studio and go to **Extensions -> search for Dev Container -> install it**
+- Restart Visual Studio
+- Go to the project folder, **right click** and **"Open in Visual Studio Code"**
+- It will ask you to reopen in a Docker Container
+- Click **"Reopen"** and wait for it to be complete **(you need to have Docker Desktop opened)**
 
 
 -----
-
 
 
 ## HOW TO RUN BABY AGI 👶
@@ -73,6 +70,8 @@ https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
+- insert the **.env file** yours Token
+- if you dont see the **.env file** check "Show hidden file" in your file manger
 - Usage: **python BABYAGI.py**
 
 
@@ -94,6 +93,8 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - pip3 install -r requirements.txt
+- insert the **.env file** yours Token
+- if you dont see the **.env file** check "Show hidden file" in your file manger
 - Usage: **python AUTOGPT.py**
 
 
@@ -121,6 +122,22 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 
 https://user-images.githubusercontent.com/108482353/235354639-998f0a40-3d2d-4f33-b187-17a3be8d7899.mp4
 
+
+
+-----
+
+## HOW TO RUN CAMEL 🐫
+
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
+
+**Or use Locally :**
+- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
+- pip3 install -r requirements.txt
+- streamlit run Camel.py
+
+
+https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950-9cc6-7f140890f386.mp4
 
 
 
