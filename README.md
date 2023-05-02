@@ -1,4 +1,3 @@
-### ⚠️ The Notebook on Google Colab is currently under maintenance ⚠️ 
 
 # USE AI AGENTs, like AUTO-GPT or BABYAGI, without paids API😤  **TOTALLY FOR FREE🤑**
 
@@ -9,7 +8,8 @@ For any problem open an ISSUE 🚬, the project is very simple so any help is we
 
 **Are you bored reading😴? Do you want to try our project now⏳? Open the notebook on Colab everything is ready!** 
 
-**⚠️ The Notebook on Google Colab is currently under maintenance ⚠️**  Abusing this tool is at your own risk
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
 <img width="1383" height="250" alt="image" src="img/GH2.gif">
 
@@ -47,7 +47,8 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 ## HOW TO RUN CAMEL 🐫
 
-⚠️ The Notebook on Google Colab is currently under maintenance ⚠️  Abusing this tool is at your own risk
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
@@ -65,7 +66,8 @@ https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950
 
 ## HOW TO RUN BABY AGI 👶
 
-⚠️ The Notebook on Google Colab is currently under maintenance ⚠️  Abusing this tool is at your own risk
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
 
 **Or use Locally :**
@@ -86,7 +88,8 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 
 ## HOW TO RUN AUTOGPT 🤖
 
-⚠️ The Notebook on Google Colab is currently under maintenance ⚠️  Abusing this tool is at your own risk
+**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
+⚠️ Abusing this tool is at your own risk
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
@@ -147,6 +150,12 @@ response = llm("Hello, how are you?")
 print(response)
 
 ```
+![exixstingchat](https://user-images.githubusercontent.com/108482353/235359284-c908afe6-1f18-41ff-aa30-8216a1b9f19a.png)
+
+
+The code snippet provided above shows how to use our custom ChatGPT LLM class to interact with the language model. It requires a token from the ChatGPT API, which can be obtained from [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session). 
+
+Please note that there is a limit of 50 requests per hour for each account on the ChatGPT API 💣. Therefore, we implemented a call counter in our ChatGPT class to prevent exceeding this limit.
 
 ### Now support HuggingCHAT LLM 
 
@@ -164,13 +173,6 @@ print(response)
 
 ```
 
-![exixstingchat](https://user-images.githubusercontent.com/108482353/235359284-c908afe6-1f18-41ff-aa30-8216a1b9f19a.png)
-
-
-The code snippet provided above shows how to use our custom ChatGPT LLM class to interact with the language model. It requires a token from the ChatGPT API, which can be obtained from [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session). 
-
-Please note that there is a limit of 50 requests per hour for each account on the ChatGPT API 💣. Therefore, we implemented a call counter in our ChatGPT class to prevent exceeding this limit.
-
 We believe that our open-source version of Autogpt will promote equitable and diverse access to AI technology and empower individuals and small businesses to create innovative AI projects without significant financial investment.
 
 **This is an example of CUSTOM agent, in less of 60 line of code and totally for free, with:**
@@ -185,7 +187,7 @@ from langchain.agents import initialize_agent, Tool
 
 from langchain.utilities import PythonREPL #tool for execute python script
 from langchain.utilities import WikipediaAPIWrapper #tool get wiki info
-from langchain.tools import DuckDuckGoSearchTool #tool get interet live info
+from langchain.tools import DuckDuckGoSearchTool #tool get interet live info (langchain==0.0.150)
 
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API
 #or
