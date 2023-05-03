@@ -1,27 +1,31 @@
 from langchain.agents import initialize_agent
 from langchain.utilities import PythonREPL
 from langchain.utilities import WikipediaAPIWrapper
-from langchain.tools import DuckDuckGoSearchTool
 from langchain.tools.human.tool import HumanInputRun
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
 
 from langchain.agents import initialize_agent, Tool
+
 import os
 
 #### LOG IN FOR CHATGPT FREE LLM
+from dotenv import load_dotenv
+load_dotenv()
+
 select_model = input("Select the model you want to use (1 or 2) \n \
 1) ChatGPT \n \
 2) HuggingChat \n \
 >>> ")
 
 if select_model == "1":
-    print("Chatgpt token : \n \
-    Go to https://chat.openai.com/chat and open the developer tools by F12. \n \
-    Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com \n \
-    Copy the value in the Cooki2e Value field.")
-    CG_TOKEN = input("Insert chatgpt token >>> ")
-    os.environ["CHATGPT_TOKEN"] = CG_TOKEN
+    CG_TOKEN = os.getenv("CHATGPT_TOKEN", "your-chatgpt-token")
+
+    if (CG_TOKEN != "your-chatgpt-token"):
+        os.environ["CHATGPT_TOKEN"] = CG_TOKEN
+    else:
+        raise ValueError("ChatGPT Token EMPTY. Edit the .env file and put your ChatGPT token")
+
     start_chat = input("Do you want start a chat from existing chat? (y/n): ") # ask if you want start a chat from existing chat
     if start_chat == "y":
         chat_id = input("Insert chat-id (chat.openai.com/c/(IS THIS ->)58XXXX0f-XXXX-XXXX-XXXX-faXXXXd2b50f)  ->") # ask the chat id
@@ -31,11 +35,19 @@ if select_model == "1":
 elif select_model == "2":
     llm=HuggingChatAPI.HuggingChat() 
 
+
 ####
 
 wikipedia = WikipediaAPIWrapper()
 python_repl = PythonREPL()
 search = DuckDuckGoSearchTool()
+
+
+#from langchain.chains.qa_with_sources.loading import load_qa_with_sources_chain, BaseCombineDocumentsChain
+#from Tool import browserQA
+#query_website_tool = browserQA.WebpageQATool(qa_chain=load_qa_with_sources_chain(llm))
+
+
 
 #define TOOLs
 
@@ -53,12 +65,21 @@ wikipedia_tool = Tool(
     description="Useful for when you need to look up a topic, country or person on wikipedia"
 )
 
+
 duckduckgo_tool = Tool(
     name='DuckDuckGo Search',
     func= search.run,
     description="Useful for when you need to do a search on the internet to find information that another tool can't find. be specific with your input."
 )
+"""
 
+queryWebsite_tool = Tool(
+    name= query_website_tool.name,
+    func= query_website_tool.run,
+    description= query_website_tool.description
+)
+
+"""
 #human_input_tool = Tool(
     #name='human input',
     #func= HumanInputRun.run,
@@ -74,6 +95,7 @@ duckduckgo_tool = Tool(
 
 
 tools.append(duckduckgo_tool)
+#tools.append(queryWebsite_tool)
 tools.append(wikipedia_tool)
 #tools.append(human_input_tool)
 #tools.append(custom_tool)
@@ -88,7 +110,9 @@ zero_shot_agent = initialize_agent(
     llm=llm,
     verbose=True,
     max_iterations=iteration,
+    
 )
+
 
 
 print(">> STRAT CUSTOM AGENT")
