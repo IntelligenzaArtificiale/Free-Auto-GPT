@@ -26,9 +26,11 @@ if select_model == "1":
     else:
         raise ValueError("ChatGPT Token EMPTY. Edit the .env file and put your ChatGPT token")
 
-    start_chat = input("Do you want start a chat from existing chat? (y/n): ") # ask if you want start a chat from existing chat
-    if start_chat == "y":
-        chat_id = input("Insert chat-id (chat.openai.com/c/(IS THIS ->)58XXXX0f-XXXX-XXXX-XXXX-faXXXXd2b50f)  ->") # ask the chat id
+    start_chat = os.getenv("USE_EXISTING_CHAT", False)
+    if start_chat:
+        chat_id = os.getenv("CHAT_ID")
+        if chat_id == None:
+            raise ValueError("You have to set up your chat-id in the .env file")
         llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], conversation=chat_id)
     else:
         llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
@@ -115,7 +117,7 @@ zero_shot_agent = initialize_agent(
 
 
 
-print(">> STRAT CUSTOM AGENT")
+print(">> START CUSTOM AGENT")
 print("> Digit 'exit' for exit or 'your task or question' for start\n\n")
 prompt = input("(Enter your task or question) >> ")
 while prompt != "exit":
