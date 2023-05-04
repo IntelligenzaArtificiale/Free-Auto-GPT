@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 from langchain import LLMChain, PromptTemplate
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
+from FreeLLM import BingChatAPI # FREE BINGCHAT API
+
 from langchain.memory import ConversationBufferWindowMemory
 import os
 
@@ -11,6 +13,7 @@ load_dotenv()
 select_model = input("Select the model you want to use (1 or 2) \n \
 1) ChatGPT \n \
 2) HuggingChat \n \
+3) BingChat \n \
 >>> ")
 
 if select_model == "1":
@@ -20,7 +23,7 @@ if select_model == "1":
         os.environ["CHATGPT_TOKEN"] = CG_TOKEN
     else:
         raise ValueError("ChatGPT Token EMPTY. Edit the .env file and put your ChatGPT token")
-    
+
     start_chat = os.getenv("USE_EXISTING_CHAT", False)
     if start_chat:
         chat_id = os.getenv("CHAT_ID")
@@ -30,8 +33,13 @@ if select_model == "1":
     else:
         llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
 elif select_model == "2":
-    llm=HuggingChatAPI.HuggingChat() 
-    
+    llm=HuggingChatAPI.HuggingChat()
+elif select_model == "3":
+    if os.environ["BINGCHAT_COOKIEPATH"] == "your-bingchat-cookiepath":
+        raise ValueError("BingChat CookiePath EMPTY. Edit the .env file and put your BingChat cookiepath")
+    cookie_path = os.environ["BINGCHAT_COOKIEPATH"]
+    llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative")
+
     
 
 ####
