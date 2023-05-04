@@ -11,7 +11,9 @@ from langchain.schema import (
 
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
-from FreeLLM import ChatGPTAPI # FREE CHATGPT API
+from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
+from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
+from FreeLLM import BingChatAPI # FREE BINGCHAT API
 import streamlit as st
 from streamlit_chat_media import message
 import os
@@ -73,15 +75,8 @@ user_role_name = col2.text_input("User Role Name", "Stock Trader")
 task = st.text_area("Task", "Develop a trading bot for the stock market")
 word_limit = st.number_input("Word Limit", 10, 1500, 50)
 
-token_CG = st.text_input("Insert your ChatGPT token", "")
-with st.expander("How to get your ChatGPT token"):
-    st.markdown("chatgpt token: \n \
-    Go to https://chat.openai.com/chat and open the developer tools by F12. \n \
-    Find the __Secure-next-auth.session-token cookie in Application > Storage > Cookies > https://chat.openai.com \n \
-    Copy the value in the Cookie Value field.", unsafe_allow_html=True)
 
-if st.button("Start Autonomus AI AGENT") and token_CG != "":
-    os.environ["CHATGPT_TOKEN"] = token_CG
+if st.button("Start Autonomus AI AGENT"):
     task_specifier_sys_msg = SystemMessage(content="You can make a task more specific.")
     task_specifier_prompt = (
     """Here is a task that {assistant_role_name} will help {user_role_name} to complete: {task}.
@@ -90,7 +85,7 @@ if st.button("Start Autonomus AI AGENT") and token_CG != "":
     )
     task_specifier_template = HumanMessagePromptTemplate.from_template(template=task_specifier_prompt)
     
-    task_specify_agent = CAMELAgent(task_specifier_sys_msg,  ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"]))
+    task_specify_agent = CAMELAgent(task_specifier_sys_msg,  HuggingChatAPI.HuggingChat())
     task_specifier_msg = task_specifier_template.format_messages(assistant_role_name=assistant_role_name,
                                                                 user_role_name=user_role_name,
                                                                 task=task, word_limit=word_limit)[0]
@@ -171,10 +166,10 @@ if st.button("Start Autonomus AI AGENT") and token_CG != "":
     assistant_sys_msg, user_sys_msg = get_sys_msgs(assistant_role_name, user_role_name, specified_task)
 
     #AI ASSISTANT setup                           |-> add the agent LLM MODEL HERE <-|
-    assistant_agent = CAMELAgent(assistant_sys_msg, ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"]))
+    assistant_agent = CAMELAgent(assistant_sys_msg, HuggingChatAPI.HuggingChat())
     
     #AI USER setup                      |-> add the agent LLM MODEL HERE <-|
-    user_agent = CAMELAgent(user_sys_msg, ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"]))
+    user_agent = CAMELAgent(user_sys_msg, HuggingChatAPI.HuggingChat())
 
     # Reset agents
     assistant_agent.reset()
