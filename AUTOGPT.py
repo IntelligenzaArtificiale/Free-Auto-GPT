@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 from langchain.experimental.autonomous_agents.autogpt.agent import AutoGPT
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
-
+from FreeLLM import BingChatAPI # FREE BINGCHAT API
 from langchain.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
 from langchain.docstore.document import Document
 import asyncio
@@ -19,10 +19,10 @@ import nest_asyncio
 nest_asyncio.apply()
 
 load_dotenv()
-
 select_model = input("Select the model you want to use (1 or 2) \n \
 1) ChatGPT \n \
 2) HuggingChat \n \
+3) BingChat \n \
 >>> ")
 
 if select_model == "1":
@@ -43,6 +43,11 @@ if select_model == "1":
         llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
 elif select_model == "2":
     llm=HuggingChatAPI.HuggingChat()
+elif select_model == "3":
+    if os.environ["BINGCHAT_COOKIEPATH"] == "your-bingchat-cookiepath":
+        raise ValueError("BingChat CookiePath EMPTY. Edit the .env file and put your BingChat cookiepath")
+    cookie_path = os.environ["BINGCHAT_COOKIEPATH"]
+    llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative")
 
 
 
