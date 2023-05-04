@@ -223,7 +223,7 @@ agent = AutoGPT.from_llm_and_tools(
     ai_role="Assistant",
     tools=tools,
     llm=llm,
-    memory=vectorstore.as_retriever(search_kwargs={"k": 8}),
+    memory=vectorstore.as_retriever(search_kwargs={"k": 5}),
     # human_in_the_loop=True, # Set to True if you want to add feedback at each step.
 )
 # agent.chain.verbose = True
