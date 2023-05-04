@@ -19,3 +19,4 @@ undetected-chromedriver>=3.2.1
 markdownify>=0.11.6
 hugchat
 python-dotenv
+EdgeGPT
