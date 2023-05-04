@@ -219,7 +219,7 @@ tools = [
 
 
 agent = AutoGPT.from_llm_and_tools(
-    ai_name="Tom",
+    ai_name="BingChat",
     ai_role="Assistant",
     tools=tools,
     llm=llm,
