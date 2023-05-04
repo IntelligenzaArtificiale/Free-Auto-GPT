@@ -32,14 +32,17 @@ I believe that by providing free and open-source AI tools, we can give small bus
 ## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
 - **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
-- 
+
 - **Now Running also with HuggingCHAT**
 
 - **(OPTIONAL BUT BETTER RESULT) CHATGPT🖥** : 
     1. Go to https://chat.openai.com/chat and open the developer tools by `F12`.
     2. Find the `__Secure-next-auth.session-token` cookie in `Application` > `Storage` > `Cookies` > `https://chat.openai.com`.
     3. Copy the value in the `Cookie Value` field.
+
+
 ![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
+
 
 - **(OPTIONAL) Bing CHAT** :
     1. Check if you have access to [Bing Chat](https://chrome.google.com/webstore/detail/bing-chat-for-all-browser/jofbglonpbndadajbafmmaklbfbkggpo)
@@ -48,6 +51,8 @@ I believe that by providing free and open-source AI tools, we can give small bus
     4. Open the extension for cookie
     5. Click "Export" on the bottom right, then "Export as JSON" (This saves your cookies to clipboard)
     6. Paste your cookies into a file `cookiesBing.json`
+
+
 ![image](https://user-images.githubusercontent.com/108482353/236259872-faf7946c-5648-4733-8d66-978040eacd85.png)
 
 
