@@ -9,6 +9,7 @@ from langchain.experimental.autonomous_agents.autogpt.agent import AutoGPT
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
 from FreeLLM import BingChatAPI # FREE BINGCHAT API
+from FreeLLM import BardChatAPI # FREE GOOGLE BARD API
 from langchain.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
 from langchain.docstore.document import Document
 import asyncio
@@ -47,8 +48,13 @@ elif select_model == "3":
     if os.environ["BINGCHAT_COOKIEPATH"] == "your-bingchat-cookiepath":
         raise ValueError("BingChat CookiePath EMPTY. Edit the .env file and put your BingChat cookiepath")
     cookie_path = os.environ["BINGCHAT_COOKIEPATH"]
-    llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative")
-
+    llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="balaced")
+elif select_model == "4":
+    if os.environ["BARDCHAT_TOKEN"] == "your-googlebard-cookiepath":
+        raise ValueError("GoogleBard CookiePath EMPTY. Edit the .env file and put your GoogleBard cookiepath")
+    cookie_path = os.environ["BARDCHAT_TOKEN"]
+    llm=BardChatAPI.BardChat(cookie=cookie_path)
+    
 
 
 HF_TOKEN = os.getenv("HUGGINGFACE_TOKEN", "your-huggingface-token")
@@ -65,9 +71,9 @@ from typing import Optional
 from langchain.agents import tool
 from langchain.tools.file_management.read import ReadFileTool
 from langchain.tools.file_management.write import WriteFileTool
+from tempfile import TemporaryDirectory
 
-ROOT_DIR = "data/"
-
+ROOT_DIR = TemporaryDirectory()
 @contextmanager
 def pushd(new_dir):
     """Context manager for changing the current working directory."""
@@ -210,8 +216,8 @@ web_search = DuckDuckGoSearchRun()
 
 tools = [
     web_search,
-    WriteFileTool(root_dir="./data"),
-    ReadFileTool(root_dir="./data"),
+    WriteFileTool(),
+    ReadFileTool(),
     process_csv,
     query_website_tool,
     # HumanInputRun(), # Activate if you want the permit asking for help from the human

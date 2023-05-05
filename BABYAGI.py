@@ -10,11 +10,13 @@ from langchain.llms import BaseLLM
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
 from FreeLLM import BingChatAPI # FREE BINGCHAT API
-
+from FreeLLM import BardChatAPI # FREE GOOGLE BARD API
 from langchain.vectorstores.base import VectorStore
 from pydantic import BaseModel, Field
 from langchain.chains.base import Chain
 from langchain.experimental import BabyAGI
+from BabyAgi import BabyAGIMod
+
 import faiss
 
 load_dotenv()
@@ -72,19 +74,55 @@ vectorstore = FAISS(embeddings_model, index, InMemoryDocstore({}), {})
 
 print(vectorstore)
 
+#DEFINE TOOL
+from langchain.agents import ZeroShotAgent, Tool, AgentExecutor
+from langchain import OpenAI, LLMChain
+from langchain.tools import BaseTool, DuckDuckGoSearchRun
+
+
+todo_prompt = PromptTemplate.from_template(
+    "I need to create a plan for complete me GOAl. Can you help me to create a TODO list? Create only the todo list for this objective: '{objective}'."
+)
+todo_chain = LLMChain(llm=llm, prompt=todo_prompt)
+search = DuckDuckGoSearchRun()
+tools = [
+    Tool(
+        name="Search",
+        func=search.run,
+        description="useful for when you need to answer questions about current events",
+    )
+]
+
+
+prefix = """Can you help me to performs one task based on the following objective: {objective}. Take into account these previously completed tasks: {context}."""
+suffix = """Question: {task}. 
+{agent_scratchpad}"""
+prompt = ZeroShotAgent.create_prompt(
+    tools,
+    prefix=prefix,
+    suffix=suffix,
+    input_variables=["objective", "task", "context", "agent_scratchpad"],
+)
+
+llm_chain = LLMChain(llm=llm, prompt=prompt)
+tool_names = [tool.name for tool in tools]
+agent = ZeroShotAgent(llm_chain=llm_chain, allowed_tools=tool_names)
+agent_executor = AgentExecutor.from_agent_and_tools(
+    agent=agent, tools=tools, verbose=True
+)
 
 # START
 
 # Logging of LLMChains
-verbose = False
+verbose = True
 
 int_max_iterations = input("Enter the maximum number of iterations: (Suggest from 3 and 5) ")
 max_iterations = int(int_max_iterations)
 
 # If None, will keep on going forever
 max_iterations: Optional[int] =   max_iterations
-baby_agi = BabyAGI.from_llm(
-    llm=llm, vectorstore=vectorstore, verbose=verbose, max_iterations=max_iterations
+baby_agi = BabyAGIMod.BabyAGI.from_llm(
+    llm=llm, vectorstore=vectorstore, task_execution_chain=agent_executor, verbose=verbose, max_iterations=max_iterations
 )
 
 
