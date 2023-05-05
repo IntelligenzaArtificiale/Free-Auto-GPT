@@ -3,6 +3,7 @@ from langchain.tools.python.tool import PythonREPLTool
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
 from FreeLLM import BingChatAPI # FREE BINGCHAT API
+from FreeLLM import BardChatAPI # FREE GOOGLE BARD API
 
 import os
 
@@ -39,7 +40,11 @@ elif select_model == "3":
         raise ValueError("BingChat CookiePath EMPTY. Edit the .env file and put your BingChat cookiepath")
     cookie_path = os.environ["BINGCHAT_COOKIEPATH"]
     llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative")
-
+elif select_model == "4":
+    if os.environ["BARDCHAT_TOKEN"] == "your-googlebard-cookiepath":
+        raise ValueError("GoogleBard CookiePath EMPTY. Edit the .env file and put your GoogleBard cookiepath")
+    cookie_path = os.environ["BARDCHAT_TOKEN"]
+    llm=BardChatAPI.BardChat(cookie=cookie_path)
 ####
 
 

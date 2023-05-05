@@ -1,11 +1,12 @@
 from langchain.agents import initialize_agent
 from langchain.utilities import PythonREPL
 from langchain.utilities import WikipediaAPIWrapper
+from langchain.tools import BaseTool, DuckDuckGoSearchRun
 from langchain.tools.human.tool import HumanInputRun
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
 from FreeLLM import BingChatAPI # FREE BINGCHAT API
-
+from FreeLLM import BardChatAPI # FREE Google BArd API
 from langchain.agents import initialize_agent, Tool
 
 import os
@@ -17,6 +18,7 @@ select_model = input("Select the model you want to use (1 or 2) \n \
 1) ChatGPT \n \
 2) HuggingChat \n \
 3) BingChat \n \
+4) Google Bard \n \
 >>> ")
 
 if select_model == "1":
@@ -42,13 +44,17 @@ elif select_model == "3":
         raise ValueError("BingChat CookiePath EMPTY. Edit the .env file and put your BingChat cookiepath")
     cookie_path = os.environ["BINGCHAT_COOKIEPATH"]
     llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative")
-
+elif select_model == "4":
+    if os.environ["BARDCHAT_TOKEN"] == "your-googlebard-cookiepath":
+        raise ValueError("GoogleBard CookiePath EMPTY. Edit the .env file and put your GoogleBard cookiepath")
+    cookie_path = os.environ["BARDCHAT_TOKEN"]
+    llm=BardChatAPI.BardChat(cookie=cookie_path)
 
 ####
 
 wikipedia = WikipediaAPIWrapper()
 python_repl = PythonREPL()
-search = DuckDuckGoSearchTool()
+search = DuckDuckGoSearchRun()
 
 
 #from langchain.chains.qa_with_sources.loading import load_qa_with_sources_chain, BaseCombineDocumentsChain
