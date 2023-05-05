@@ -13,6 +13,8 @@ For any problem open an ISSUE 🚬, the project is very simple so any help is we
 
 ![Intro](https://static.wixstatic.com/media/3c029f_7db5f44379074783b6f2de67b82eb3b5~mv2.gif)
 
+![My Remote Image](https://static.wixstatic.com/media/3c029f_7db5f44379074783b6f2de67b82eb3b5~mv2.gif)
+
 By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API?style=social)](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API/stargazers) and all the support!!
 
 ## WHY THIS REPOSITORY ? 🤔
