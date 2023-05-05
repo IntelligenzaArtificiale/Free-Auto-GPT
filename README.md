@@ -44,6 +44,14 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 ![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
 
+- **(OPTIONAL) Google Bard🖥** : 
+    1. Go toGo to https://bard.google.com/ and open the developer tools by `F12`.
+    2. Find the `__Secure-1PSID` cookie in `Application` > `Storage` > `Cookies` 
+    3. Copy the value in the `Cookie Value` field.
+
+![Cattura](https://user-images.githubusercontent.com/108482353/236518416-ba0fb89c-080d-4e5e-8514-4ed7ac897b55.PNG)
+
+
 
 - **(OPTIONAL) Bing CHAT** :
     1. Check if you have access to [Bing Chat](https://chrome.google.com/webstore/detail/bing-chat-for-all-browser/jofbglonpbndadajbafmmaklbfbkggpo)
@@ -235,6 +243,8 @@ from langchain.tools import DuckDuckGoSearchTool #tool get interet live info (la
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API
 #or
 from FreeLLM import HuggingChatAPI 
+from FreeLLM import BingChatAPI 
+from FreeLLM import BardChatAPI 
 
 
 # Instantiate a ChatGPT object with your token
@@ -242,6 +252,8 @@ llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")
 
 # or use HuggingChatAPI if u dont have CHATGPT account
 # llm = HuggingChatAPI.HuggingChat() 
+
+# TODO BING and GOOGLE DOCUMENTATION
 
 
 # Define the tools
