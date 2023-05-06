@@ -24,7 +24,7 @@ load_dotenv()
 select_model = input("Select the model you want to use (1 or 2) \n \
 1) ChatGPT \n \
 2) HuggingChat \n \
-3) BingChat \n \
+3) BingChat (NOT GOOD RESULT)\n \
 4) BardChat \n \
 >>> ")
 
@@ -99,7 +99,7 @@ tools = [
     Tool(
         name="TODO",
         func=todo_chain.run,
-        description="useful for when you need to create a task list to complete a goal. You have to give an Input: a goal for which to create a to-do list. Output: just a list of tasks to do for that goal. It is important to give the target input correctly!",
+        description="useful for when you need to create a task list to complete a objective. You have to give an Input: a objective for which to create a to-do list. Output: just a list of tasks to do for that objective. It is important to give the target input 'objective' correctly!",
     ),
 ]
 
