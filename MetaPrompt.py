@@ -1,4 +1,7 @@
+import json
 from dotenv import load_dotenv
+from pathlib import Path
+from json import JSONDecodeError
 from langchain import LLMChain, PromptTemplate
 from FreeLLM import ChatGPTAPI # FREE CHATGPT API 
 from FreeLLM import HuggingChatAPI # FREE HUGGINGCHAT API
@@ -11,10 +14,11 @@ import os
 load_dotenv()
 
 #### LOG IN FOR CHATGPT FREE LLM
-select_model = input("Select the model you want to use (1 or 2) \n \
+select_model = input("Select the model you want to use (1, 2, 3 or 4) \n \
 1) ChatGPT \n \
 2) HuggingChat \n \
 3) BingChat \n \
+4) Google Bard \n \
 >>> ")
 
 if select_model == "1":
@@ -36,13 +40,22 @@ if select_model == "1":
 elif select_model == "2":
     llm=HuggingChatAPI.HuggingChat()
 elif select_model == "3":
-    if os.environ["BINGCHAT_COOKIEPATH"] == "your-bingchat-cookiepath":
-        raise ValueError("BingChat CookiePath EMPTY. Edit the .env file and put your BingChat cookiepath")
-    cookie_path = os.environ["BINGCHAT_COOKIEPATH"]
-    llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative")
+    if not os.path.exists("cookiesBing.json"):
+        raise ValueError("File 'cookiesBing.json' not found! Create it and put your cookies in there in the JSON format.")
+    cookie_path = Path() / "cookiesBing.json"
+    with open("cookiesBing.json", 'r') as file:
+        try:
+            file_json = json.loads(file.read())
+        except JSONDecodeError:
+            raise ValueError("You did not put your cookies inside 'cookiesBing.json'! You can find the simple guide to get the cookie file here: https://github.com/acheong08/EdgeGPT/tree/master#getting-authentication-required.")
+    llm=BingChatAPI.BingChat(cookiepath=str(cookie_path), conversation_style="creative")
 elif select_model == "4":
-    if os.environ["BARDCHAT_TOKEN"] == "your-googlebard-cookiepath":
-        raise ValueError("GoogleBard CookiePath EMPTY. Edit the .env file and put your GoogleBard cookiepath")
+    GB_TOKEN = os.getenv("BARDCHAT_TOKEN", "your-googlebard-token")
+    
+    if GB_TOKEN != "your-googlebard-token":
+        os.environ["BARDCHAT_TOKEN"] = GB_TOKEN
+    else:
+        raise ValueError("GoogleBard Token EMPTY. Edit the .env file and put your GoogleBard token")
     cookie_path = os.environ["BARDCHAT_TOKEN"]
     llm=BardChatAPI.BardChat(cookie=cookie_path)
     
