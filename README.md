@@ -32,7 +32,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 ## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
-</summary>
+  </summary>
 
 
 - **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
