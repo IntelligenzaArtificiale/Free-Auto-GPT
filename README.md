@@ -191,7 +191,7 @@ from FreeLLM import ChatGPTAPI
 llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")  #for start new chat
 
 # or if if u would to start from an existing chat 
-# llm = ChatGPT(token = "YOUR-TOKEN", conversation = "Add-XXXX-XXXX-Convesation-ID")
+# llm = ChatGPTAPI.ChatGPT(token = "YOUR-TOKEN", conversation = "Add-XXXX-XXXX-Convesation-ID")
 
 
 # Generate a response based on the given prompt
@@ -207,6 +207,7 @@ print(response)
 The code snippet provided above shows how to use our custom ChatGPT LLM class to interact with the language model. It requires a token from the ChatGPT API, which can be obtained from [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session). 
 
 Please note that there is a limit of 50 requests per hour for each account on the ChatGPT API 💣. Therefore, we implemented a call counter in our ChatGPT class to prevent exceeding this limit.
+
 
 ### Now support HuggingCHAT LLM 
 
@@ -224,6 +225,40 @@ print(response)
 
 ```
 
+### Now support Bing CHAT LLM 
+
+```python
+from FreeLLM import BingChatAPI 
+
+# Instantiate a Bing CHAT object with your cookie path
+llm=BingChatAPI.BingChat(cookiepath="cookie_path")  #for start new chat
+
+llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative") #conversation_style must be precise, creative or balanced
+
+# Generate a response based on the given prompt
+response = llm("Hello, how are you?")
+
+# Print the response
+print(response)
+
+```
+
+### Now support Google BARD CHAT LLM 
+
+```python
+from FreeLLM import BardChatAPI 
+
+# Instantiate a Bard CHAT object with your cookie path
+llm=BardChatAPI.BardChat(cookie="cookie") #for start new chat
+
+# Generate a response based on the given prompt
+response = llm("Hello, how are you?")
+
+# Print the response
+print(response)
+
+```
+
 We believe that our open-source version of Autogpt will promote equitable and diverse access to AI technology and empower individuals and small businesses to create innovative AI projects without significant financial investment.
 
 **This is an example of CUSTOM agent, in less of 60 line of code and totally for free, with:**
@@ -232,10 +267,9 @@ We believe that our open-source version of Autogpt will promote equitable and di
 - **Wikipedia** knowledge
 
 ```python
-#pip install langchain==0.0.150
 from langchain.agents import initialize_agent #use for create new agent
-from langchain.agents import initialize_agent, Tool
-
+from langchain.agents import Tool
+from langchain.tools import BaseTool, DuckDuckGoSearchRun
 from langchain.utilities import PythonREPL #tool for execute python script
 from langchain.utilities import WikipediaAPIWrapper #tool get wiki info
 from langchain.tools import DuckDuckGoSearchTool #tool get interet live info (langchain==0.0.150)
@@ -250,10 +284,14 @@ from FreeLLM import BardChatAPI
 # Instantiate a ChatGPT object with your token
 llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")
 
-# or use HuggingChatAPI if u dont have CHATGPT account
-# llm = HuggingChatAPI.HuggingChat() 
+# or use Bing CHAT
+# llm = BingChatAPI.BingChat(cookiepath="cookie_path")
 
-# TODO BING and GOOGLE DOCUMENTATION
+# or use Google BArd CHAT
+# llm=BardChatAPI.BardChat(cookie="cookie") 
+
+# or use HuggingChatAPI if u dont have CHATGPT, BING or Google account
+# llm = HuggingChatAPI.HuggingChat() 
 
 
 # Define the tools
@@ -303,6 +341,8 @@ prompt = input("(Enter your task or question) >> ")
 while prompt.toLowerCase() != "exit":
     zero_shot_agent.run(prompt)
     prompt = input("(Enter your task or question) >> ")
+    
+# SO ESASY :)
 
 ```
 
@@ -339,13 +379,23 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 
 
 ## TODO , I NEED YOUR HELP 
-- [x] Create free LLM langchain wrapper based on [Reverse Engineered ChatGPT API by OpenAI](https://github.com/acheong08/ChatGPT) 
-- [x] Create a simple versione of AUTOGPT based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
-- [x] Find a way to replace OpenAIEmbeddings()
-- [x] Create a simple version of AUTOGPT based on [Baby AGI](https://alumni.media.mit.edu/~kris/ftp/SafeBabyAGI-J.BiegerEtAl2015.pdf)
-- [x] Add web search agent
-- [x] Add file writer agent
+- [x] Create free LLM langchain wrapper based on [Reverse Engineered ChatGPT API by OpenAI](https://github.com/terry3041/pyChatGPT) 
+- [x] Create free LLM langchain wrapper based on [Reverse Engineered HUGGING CHAT API by HuggingFace](https://github.com/Soulter/hugging-chat-api) 
+- [x] Create free LLM langchain wrapper based on [Reverse Engineered Bing CHAT API by Microsoft](https://github.com/acheong08/EdgeGPT) 
+- [x] Create free LLM langchain wrapper based on [Reverse Engineered Bard CHAT API by Google](https://github.com/acheong08/Bard) 
+- [x] Find a way to replace OpenAIEmbeddings() using HuggingFace Embeddings infeence API 
+
+- [x] Create a simple versione of CAMEL based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
+- [x] Create a simple version of BABYAGI based on [Baby AGI](https://alumni.media.mit.edu/~kris/ftp/SafeBabyAGI-J.BiegerEtAl2015.pdf)
+- [x] Add web search Tool
+- [x] Add file writer Tool
+- [x] Add Wikipedia Tool
+- [x] Add QA web page Tool
 - [x] Finally AUTOGPT without paids API
+
+- [x] Make a Colab Notebook for make this repository accessible to anyone
+- [x] Local using with Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)
+
 
 - [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
 - [ ] Add long term memory
@@ -362,6 +412,5 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
 
 
-**RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
-⚠️ Abusing this tool is at your own risk
+## We are hungry for PULL REQUEST 😋
 
