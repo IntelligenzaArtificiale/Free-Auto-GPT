@@ -29,13 +29,12 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 
 -----
-  <summary>
+
 
 
 ## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
-  </summary>
-
+--
 
 - **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
 
@@ -69,9 +68,6 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 ![image](https://user-images.githubusercontent.com/108482353/236259872-faf7946c-5648-4733-8d66-978040eacd85.png)
 
-</details>
-
-<details>
 
 
 -----
