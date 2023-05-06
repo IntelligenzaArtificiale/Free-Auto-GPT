@@ -14,7 +14,7 @@ class TaskCreationChain(LLMChain):
             " This result was based on this task description: {task_description}."
             " These are incomplete tasks: {incomplete_tasks}."
             " Based on the result, create new tasks to be completed"
-            " Return the task as an List."
+            " Return the task as an List without anything else."
         )
         prompt = PromptTemplate(
             template=task_creation_template,
