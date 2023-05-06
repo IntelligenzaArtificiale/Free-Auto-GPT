@@ -48,7 +48,7 @@ elif select_model == "3":
     if os.environ["BINGCHAT_COOKIEPATH"] == "your-bingchat-cookiepath":
         raise ValueError("BingChat CookiePath EMPTY. Edit the .env file and put your BingChat cookiepath")
     cookie_path = os.environ["BINGCHAT_COOKIEPATH"]
-    llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="balaced")
+    llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="balanced")
 elif select_model == "4":
     if os.environ["BARDCHAT_TOKEN"] == "your-googlebard-cookiepath":
         raise ValueError("GoogleBard CookiePath EMPTY. Edit the .env file and put your GoogleBard cookiepath")
