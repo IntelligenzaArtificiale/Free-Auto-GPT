@@ -28,7 +28,8 @@ class ChatGPT(LLM):
 
     def _call(self, prompt: str, stop: Optional[List[str]] = None) -> str:
         if stop is not None:
-            raise ValueError("stop kwargs are not permitted.")
+            pass
+            #raise ValueError("stop kwargs are not permitted.")
         #token is a must check
         if self.chatbot is None:
             if self.token is None:
