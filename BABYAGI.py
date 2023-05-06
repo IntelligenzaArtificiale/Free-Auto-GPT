@@ -25,6 +25,7 @@ select_model = input("Select the model you want to use (1 or 2) \n \
 1) ChatGPT \n \
 2) HuggingChat \n \
 3) BingChat \n \
+4) BardChat \n \
 >>> ")
 
 if select_model == "1":
@@ -50,7 +51,11 @@ elif select_model == "3":
         raise ValueError("BingChat CookiePath EMPTY. Edit the .env file and put your BingChat cookiepath")
     cookie_path = os.environ["BINGCHAT_COOKIEPATH"]
     llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative")
-
+elif select_model == "4":
+    if os.environ["BARDCHAT_TOKEN"] == "your-googlebard-cookiepath":
+        raise ValueError("GoogleBard CookiePath EMPTY. Edit the .env file and put your GoogleBard cookiepath")
+    cookie_path = os.environ["BARDCHAT_TOKEN"]
+    llm=BardChatAPI.BardChat(cookie=cookie_path)
     
     
 
@@ -90,7 +95,12 @@ tools = [
         name="Search",
         func=search.run,
         description="useful for when you need to answer questions about current events",
-    )
+    ),
+    Tool(
+        name="TODO",
+        func=todo_chain.run,
+        description="useful for when you need to create a task list to complete a goal. You have to give an Input: a goal for which to create a to-do list. Output: just a list of tasks to do for that goal. It is important to give the target input correctly!",
+    ),
 ]
 
 
@@ -114,15 +124,19 @@ agent_executor = AgentExecutor.from_agent_and_tools(
 # START
 
 # Logging of LLMChains
-verbose = True
+verbose = False
 
 int_max_iterations = input("Enter the maximum number of iterations: (Suggest from 3 and 5) ")
 max_iterations = int(int_max_iterations)
 
+if input("Do you want to store the results? (y/n) ") == "y" :
+    store_results = True
+
+
 # If None, will keep on going forever
 max_iterations: Optional[int] =   max_iterations
 baby_agi = BabyAGIMod.BabyAGI.from_llm(
-    llm=llm, vectorstore=vectorstore, task_execution_chain=agent_executor, verbose=verbose, max_iterations=max_iterations
+    llm=llm, vectorstore=vectorstore, task_execution_chain=agent_executor, verbose=verbose, max_iterations=max_iterations, store= store_results
 )
 
 
