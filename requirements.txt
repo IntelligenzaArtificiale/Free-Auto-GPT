@@ -21,3 +21,4 @@ hugchat
 python-dotenv
 EdgeGPT
 GoogleBard
+lark
