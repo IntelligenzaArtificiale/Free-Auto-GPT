@@ -14,7 +14,7 @@ import json
 import time
 import re
 import os
-
+import random
 
 cf_challenge_form = (By.ID, 'challenge-form')
 
@@ -39,7 +39,10 @@ chatgpt_chats_list_first_node = (
     "//li[@class='relative z-[15]']//a",
 )
 
-chatgpt_chat_url = 'https://chat.openai.com/chat'
+model_selector = (By.XPATH, "//button[starts-with(@id, 'headlessui-listbox-button')]")
+gpt4_selector = (By.XPATH, "//ul[@role='listbox']/li[contains(.//text(), 'GPT-4')][1]")
+
+chatgpt_chat_url = 'https://chat.openai.com'
 
 
 class ChatGPT:
@@ -364,7 +367,7 @@ class ChatGPT:
                 )
             except Exception as e:
                 self.logger.debug(f'Failed to update session: {str(e)}')
-            time.sleep(60)
+            self.__sleep(60)
 
     def __check_blocking_elements(self) -> None:
         '''
@@ -412,9 +415,33 @@ class ChatGPT:
         self.logger.debug('Ensuring Cloudflare cookies...')
         self.__ensure_cf()
         self.__check_blocking_elements()
-        self.logger.debug('Sending message...')
+
+        # Wait for page to load
         try:
             textbox = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable(chatgpt_textbox)
+            )
+        except SeleniumExceptions.ElementClickInterceptedException():
+            pass
+
+        # If we have paid access, we should select GPT4 model
+        try:
+            self.logger.debug('Trying to select model...')
+            WebDriverWait(self.driver, 3).until(
+                EC.presence_of_element_located(model_selector)
+            ).click()
+            self.logger.debug('Paid access detected, selecting GPT4 model...')
+            self.__sleep(1.0)
+            WebDriverWait(self.driver, 3).until(
+                EC.presence_of_element_located(gpt4_selector)
+            ).click()
+            self.logger.debug('GPT4 model selected')
+        except SeleniumExceptions.TimeoutException:
+            self.logger.debug('Paid access not detected, using default model...')
+
+        self.logger.debug('Sending message...')
+        try:
+            textbox = WebDriverWait(self.driver, 3).until(
                 EC.element_to_be_clickable(chatgpt_textbox)
             )
             textbox.click()
@@ -424,7 +451,7 @@ class ChatGPT:
                 EC.element_to_be_clickable(chatgpt_textbox)
             )
             textbox.click()
-            
+
         self.driver.execute_script(
             '''
         var element = arguments[0], txt = arguments[1];
@@ -439,7 +466,7 @@ class ChatGPT:
         if stream:
             for i in self.__stream_message():
                 print(i, end='')
-                time.sleep(0.1)
+                self.__sleep(0.1)
             return print()
 
         self.logger.debug('Waiting for completion...')
@@ -465,24 +492,30 @@ class ChatGPT:
         matches = pattern.search(self.driver.current_url)
         if not matches:
             self.driver.refresh()
-            time.sleep(1)
+            self.__sleep(1)
             self.__check_blocking_elements()
-            time.sleep(1)
+            self.__sleep(1)
             self.driver.execute_script("arguments[0].click();", WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable(chatgpt_chats_list_first_node)
             ))
-            time.sleep(1)
+            self.__sleep(1)
             #print(self.driver.current_url)
             matches = pattern.search(self.driver.current_url)
-            
+
 
         #get current url and print it
         #print(self.driver.current_url)
         #print(matches)
-        
+
         conversation_id = matches.group()
         return {'message': content, 'conversation_id': conversation_id}
         #return {'message': content}
+
+    def __sleep(self, sec=1.0, multiplier=2) -> None:
+        """
+        Random sleep to avoid detection
+        """
+        time.sleep(random.uniform(sec, sec * multiplier))
 
     def reset_conversation(self) -> None:
         '''
