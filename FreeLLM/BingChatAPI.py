@@ -29,7 +29,7 @@ class BingChat(LLM):
             self.conversation_style_on = ConversationStyle.precise
         elif conversation_style == "creative":
             self.conversation_style_on = ConversationStyle.creative
-        elif conversation_style == "balaced":
+        elif conversation_style == "balanced":
             self.conversation_style_on = ConversationStyle.balanced
         else:
             raise ValueError("conversation_style must be precise, creative or balaced")
