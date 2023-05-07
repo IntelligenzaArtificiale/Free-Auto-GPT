@@ -64,14 +64,21 @@ class BingChat(LLM):
         response_text = response_messages[1].get("text", "")
         
         if response_text == "":
+            hidden_text = response_messages[1].get("hiddenText", "")
+            print(">>>> [DEBBUGGER] hidden_text = " + str(hidden_text) + " [DEBBUGGER] <<<<")
+            print(">>>> [DEBBUGGER] BING CHAT dont is open Like CHATGPT , BingCHAT have refused to respond. [DEBBUGGER] <<<<")
+            response_text = hidden_text
+            """
             # reset the chatbot and remake the call
             print("[DEBUGGER] Chatbot failed to respond. Resetting and trying again. [DEBUGGER]")
+            print("[ INFO DEBUGGER ] \n<Response>\n" + str(response) + "\n</Response>\n\n")
             sleep(10)
             self.chatbot = await Chatbot.create(cookie_path=self.cookiepath)
             sleep(2)
             response = await self.chatbot.ask(prompt=prompt)
             response_messages = response.get("item", {}).get("messages", [])
             response_text = response_messages[1].get("text", "")
+            """
         
         #add to history
         self.history_data.append({"prompt":prompt,"response":response_text})    
