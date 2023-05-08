@@ -34,7 +34,6 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 ## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
---
 
 - **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
 
@@ -43,7 +42,8 @@ I believe that by providing free and open-source AI tools, we can give small bus
 - **(OPTIONAL BUT BETTER RESULT) CHATGPT🖥** : 
     1. Go to https://chat.openai.com/chat and open the developer tools by `F12`.
     2. Find the `__Secure-next-auth.session-token` cookie in `Application` > `Storage` > `Cookies` > `https://chat.openai.com`.
-    3. Copy the value in the `Cookie Value` field.
+    3. Copy the value in the `Cookie Value` field in `.env` file.
+    4. If you have Plus subscription you can use GPT4. Edit in `.env` file this line : `USE_GPT4 = True`
 
 
 ![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
@@ -51,7 +51,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 - **(OPTIONAL) Google Bard🖥** : 
     1. Go toGo to https://bard.google.com/ and open the developer tools by `F12`.
     2. Find the `__Secure-1PSID` cookie in `Application` > `Storage` > `Cookies` 
-    3. Copy the value in the `Cookie Value` field.
+    3. Copy the value in the `Cookie Value` field in `.env` file.
 
 ![Cattura](https://user-images.githubusercontent.com/108482353/236518416-ba0fb89c-080d-4e5e-8514-4ed7ac897b55.PNG)
 
@@ -193,6 +193,9 @@ from FreeLLM import ChatGPTAPI
 
 # Instantiate a ChatGPT object with your token
 llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")  #for start new chat
+
+# If you have a Plus subscription , you can use GPT4 model
+ llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN", model="gpt4") # REQUIRED CHATGPT PLUS subscription
 
 # or if if u would to start from an existing chat 
 # llm = ChatGPTAPI.ChatGPT(token = "YOUR-TOKEN", conversation = "Add-XXXX-XXXX-Convesation-ID")
