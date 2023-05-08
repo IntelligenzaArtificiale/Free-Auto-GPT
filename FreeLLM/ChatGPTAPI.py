@@ -18,6 +18,7 @@ class ChatGPT(LLM):
     chatbot : Optional[Chatbot] = None
     call : int = 0
     conversation : Optional[str] = ""
+    model : str = "default" # or gpt4
     
     #### WARNING : for each api call this library will create a new chat on chat.openai.com
     
@@ -44,11 +45,14 @@ class ChatGPT(LLM):
             
         response = ""
         # OpenAI: 50 requests / hour for each account
-        if self.call >= 45:
+        if (self.call >= 45 and self.model == "default") or (self.call >= 23 and self.model == "gpt4"):
             raise ValueError("You have reached the maximum number of requests per hour ! Help me to Improve. Abusing this tool is at your own risk")
         else:
             sleep(2)
-            data = self.chatbot.send_message(prompt)
+            if self.model == "default":
+                data = self.chatbot.send_message(prompt)
+            elif self.model == "gpt4":
+                data = self.chatbot.send_message(prompt, model="gpt4")
             #print(data)
             response = data["message"]
             self.conversation = data["conversation_id"]
@@ -64,11 +68,13 @@ class ChatGPT(LLM):
     @property
     def _identifying_params(self) -> Mapping[str, Any]:
         """Get the identifying parameters."""
-        return {"model": "ChatGPT", "token": self.token}
+        return {"model": "ChatGPT", "token": self.token, "model": self.model}
 
 
 
 #llm = ChatGPT(token = "YOUR-COOKIE") #for start new chat
+
+#llm = ChatGPT(token = "YOUR-COOKIE" , model="gpt4") # REQUIRED CHATGPT PLUS subscription
 
 #llm = ChatGPT(token = "YOUR-COOKIE", conversation = "Add-XXXX-XXXX-Convesation-ID") #for use a chat already started
 
