@@ -406,7 +406,7 @@ class ChatGPT:
             if not result_streaming:
                 break
 
-    def send_message(self, message: str, stream: bool = False) -> dict:
+    def send_message(self, message: str, stream: bool = False, model: str = "default") -> dict:
         '''
         Send a message to ChatGPT\n
         :param message: Message to send
@@ -426,17 +426,19 @@ class ChatGPT:
 
         # If we have paid access, we should select GPT4 model
         try:
-            self.logger.debug('Trying to select model...')
-            WebDriverWait(self.driver, 3).until(
-                EC.presence_of_element_located(model_selector)
-            ).click()
-            self.logger.debug('Paid access detected, selecting GPT4 model...')
-            self.__sleep(1.0)
-            WebDriverWait(self.driver, 3).until(
-                EC.presence_of_element_located(gpt4_selector)
-            ).click()
-            self.logger.debug('GPT4 model selected')
+            if model == "gpt4":
+                self.logger.debug('Trying to select model...')
+                WebDriverWait(self.driver, 3).until(
+                    EC.presence_of_element_located(model_selector)
+                ).click()
+                self.logger.debug('Paid access detected, selecting GPT4 model...')
+                self.__sleep(1.0)
+                WebDriverWait(self.driver, 3).until(
+                    EC.presence_of_element_located(gpt4_selector)
+                ).click()
+                self.logger.debug('GPT4 model selected')
         except SeleniumExceptions.TimeoutException:
+            print(">>> WARNING <<<\n>> You don't have paid access to GPT4, using default model...")
             self.logger.debug('Paid access not detected, using default model...')
 
         self.logger.debug('Sending message...')
