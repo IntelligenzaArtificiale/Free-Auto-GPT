@@ -61,7 +61,7 @@ elif select_model == "4":
 
 ####
 
-path_csv = input("Enter the path of the csv file: ")
+path_csv = input("Enter the path of the csv file: ") or "OtherAgent/startup.csv"
 
 agent = create_csv_agent(llm=llm, tool=PythonREPL(), path=path_csv, verbose=True)
 
