@@ -7,6 +7,19 @@ assignees: ''
 
 ---
 
+<details>
+ <summary>
+⚠️INSTRUCTIONS:
+ </summary>
+ 
+- Enter ONE "x" inside the brackets [x] to choose the answer
+- [x] Example
+- [ ] Example2
+
+</details>
+
+
+
 **Have you already searched for your ISSUE among the resolved ones?**
 - [ ] Yes, new issue
 - [ ] Yes, but the solution not work for me
