@@ -126,11 +126,10 @@ Now add you Cookie and Token in `.env` file .
 -----
 <br>
 
-
 <details>
   <summary>
 
-## HOW TO FAST INSTALL local using Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)🚀
+## Local using with Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)🚀
 
   </summary>
   
