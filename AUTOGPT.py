@@ -39,15 +39,22 @@ if select_model == "1":
         raise ValueError("ChatGPT Token EMPTY. Edit the .env file and put your ChatGPT token")
 
     start_chat = os.getenv("USE_EXISTING_CHAT", False)
+    if os.getenv("USE_GPT4") == "True":
+        model = "gpt4"
+    else:
+        model = "default"
+        
     if start_chat:
         chat_id = os.getenv("CHAT_ID")
         if chat_id == None:
             raise ValueError("You have to set up your chat-id in the .env file")
-        llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], conversation=chat_id)
+        llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], conversation=chat_id , model=model)
     else:
-        llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"])
+        llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], model=model)
+              
 elif select_model == "2":
     llm=HuggingChatAPI.HuggingChat()
+
 elif select_model == "3":
     if not os.path.exists("cookiesBing.json"):
         raise ValueError("File 'cookiesBing.json' not found! Create it and put your cookies in there in the JSON format.")
@@ -57,7 +64,8 @@ elif select_model == "3":
             file_json = json.loads(file.read())
         except JSONDecodeError:
             raise ValueError("You did not put your cookies inside 'cookiesBing.json'! You can find the simple guide to get the cookie file here: https://github.com/acheong08/EdgeGPT/tree/master#getting-authentication-required.")
-    llm=BingChatAPI.BingChat(cookiepath=str(cookie_path), conversation_style="balanced")
+    llm=BingChatAPI.BingChat(cookiepath=str(cookie_path), conversation_style="creative")
+
 elif select_model == "4":
     GB_TOKEN = os.getenv("BARDCHAT_TOKEN", "your-googlebard-token")
     
