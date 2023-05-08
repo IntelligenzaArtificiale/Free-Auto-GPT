@@ -29,26 +29,52 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 
 -----
+<br>
 
 <details>
   <summary>
 
-### HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
+## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
 
   </summary>
 
-- **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
-
 - **Now Running also with HuggingCHAT**
 
+<details>
+  <summary>
+
+#### GET HUGGINGFACE TOKEN 🤗
+
+  </summary>
+  
+- **HUGGINGFACE TOKEN** : 
+    1. **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
+
+![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
+</details>
+
+<details>
+  <summary>
+
+#### GET CHATGPT COOKIE🍪
+
+  </summary>
+  
 - **(OPTIONAL BUT BETTER RESULT) CHATGPT🖥** : 
     1. Go to https://chat.openai.com/chat and open the developer tools by `F12`.
     2. Find the `__Secure-next-auth.session-token` cookie in `Application` > `Storage` > `Cookies` > `https://chat.openai.com`.
     3. Copy the value in the `Cookie Value` field in `.env` file.
     4. If you have Plus subscription you can use GPT4. Edit in `.env` file this line : `USE_GPT4 = True`
 
-
 ![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
+</details>
+
+<details>
+  <summary>
+
+#### GET GOOGLE BARD COOKIE🍪
+
+  </summary>
 
 - **(OPTIONAL) Google Bard🖥** : 
     1. Go toGo to https://bard.google.com/ and open the developer tools by `F12`.
@@ -56,10 +82,15 @@ I believe that by providing free and open-source AI tools, we can give small bus
     3. Copy the value in the `Cookie Value` field in `.env` file.
 
 ![Cattura](https://user-images.githubusercontent.com/108482353/236518416-ba0fb89c-080d-4e5e-8514-4ed7ac897b55.PNG)
+</details>
 
+<details>
+  <summary>
 
+#### GET MICROSOFT BING COOKIE🍪
 
-- **(OPTIONAL) Bing CHAT** :
+  </summary>
+- **(OPTIONAL) Bing CHAT👨‍💻** :
     1. Check if you have access to [Bing Chat](https://chrome.google.com/webstore/detail/bing-chat-for-all-browser/jofbglonpbndadajbafmmaklbfbkggpo)
     2. Install the cookie editor extension for [Chrome](https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
     3. Go to `bing.com` 
@@ -69,26 +100,40 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
 
 ![image](https://user-images.githubusercontent.com/108482353/236259872-faf7946c-5648-4733-8d66-978040eacd85.png)
-
+</details>
 
 </details>
 
 -----
+<br>
 
-## SETUP the .env FILE
 
+<details>
+  <summary>
+  
+## ⚠️ SETUP the .env FILE ⚠️
+
+  </summary>
 Open the file called `.env` . 
 If you dont see the file, open your file manger and check for **`Show hidden file`** .
 
 Now add you Cookie and Token in `.env` file .
 
+</details>
 
 
-----
 
+-----
+<br>
+
+
+<details>
+  <summary>
 
 ## HOW TO FAST INSTALL local using Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)🚀
 
+  </summary>
+  
 🚀Added the possibility to use Docker image using Dev Container in VSCode. How to run it :
 - Install [Docker Desktop](https://docs.docker.com/desktop/)
 - Install Visual Studio Code
@@ -98,12 +143,21 @@ Now add you Cookie and Token in `.env` file .
 - It will ask you to reopen in a Docker Container
 - Click **"Reopen"** and wait for it to be complete **(you need to have Docker Desktop opened)**
 
+</details>
+
+
 
 -----
+<br>
 
+<details>
+  <summary>
 
 ## HOW TO RUN BABY AGI 👶
 
+
+  </summary>
+  
 **RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
 ⚠️ Abusing this tool is at your own risk
 
@@ -120,14 +174,21 @@ Now add you Cookie and Token in `.env` file .
 https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de-9022-61858cd3dca4.mp4
 
 
+</details>
 
 
 
 
 -----
+<br>
+
+<details>
+  <summary>
 
 ## HOW TO RUN AUTOGPT 🤖
 
+  </summary>
+  
 **RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
 ⚠️ Abusing this tool is at your own risk
 
@@ -141,13 +202,19 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 
 https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9-be1d-3257a46eacf3.mp4
 
-
+</details>
 
 
 -----
+<br>
 
-
+<details>
+  <summary>
+  
 ## HOW TO RUN Your CUSTOM AGENT 🤖
+
+  </summary>
+  
 **RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
 ⚠️ Abusing this tool is at your own risk
 
@@ -163,11 +230,18 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 
 https://user-images.githubusercontent.com/108482353/235354639-998f0a40-3d2d-4f33-b187-17a3be8d7899.mp4
 
-
+</details>
 
 -----
+<br>
 
+<details>
+  <summary>
+  
 ## HOW TO RUN CAMEL 🐫
+
+
+  </summary>
 
 **RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
 ⚠️ Abusing this tool is at your own risk
@@ -180,12 +254,20 @@ https://user-images.githubusercontent.com/108482353/235354639-998f0a40-3d2d-4f33
 
 https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950-9cc6-7f140890f386.mp4
 
+</details>
 
 
 
 -----
+<br>
+
+<details>
+  <summary>
 
 ## HOW IT WORK ? 🔨🔩
+
+  </summary>
+
 
 To create an open-source version of Autogpt that does not require paid APIs or specific hardware, **we performed a reverse engineering process on ChatGPT**, a language model developed by OpenAI. By doing so, we were able to use the agents and new technologies of langchain for free.
 
@@ -363,10 +445,12 @@ while prompt.toLowerCase() != "exit":
 
 ![Schermata del 2023-04-30 16-25-11](https://user-images.githubusercontent.com/108482353/235358379-dfd7dbba-74ff-48a1-b23c-c51b63d4c181.png)
 
+</details>
 
 ### With this "CUSTOM LLM WRAPPER" now u can build or test your LLM APP's WITHOUT PAYing
 
 -----
+<br>
 
 # **🤗 Democratize AI 🤗**
 
@@ -378,28 +462,24 @@ while prompt.toLowerCase() != "exit":
 
 By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API?style=social)](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API/stargazers) and all the support!!
 
------
-
-#### LINK : 
-- [VIDEO DEMO](https://watch.screencastify.com/v/vSDUBdhfvh9yEwclHUyw)
-- [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- [Camel project](https://www.camel-ai.org/)
-- [BABY AGI](https://python.langchain.com/en/latest/use_cases/agents/baby_agi_with_agent.html)
-- [AutoGPT](https://python.langchain.com/en/latest/use_cases/autonomous_agents/autogpt.html?highlight=autogpt#setup-model-and-autogpt)
-- [langchain for custom llm wrapper](https://python.langchain.com/en/latest/modules/models/llms/examples/custom_llm.html)
-
 
 
 -----
+<br>
 
+<details>
+  <summary>
 
-## TODO , I NEED YOUR HELP 
+## TODO , I NEED YOUR HELP 👥👨‍💻
+
+  </summary>
+
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered ChatGPT API by OpenAI](https://github.com/terry3041/pyChatGPT) 
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered HUGGING CHAT API by HuggingFace](https://github.com/Soulter/hugging-chat-api) 
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered Bing CHAT API by Microsoft](https://github.com/acheong08/EdgeGPT) 
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered Bard CHAT API by Google](https://github.com/acheong08/Bard) 
 - [x] Find a way to replace OpenAIEmbeddings() using HuggingFace Embeddings infeence API 
-
+<br>
 - [x] Create a simple versione of CAMEL based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
 - [x] Create a simple version of BABYAGI based on [Baby AGI](https://alumni.media.mit.edu/~kris/ftp/SafeBabyAGI-J.BiegerEtAl2015.pdf)
 - [x] Add web search Tool
@@ -407,29 +487,69 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [x] Add Wikipedia Tool
 - [x] Add QA web page Tool
 - [x] Finally AUTOGPT without paids API
-
+<br>
 - [x] Make a Colab Notebook for make this repository accessible to anyone
 - [x] Local using with Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)
-
-
+<br>
 - [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
 - [ ] Add long term memory
 - [ ] Find a way to replace PINECONE api
 - [ ] Find a way to replace official Google API
 
+</details>
+
+
 
 -----
+<br>
+
+<details>
+  <summary>
+
+#### Useful LINK 👥
+
+  </summary>
+
+- [VIDEO DEMO](https://watch.screencastify.com/v/vSDUBdhfvh9yEwclHUyw)
+- [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
+- [Camel project](https://www.camel-ai.org/)
+- [BABY AGI](https://python.langchain.com/en/latest/use_cases/agents/baby_agi_with_agent.html)
+- [AutoGPT](https://python.langchain.com/en/latest/use_cases/autonomous_agents/autogpt.html?highlight=autogpt#setup-model-and-autogpt)
+- [langchain for custom llm wrapper](https://python.langchain.com/en/latest/modules/models/llms/examples/custom_llm.html)
+
+</details>
+
+
+
+-----
+<br>
+
+<details>
+  <summary>
 
 ### Inspiration and Credits 🤗
+
+  </summary>
+
 - [https://github.com/hwchase17/langchain](https://github.com/hwchase17/langchain)
 - [https://github.com/terry3041/pyChatGPT](https://github.com/terry3041/pyChatGPT)
 - [https://github.com/Soulter/hugging-chat-api](https://github.com/Soulter/hugging-chat-api)
 - [https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
 
+</details>
 
 ## We are hungry for PULL REQUEST 😋
-<br><br>
-### Legal Notice <a name="legal-notice"></a>
+
+
+<br>
+
+
+<details>
+  <summary>
+
+### Legal Notice 🧑‍⚖️ <a name="legal-notice"></a>
+
+  </summary>
 
 This repository is _not_ associated with or endorsed by providers of the APIs contained in this GitHub repository. This project is intended **for educational purposes only**. This is just a personal project.
 Please note the following:
@@ -445,5 +565,7 @@ Please note the following:
 5. **Updates and Changes**: The author reserves the right to modify, update, or remove any content, information, or features in this repository at any time without prior notice. Users are responsible for regularly reviewing the content and any changes made to this repository.
 
 By using this repository or any code related to it, you agree to these terms. The author is not responsible for any copies, forks, or reuploads made by other users. This is the author's only account and repository. To prevent impersonation or irresponsible actions, you may comply with the MIT license this Repository uses.
+
+</details>
 
 <br>
