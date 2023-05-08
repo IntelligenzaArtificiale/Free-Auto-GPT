@@ -240,7 +240,12 @@ from FreeLLM import BingChatAPI
 # Instantiate a Bing CHAT object with your cookie path
 llm=BingChatAPI.BingChat(cookiepath="cookie_path")  #for start new chat
 
-llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative") #conversation_style must be precise, creative or balanced
+# if you want set the type of conversation style
+#llm=BingChatAPI.BingChat(cookiepath=cookie_path, conversation_style="creative") #conversation_style must be precise, creative or balanced
+
+# if you want set Microsoft Bing internet Access
+#llm = =BingChatAPI.BingChat(cookiepath = "YOUR-COOKIE" , conversation_style = "precise" , search_result=True) #with web access
+
 
 # Generate a response based on the given prompt
 response = llm("Hello, how are you?")
