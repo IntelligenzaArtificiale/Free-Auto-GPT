@@ -1,6 +1,6 @@
 requests
 langchain
-streamlit 
+streamlit
 streamlit-chat-media
 numpy
 retry
