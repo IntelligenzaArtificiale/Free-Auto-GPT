@@ -10,7 +10,8 @@ if os.environ.get("HUGGINGFACEHUB_API_TOKEN") is not None:
 else:
     raise Exception("You must provide the huggingface token")
   
-model_id = "sentence-transformers/all-MiniLM-L6-v2"
+# model_id = "sentence-transformers/all-MiniLM-L6-v2" NOT WORKING FROM 10/05/2023
+model_id = "obrizum/all-MiniLM-L6-v2"
 api_url = f"https://api-inference.huggingface.co/pipeline/feature-extraction/{model_id}"
 headers = {"Authorization": f"Bearer {hf_token}"}
 
