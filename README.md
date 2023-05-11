@@ -475,7 +475,6 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered Bing CHAT API by Microsoft](https://github.com/acheong08/EdgeGPT) 
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered Bard CHAT API by Google](https://github.com/acheong08/Bard) 
 - [x] Find a way to replace OpenAIEmbeddings() using HuggingFace Embeddings infeence API 
-<br>
 - [x] Create a simple versione of CAMEL based on [Camel theory](https://arxiv.org/pdf/2303.17760.pdf)
 - [x] Create a simple version of BABYAGI based on [Baby AGI](https://alumni.media.mit.edu/~kris/ftp/SafeBabyAGI-J.BiegerEtAl2015.pdf)
 - [x] Add web search Tool
@@ -483,10 +482,8 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [x] Add Wikipedia Tool
 - [x] Add QA web page Tool
 - [x] Finally AUTOGPT without paids API
-<br>
 - [x] Make a Colab Notebook for make this repository accessible to anyone
 - [x] Local using with Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)
-<br>
 - [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
 - [ ] Add long term memory
 - [ ] Find a way to replace PINECONE api
