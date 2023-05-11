@@ -26,6 +26,7 @@ chatgpt_small_response = (
     '//div[starts-with(@class, "markdown prose w-full break-words")]',
 )
 chatgpt_alert = (By.XPATH, '//div[@role="alert"]')
+chatgpt_dialog = (By.XPATH, '//div[@role="dialog"]')
 chatgpt_intro = (By.ID, 'headlessui-portal-root')
 chatgpt_login_btn = (By.XPATH, '//button[text()="Log in"]')
 chatgpt_login_h1 = (By.XPATH, '//h1[text()="Welcome back"]')
@@ -374,19 +375,39 @@ class ChatGPT:
         Check for blocking elements and dismiss them
         '''
         self.logger.debug('Looking for blocking elements...')
+        
         try:
-            intro = WebDriverWait(self.driver, 3).until(
-                EC.presence_of_element_located(chatgpt_intro)
+            # FInd a button to dismiss the dialog with class="btn relative btn-primary" inside the div[@role="dialog"]
+            btn_to_dismiss = WebDriverWait(self.driver, 5).until(
+                EC.presence_of_element_located((By.XPATH, '//div[@role="dialog"]//button[@class="btn relative btn-primary"]'))
             )
-            self.logger.debug('Dismissing intro...')
-            self.driver.execute_script('arguments[0].remove()', intro)
-        except SeleniumExceptions.TimeoutException:
+            if btn_to_dismiss:
+                self.logger.debug('Dismissing dialog...')
+                self.driver.execute_script('arguments[0].click()', btn_to_dismiss)
+        except:
             pass
-
-        alerts = self.driver.find_elements(*chatgpt_alert)
-        if alerts:
-            self.logger.debug('Dismissing alert...')
-            self.driver.execute_script('arguments[0].remove()', alerts[0])
+        
+        try:
+            # for 3 times
+            i = 0
+            while i<=2:
+                self.__sleep(0.4)
+                if i !=2:
+                    #get the button with class="btn relative btn-neutral ml-auto"
+                    btn = WebDriverWait(self.driver, 5).until(
+                        EC.presence_of_element_located((By.XPATH, '//button[@class="btn relative btn-neutral ml-auto"]'))
+                    )
+                else:
+                    #get the button with class="btn relative btn-primary ml-auto"
+                    btn = WebDriverWait(self.driver, 5).until(
+                        EC.presence_of_element_located((By.XPATH, '//button[@class="btn relative btn-primary ml-auto"]'))
+                    )
+                if btn:
+                    self.logger.debug('Dismissing dialog...')
+                    self.driver.execute_script('arguments[0].click()', btn)
+                i+=1     
+        except:  
+            pass
 
     def __stream_message(self):
         prev_content = ''
@@ -414,7 +435,7 @@ class ChatGPT:
         '''
         self.logger.debug('Ensuring Cloudflare cookies...')
         self.__ensure_cf()
-        self.__check_blocking_elements()
+        #self.__check_blocking_elements()
 
         # Wait for page to load
         try:
@@ -488,19 +509,19 @@ class ChatGPT:
         content = markdownify(response.get_attribute('innerHTML')).replace(
             'Copy code`', '`'
         )
+                
         pattern = re.compile(
             r'[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}'
         )
         matches = pattern.search(self.driver.current_url)
         if not matches:
             self.driver.refresh()
-            self.__sleep(1)
-            self.__check_blocking_elements()
-            self.__sleep(1)
+            self.__sleep(2)
+            #self.__check_blocking_elements()
             self.driver.execute_script("arguments[0].click();", WebDriverWait(self.driver, 10).until(
                 EC.element_to_be_clickable(chatgpt_chats_list_first_node)
             ))
-            self.__sleep(1)
+            self.__sleep(2)
             #print(self.driver.current_url)
             matches = pattern.search(self.driver.current_url)
 
