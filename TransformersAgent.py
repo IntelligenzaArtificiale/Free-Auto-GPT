@@ -9,7 +9,6 @@ from pathlib import Path
 
 import huggingface_hub
 
-
 load_dotenv()
 
 select_model = input("Select the model you want to use (1, 2, 3, 4, 5, 6) \n \
