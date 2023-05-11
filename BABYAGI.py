@@ -151,6 +151,8 @@ max_iterations = int(int_max_iterations)
 
 if input("Do you want to store the results? (y/n) ") == "y" :
     store_results = True
+else:
+    store_results = False
 
 
 # If None, will keep on going forever
