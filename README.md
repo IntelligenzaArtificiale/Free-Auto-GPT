@@ -163,7 +163,7 @@ Now add you Cookie and Token in `.env` file .
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- install using **Dev Container in VSCode** or `pip3 install -r requirements.txt`
+- install using **Dev Container in VSCode** or `python3 -m pip install -r requirements.txt`
 - insert the **.env file** yours Token
 - if you dont see the **.env file** check "Show hidden file" in your file manger
 - Usage: **python BABYAGI.py**
@@ -193,7 +193,7 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- install using **Dev Container in VSCode** or `pip3 install -r requirements.txt`
+- install using **Dev Container in VSCode** or `python3 -m pip install -r requirements.txt`
 - insert the **.env file** yours Token
 - if you dont see the **.env file** check "Show hidden file" in your file manger
 - Usage: **python AUTOGPT.py**
@@ -219,7 +219,7 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- install using **Dev Container in VSCode** or `pip3 install -r requirements.txt`
+- install using **Dev Container in VSCode** or `python3 -m pip install -r requirements.txt`
 - cd OtherAgent/
 - Choose or develop your agent [ csvAgent.py  ;  pythonAgent.py  ; customAgent.py ]
 - Usage: **python YourAgent.py**
@@ -247,8 +247,8 @@ https://user-images.githubusercontent.com/108482353/235354639-998f0a40-3d2d-4f33
 
 **Or use Locally :**
 - Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- pip3 install -r requirements.txt
-- streamlit run Camel.py
+- `python3 -m pip install -r requirements.txt`
+- `streamlit run Camel.py`
 
 
 https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950-9cc6-7f140890f386.mp4
