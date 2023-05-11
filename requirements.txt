@@ -22,3 +22,5 @@ python-dotenv
 EdgeGPT
 GoogleBard
 lark
+accelerate
+diffusers
