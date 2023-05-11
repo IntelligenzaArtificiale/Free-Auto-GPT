@@ -506,9 +506,10 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [langchain for custom llm wrapper](https://python.langchain.com/en/latest/modules/models/llms/examples/custom_llm.html)
 
 
-
+## We are hungry for PULL REQUEST 😋
+  
 -----
-<br>
+
 
 <details>
   <summary>
@@ -523,12 +524,7 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
 
 </details>
-
-## We are hungry for PULL REQUEST 😋
-
-
-<br>
-
+-----
 
 <details>
   <summary>
