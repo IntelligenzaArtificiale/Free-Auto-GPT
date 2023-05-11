@@ -484,10 +484,8 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [ ] Find a way to replace PINECONE api
 - [ ] Find a way to replace official Google API
 
-</details>
-
-
-
+## We are hungry for PULL REQUEST 😋
+  
 -----
 <br>
 
@@ -505,9 +503,8 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [AutoGPT](https://python.langchain.com/en/latest/use_cases/autonomous_agents/autogpt.html?highlight=autogpt#setup-model-and-autogpt)
 - [langchain for custom llm wrapper](https://python.langchain.com/en/latest/modules/models/llms/examples/custom_llm.html)
 
+</details>
 
-## We are hungry for PULL REQUEST 😋
-  
 -----
 
 
