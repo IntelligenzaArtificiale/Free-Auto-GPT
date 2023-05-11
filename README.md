@@ -463,12 +463,7 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 -----
 <br>
 
-<details>
-  <summary>
-
 ## TODO , I NEED YOUR HELP 👥👨‍💻
-
-  </summary>
 
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered ChatGPT API by OpenAI](https://github.com/terry3041/pyChatGPT) 
 - [x] Create free LLM langchain wrapper based on [Reverse Engineered HUGGING CHAT API by HuggingFace](https://github.com/Soulter/hugging-chat-api) 
@@ -509,8 +504,6 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [BABY AGI](https://python.langchain.com/en/latest/use_cases/agents/baby_agi_with_agent.html)
 - [AutoGPT](https://python.langchain.com/en/latest/use_cases/autonomous_agents/autogpt.html?highlight=autogpt#setup-model-and-autogpt)
 - [langchain for custom llm wrapper](https://python.langchain.com/en/latest/modules/models/llms/examples/custom_llm.html)
-
-</details>
 
 
 
