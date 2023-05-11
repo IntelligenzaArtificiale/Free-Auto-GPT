@@ -446,7 +446,6 @@ while prompt.toLowerCase() != "exit":
 
 </details>
 
-### With this "CUSTOM LLM WRAPPER" now u can build or test your LLM APP's WITHOUT PAYing
 
 -----
 <br>
@@ -521,7 +520,6 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [https://github.com/Significant-Gravitas/Auto-GPT](https://github.com/Significant-Gravitas/Auto-GPT)
 
 </details>
------
 
 <details>
   <summary>
@@ -546,5 +544,3 @@ Please note the following:
 By using this repository or any code related to it, you agree to these terms. The author is not responsible for any copies, forks, or reuploads made by other users. This is the author's only account and repository. To prevent impersonation or irresponsible actions, you may comply with the MIT license this Repository uses.
 
 </details>
-
-<br>
