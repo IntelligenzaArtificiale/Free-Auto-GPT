@@ -486,7 +486,6 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 ## We are hungry for PULL REQUEST 😋
   
 -----
-<br>
 
 <details>
   <summary>
