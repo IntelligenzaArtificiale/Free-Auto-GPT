@@ -47,10 +47,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
   </summary>
   
-- **HUGGINGFACE TOKEN** : 
-    1. **HUGGINGFACE🤗** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
-
-![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
+- **HUGGINGFACE TOKEN** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
 </details>
 
 <details>
