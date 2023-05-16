@@ -102,6 +102,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 #### GET MICROSOFT BING COOKIE🍪
 
   </summary>
+  
 - **(OPTIONAL) Bing CHAT👨‍💻** :
     1. Check if you have access to [Bing Chat](https://chrome.google.com/webstore/detail/bing-chat-for-all-browser/jofbglonpbndadajbafmmaklbfbkggpo)
     2. Install the cookie editor extension for [Chrome](https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
