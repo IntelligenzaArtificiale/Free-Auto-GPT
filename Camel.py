@@ -8,7 +8,10 @@ from langchain.schema import (
     SystemMessage,
     BaseMessage,
 )
-
+import os
+import json
+from pathlib import Path
+from json import JSONDecodeError
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
 from FreeLLM import HuggingChatAPI  # FREE HUGGINGCHAT API
@@ -73,6 +76,20 @@ user_role_name = col2.text_input("User Role Name", "Stock Trader")
 task = st.text_area("Task", "Develop a trading bot for the stock market")
 word_limit = st.number_input("Word Limit", 10, 1500, 50)
 
+if not os.path.exists("cookiesHuggingChat.json"):
+    raise ValueError(
+        "File 'cookiesHuggingChat.json' not found! Create it and put your cookies in there in the JSON format."
+    )
+cookie_path = Path() / "cookiesHuggingChat.json"
+with open("cookiesHuggingChat.json", "r") as file:
+    try:
+        file_json = json.loads(file.read())
+    except JSONDecodeError:
+        raise ValueError(
+            "You did not put your cookies inside 'cookiesHuggingChat.json'! You can find the simple guide to get the cookie file here: https://github.com/IntelligenzaArtificiale/Free-Auto-GPT"
+        )  
+llm = HuggingChatAPI.HuggingChat(cookiepath = str(cookie_path))
+
 
 if st.button("Start Autonomus AI AGENT"):
     task_specifier_sys_msg = SystemMessage(content="You can make a task more specific.")
@@ -84,7 +101,7 @@ if st.button("Start Autonomus AI AGENT"):
     )
 
     task_specify_agent = CAMELAgent(
-        task_specifier_sys_msg, HuggingChatAPI.HuggingChat()
+        task_specifier_sys_msg, llm
     )
     task_specifier_msg = task_specifier_template.format_messages(
         assistant_role_name=assistant_role_name,
@@ -185,10 +202,10 @@ if st.button("Start Autonomus AI AGENT"):
     )
 
     # AI ASSISTANT setup                           |-> add the agent LLM MODEL HERE <-|
-    assistant_agent = CAMELAgent(assistant_sys_msg, HuggingChatAPI.HuggingChat())
+    assistant_agent = CAMELAgent(assistant_sys_msg, llm)
 
     # AI USER setup                      |-> add the agent LLM MODEL HERE <-|
-    user_agent = CAMELAgent(user_sys_msg, HuggingChatAPI.HuggingChat())
+    user_agent = CAMELAgent(user_sys_msg, llm)
 
     # Reset agents
     assistant_agent.reset()

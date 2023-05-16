@@ -49,6 +49,18 @@ if select_model == "1":
         agent = agents.ChatGPTAgent(token=os.environ["CHATGPT_TOKEN"], model=model)
 
 elif select_model == "2":
+    if not os.path.exists("cookiesHuggingChat.json"):
+        raise ValueError(
+            "File 'cookiesHuggingChat.json' not found! Create it and put your cookies in there in the JSON format."
+        )
+    cookie_path = Path() / "cookiesHuggingChat.json"
+    with open("cookiesHuggingChat.json", "r") as file:
+        try:
+            file_json = json.loads(file.read())
+        except JSONDecodeError:
+            raise ValueError(
+                "You did not put your cookies inside 'cookiesHuggingChat.json'! You can find the simple guide to get the cookie file here: https://github.com/IntelligenzaArtificiale/Free-Auto-GPT"
+            )  
     agent = agents.HuggingChatAgent()
 
 elif select_model == "3":
