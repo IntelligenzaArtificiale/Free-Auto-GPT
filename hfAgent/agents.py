@@ -616,11 +616,27 @@ class HuggingChatAgent(Agent):
         self, chat_prompt_template=None, run_prompt_template=None, additional_tools=None, llm=None, model=None
     ):
         
+        import json
+        from pathlib import Path
+        from json import JSONDecodeError
 
+        if not os.path.exists("cookiesHuggingChat.json"):
+            raise ValueError(
+                "File 'cookiesHuggingChat.json' not found! Create it and put your cookies in there in the JSON format."
+            )
+        cookie_path = Path() / "cookiesHuggingChat.json"
+        with open("cookiesHuggingChat.json", "r") as file:
+            try:
+                file_json = json.loads(file.read())
+            except JSONDecodeError:
+                raise ValueError(
+                    "You did not put your cookies inside 'cookiesHuggingChat.json'! You can find the simple guide to get the cookie file here: https://github.com/IntelligenzaArtificiale/Free-Auto-GPT"
+                )  
         from .FreeLLM import HuggingChatAPI
-        
-        self.llm = HuggingChatAPI.HuggingChat()
+        self.llm = HuggingChatAPI.HuggingChat(cookiepath = str(cookie_path))
+
             
+        
             
             
         super().__init__(
