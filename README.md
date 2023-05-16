@@ -34,11 +34,10 @@ I believe that by providing free and open-source AI tools, we can give small bus
 <details>
   <summary>
 
-## HOW TO GET CHATGPT & HUGGINGFACE TOKEN FREE 🔑🔐
+## HOW TO GET Tokens & Cookies totally for FREE 🔑🔐
 
   </summary>
 
-- **Now Running also with HuggingCHAT**
 
 <details>
   <summary>
@@ -50,6 +49,22 @@ I believe that by providing free and open-source AI tools, we can give small bus
 - **HUGGINGFACE TOKEN** : Visit this simple [official guide](https://huggingface.co/docs/hub/security-tokens)
 </details>
 
+<details>
+  <summary>
+    
+#### GET HUGGINGCHAT COOKIE🍪
+    
+  </summary>
+
+- Install the `Cookie-Editor` extension for [Chrome](https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
+- Go to [HuggingChat](https://huggingface.co/chat) and **login**
+- Open the extension
+- Click `Export` on the bottom right, then `Export as JSON`(This saves your cookies to the clipboard)
+- Paste your cookies into a file `cookiesHuggingChat.json`
+
+</details>
+  
+  
 <details>
   <summary>
 
