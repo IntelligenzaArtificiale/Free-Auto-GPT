@@ -15,7 +15,7 @@ class HuggingChat(LLM):
     history_data: Optional[List] = []
     chatbot : Optional[hugchat.ChatBot] = None
     conversation : Optional[str] = ""
-    
+    cookiepath : Optional[str]
     #### WARNING : for each api call this library will create a new chat on chat.openai.com
     
     
@@ -29,10 +29,13 @@ class HuggingChat(LLM):
             #raise ValueError("stop kwargs are not permitted.")
         #token is a must check
         if self.chatbot is None:
-            if self.conversation == "":
-                self.chatbot = hugchat.ChatBot()
-            else:
-                raise ValueError("Something went wrong")
+            if self.cookiepath is None:
+                ValueError("Cookie path is required, pls check the documentation on github")
+            else: 
+                if self.conversation == "":
+                    self.chatbot = hugchat.ChatBot(cookie_path=self.cookiepath)
+                else:
+                    raise ValueError("Something went wrong")
             
         
         sleep(2)
@@ -52,7 +55,7 @@ class HuggingChat(LLM):
 
 
 
-#llm = HuggingChat() #for start new chat
+#llm = HuggingChat(cookiepath = "YOUR-COOKIES-PATH") #for start new chat
 
 
 #print(llm("Hello, how are you?"))
