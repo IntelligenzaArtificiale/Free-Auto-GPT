@@ -1,0 +1,8 @@
+copy here yours huggingCHAT cookie 
+
+How to Get Cookies ?
+- Install the Cookie-Editor extension for Chrome or Firefox
+- Go to HuggingChat and login
+- Open the extension
+- Click Export on the bottom right, then Export as JSON(This saves your cookies to the clipboard)
+Paste your cookies into a file cookiesHuggingChat.json
