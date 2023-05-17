@@ -13,7 +13,6 @@ from FreeLLM import ChatGPTAPI  # FREE CHATGPT API
 from FreeLLM import HuggingChatAPI  # FREE HUGGINGCHAT API
 from FreeLLM import BingChatAPI  # FREE BINGCHAT API
 from FreeLLM import BardChatAPI  # FREE GOOGLE BARD API
-from FreeLLM import HuggingFaceAPI  # FREE HUGGINGFACE API
 from langchain.agents.agent_toolkits.pandas.base import create_pandas_dataframe_agent
 from langchain.docstore.document import Document
 import asyncio
