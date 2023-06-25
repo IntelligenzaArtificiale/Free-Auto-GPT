@@ -14,6 +14,7 @@ WORKDIR /workspace/FreeAutoGPT
 
 # Copy the current directory contents into the Workspace.
 COPY . /workspace/FreeAutoGPT
+RUN chmod +x /workspace/FreeAutoGPT/menu.sh
 
 # Install any necessary packages specified in requirements.txt.
 RUN pip install -r requirements.txt
