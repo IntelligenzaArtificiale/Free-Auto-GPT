@@ -34,33 +34,24 @@ if select_model == "1":
 
     start_chat = os.getenv("USE_EXISTING_CHAT", False)
     if os.getenv("USE_GPT4") == "True":
-        model = "gpt4"
+        model = "gpt-4"
     else:
         model = "default"
 
-    if start_chat:
-        chat_id = os.getenv("CHAT_ID")
-        if chat_id == None:
-            raise ValueError("You have to set up your chat-id in the .env file")
-        agent = agents.ChatGPTAgent(
-            token=os.environ["CHATGPT_TOKEN"], conversation=chat_id, model=model
-        )
-    else:
-        agent = agents.ChatGPTAgent(token=os.environ["CHATGPT_TOKEN"], model=model)
+    agent = agents.ChatGPTAgent(token=os.environ["CHATGPT_TOKEN"], model=model)
+
 
 elif select_model == "2":
-    if not os.path.exists("cookiesHuggingChat.json"):
+    emailHF = os.getenv("emailHF", "your-emailHF")
+    pswHF = os.getenv("pswHF", "your-pswHF")
+    if emailHF != "your-emailHF" or pswHF != "your-pswHF":
+        os.environ["emailHF"] = emailHF
+        os.environ["pswHF"] = pswHF
+    else:
         raise ValueError(
-            "File 'cookiesHuggingChat.json' not found! Create it and put your cookies in there in the JSON format."
+            "HuggingChat Token EMPTY. Edit the .env file and put your HuggingChat credentials"
         )
-    cookie_path = Path() / "cookiesHuggingChat.json"
-    with open("cookiesHuggingChat.json", "r") as file:
-        try:
-            file_json = json.loads(file.read())
-        except JSONDecodeError:
-            raise ValueError(
-                "You did not put your cookies inside 'cookiesHuggingChat.json'! You can find the simple guide to get the cookie file here: https://github.com/IntelligenzaArtificiale/Free-Auto-GPT"
-            )  
+    
     agent = agents.HuggingChatAgent()
 
 elif select_model == "3":

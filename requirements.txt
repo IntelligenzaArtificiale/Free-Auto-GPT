@@ -24,3 +24,4 @@ GoogleBard
 lark
 accelerate
 diffusers
+gpt4-openai-api

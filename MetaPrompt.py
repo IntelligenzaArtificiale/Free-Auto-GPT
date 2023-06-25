@@ -50,7 +50,17 @@ if select_model == "1":
         llm = ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], model=model)
 
 elif select_model == "2":
-    llm = HuggingChatAPI.HuggingChat()
+    emailHF = os.getenv("emailHF", "your-emailHF")
+    pswHF = os.getenv("pswHF", "your-pswHF")
+    if emailHF != "your-emailHF" or pswHF != "your-pswHF":
+        os.environ["emailHF"] = emailHF
+        os.environ["pswHF"] = pswHF
+    else:
+        raise ValueError(
+            "HuggingChat Token EMPTY. Edit the .env file and put your HuggingChat credentials"
+        )
+    
+    llm = HuggingChatAPI.HuggingChat(email=os.environ["emailHF"], psw=os.environ["pswHF"])
 
 elif select_model == "3":
     if not os.path.exists("cookiesBing.json"):
