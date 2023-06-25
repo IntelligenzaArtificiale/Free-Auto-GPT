@@ -1,12 +1,10 @@
 
 from hugchat import hugchat
-import requests
+from hugchat.login import Login
 from langchain.llms.base import LLM
 from typing import Optional, List, Mapping, Any
-import pydantic
-import os
-from langchain import PromptTemplate, LLMChain
 from time import sleep
+
 
 
 
@@ -15,7 +13,8 @@ class HuggingChat(LLM):
     history_data: Optional[List] = []
     chatbot : Optional[hugchat.ChatBot] = None
     conversation : Optional[str] = ""
-    cookiepath : Optional[str]
+    email : Optional[str]
+    psw : Optional[str]
     #### WARNING : for each api call this library will create a new chat on chat.openai.com
     
     
@@ -29,19 +28,25 @@ class HuggingChat(LLM):
             #raise ValueError("stop kwargs are not permitted.")
         #token is a must check
         if self.chatbot is None:
-            if self.cookiepath is None:
-                ValueError("Cookie path is required, pls check the documentation on github")
+            if self.email is None and self.psw is None:
+                ValueError("Email and Password is required, pls check the documentation on github")
             else: 
                 if self.conversation == "":
-                    self.chatbot = hugchat.ChatBot(cookie_path=self.cookiepath)
+                    sign = Login(self.email, self.psw)
+                    cookies = sign.login()
+
+                    # Save cookies to usercookies/<email>.json
+                    sign.saveCookies()
+
+                    # Create a ChatBot
+                    self.chatbot = hugchat.ChatBot(cookies=cookies.get_dict()) 
                 else:
                     raise ValueError("Something went wrong")
             
         
         sleep(2)
         data = self.chatbot.chat(prompt, temperature=0.5, stream=False)
-        #conversation_list = self.chatbot.get_conversation_list()
-        #print(conversation_list)
+    
         
         #add to history
         self.history_data.append({"prompt":prompt,"response":data})    
