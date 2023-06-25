@@ -24,39 +24,33 @@ select_model = input("Select the model you want to use (1, 2, 3 or 4) \n \
 if select_model == "1":
     CG_TOKEN = os.getenv("CHATGPT_TOKEN", "your-chatgpt-token")
 
-    if (CG_TOKEN != "your-chatgpt-token"):
+    if CG_TOKEN != "your-chatgpt-token":
         os.environ["CHATGPT_TOKEN"] = CG_TOKEN
     else:
-        raise ValueError("ChatGPT Token EMPTY. Edit the .env file and put your ChatGPT token")
+        raise ValueError(
+            "ChatGPT Token EMPTY. Edit the .env file and put your ChatGPT token"
+        )
 
     start_chat = os.getenv("USE_EXISTING_CHAT", False)
     if os.getenv("USE_GPT4") == "True":
-        model = "gpt4"
+        model = "gpt-4"
     else:
         model = "default"
-        
-    if start_chat:
-        chat_id = os.getenv("CHAT_ID")
-        if chat_id == None:
-            raise ValueError("You have to set up your chat-id in the .env file")
-        llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], conversation=chat_id , model=model)
-    else:
-        llm= ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], model=model)
+
+    llm = ChatGPTAPI.ChatGPT(token=os.environ["CHATGPT_TOKEN"], model=model)
               
 elif select_model == "2":
-    if not os.path.exists("cookiesHuggingChat.json"):
+    emailHF = os.getenv("emailHF", "your-emailHF")
+    pswHF = os.getenv("pswHF", "your-pswHF")
+    if emailHF != "your-emailHF" or pswHF != "your-pswHF":
+        os.environ["emailHF"] = emailHF
+        os.environ["pswHF"] = pswHF
+    else:
         raise ValueError(
-            "File 'cookiesHuggingChat.json' not found! Create it and put your cookies in there in the JSON format."
+            "HuggingChat Token EMPTY. Edit the .env file and put your HuggingChat credentials"
         )
-    cookie_path = Path() / "cookiesHuggingChat.json"
-    with open("cookiesHuggingChat.json", "r") as file:
-        try:
-            file_json = json.loads(file.read())
-        except JSONDecodeError:
-            raise ValueError(
-                "You did not put your cookies inside 'cookiesHuggingChat.json'! You can find the simple guide to get the cookie file here: https://github.com/IntelligenzaArtificiale/Free-Auto-GPT"
-            )  
-    llm = HuggingChatAPI.HuggingChat(cookiepath = str(cookie_path))
+    
+    llm = HuggingChatAPI.HuggingChat(email=os.environ["emailHF"], psw=os.environ["pswHF"])
 
 elif select_model == "3":
     if not os.path.exists("cookiesBing.json"):
