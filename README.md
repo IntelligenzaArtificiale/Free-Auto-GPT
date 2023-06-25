@@ -56,11 +56,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
     
   </summary>
 
-- Install the `Cookie-Editor` extension for [Chrome](https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm) or [Firefox](https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/)
-- Go to [HuggingChat](https://huggingface.co/chat) and **login**
-- Open the extension
-- Click `Export` on the bottom right, then `Export as JSON`(This saves your cookies to the clipboard)
-- Paste your cookies into a file `cookiesHuggingChat.json`
+- copy your email and password int .env file
 
 </details>
   
