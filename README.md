@@ -16,9 +16,9 @@ For any problem open an ISSUE 🚬, the project is very simple so any help is we
 
 By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API?style=social)](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API/stargazers) and all the support!!
 
-## WHY THIS REPOSITORY ? 🤔
+## WHY THIS REPOSITORY? 🤔
 
-Hello everyone :smiling_face_with_three_hearts: ,
+Hello everyone,
 
 I wanted to start by **talking about how important it is to democratize AI**. Unfortunately, most new applications or discoveries in this field end up enriching some big companies, leaving behind small businesses or simple projects. One striking example of this is Autogpt, an autonomous AI agent capable of performing tasks.
 
@@ -72,7 +72,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
     1. Go to https://chat.openai.com/chat and open the developer tools by `F12`.
     2. Find the `__Secure-next-auth.session-token` cookie in `Application` > `Storage` > `Cookies` > `https://chat.openai.com`.
     3. Copy the value in the `Cookie Value` field in `.env` file.
-    4. If you have Plus subscription you can use GPT4. Edit in `.env` file this line : `USE_GPT4 = True`
+    4. If you have the Plus subscription you can use GPT4. Edit in `.env` file this line : `USE_GPT4 = True`
 
 ![image](https://user-images.githubusercontent.com/19218518/206170122-61fbe94f-4b0c-4782-a344-e26ac0d4e2a7.png)
 </details>
@@ -85,7 +85,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
   </summary>
 
 - **(OPTIONAL) Google Bard🖥** : 
-    1. Go toGo to https://bard.google.com/ and open the developer tools by `F12`.
+    1. Go to https://bard.google.com/ and open the developer tools by `F12`.
     2. Find the `__Secure-1PSID` cookie in `Application` > `Storage` > `Cookies` 
     3. Copy the value in the `Cookie Value` field in `.env` file.
 
@@ -124,7 +124,7 @@ I believe that by providing free and open-source AI tools, we can give small bus
 
   </summary>
 Open the file called `.env` . 
-If you dont see the file, open your file manger and check for **`Show hidden file`** .
+If you don't see the file, open your file manager and check for **`Show hidden file`** .
 
 Now add you Cookie and Token in `.env` file .
 
@@ -138,18 +138,18 @@ Now add you Cookie and Token in `.env` file .
 <details>
   <summary>
 
-## Local using with Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)🚀
+## Develop locally with Dev Containers in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)🚀
 
   </summary>
   
-🚀Added the possibility to use Docker image using Dev Container in VSCode. How to run it :
+🚀Added the possibility to use Docker image using Dev Containers in VSCode. How to run it :
 - Install [Docker Desktop](https://docs.docker.com/desktop/)
 - Install Visual Studio Code
-- Open Visual Studio and go to **Extensions -> search for Dev Container -> install it**
+- Open Visual Studio and go to **Extensions -> search for `Dev Containers` -> install it**
 - Restart Visual Studio
 - Go to the project folder, **right click** and **"Open in Visual Studio Code"**
 - It will ask you to reopen in a Docker Container
-- Click **"Reopen"** and wait for it to be complete **(you need to have Docker Desktop opened)**
+- Click **"Reopen"** and wait for it to be completed **(you need to have Docker Desktop opened)**
 
 </details>
 
@@ -167,14 +167,14 @@ Now add you Cookie and Token in `.env` file .
   </summary>
   
 **RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
-⚠️ Abusing this tool is at your own risk
+⚠️ Abuse this tool at your own risk
 
 
 **Or use Locally :**
-- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- install using **Dev Container in VSCode** or `python3 -m pip install -r requirements.txt`
+- Download the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
+- install using **Dev Containers in VSCode** or `python3 -m pip install -r requirements.txt`
 - insert the **.env file** yours Token
-- if you dont see the **.env file** check "Show hidden file" in your file manger
+- if you don't see the **.env file** check "Show hidden file" in your File Manger
 - Usage: **python BABYAGI.py**
 
 
@@ -198,13 +198,13 @@ https://user-images.githubusercontent.com/108482353/234963635-004adace-36ab-46de
   </summary>
   
 **RUN NOW ON COLAB😮** [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14854fi6oO4lXqR3_mt6tc2Lr2IsA12oq?usp=sharing)
-⚠️ Abusing this tool is at your own risk
+⚠️ Abuse this tool at your own risk
 
 **Or use Locally :**
-- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- install using **Dev Container in VSCode** or `python3 -m pip install -r requirements.txt`
+- Download the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
+- install using **Dev Containers in VSCode** or `python3 -m pip install -r requirements.txt`
 - insert the **.env file** yours Token
-- if you dont see the **.env file** check "Show hidden file" in your file manger
+- if you don't see the **.env file** check "Show hidden file" in your File Manger
 - Usage: **python AUTOGPT.py**
 
 
@@ -227,8 +227,8 @@ https://user-images.githubusercontent.com/108482353/234947600-1df35b1f-6505-40f9
 ⚠️ Abusing this tool is at your own risk
 
 **Or use Locally :**
-- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
-- install using **Dev Container in VSCode** or `python3 -m pip install -r requirements.txt`
+- Download the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
+- install using **Dev Containers in VSCode** or `python3 -m pip install -r requirements.txt`
 - cd OtherAgent/
 - Choose or develop your agent [ csvAgent.py  ;  pythonAgent.py  ; customAgent.py ]
 - Usage: **python YourAgent.py**
@@ -255,7 +255,7 @@ https://user-images.githubusercontent.com/108482353/235354639-998f0a40-3d2d-4f33
 ⚠️ Abusing this tool is at your own risk
 
 **Or use Locally :**
-- Dowload the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
+- Download the repository [FREE AUTOGPT REPOSITORY](https://github.com/IntelligenzaArtificiale/Free-AUTOGPT-with-NO-API)
 - `python3 -m pip install -r requirements.txt`
 - `streamlit run Camel.py`
 
@@ -272,7 +272,7 @@ https://user-images.githubusercontent.com/108482353/235199747-c2dbdd27-80d6-4950
 <details>
   <summary>
 
-## HOW IT WORK ? 🔨🔩
+## HOW IT WORKS ? 🔨🔩
 
   </summary>
 
@@ -395,7 +395,7 @@ llm = ChatGPTAPI.ChatGPT((token="YOURTOKEN")
 # or use Google BArd CHAT
 # llm=BardChatAPI.BardChat(cookie="cookie") 
 
-# or use HuggingChatAPI if u dont have CHATGPT, BING or Google account
+# or use HuggingChatAPI if u don't have CHATGPT, BING or Google account
 # llm = HuggingChatAPI.HuggingChat() 
 
 
@@ -486,7 +486,7 @@ By the way, thank you so much for [![Stars](https://img.shields.io/github/stars/
 - [x] Add QA web page Tool
 - [x] Finally AUTOGPT without paids API
 - [x] Make a Colab Notebook for make this repository accessible to anyone
-- [x] Local using with Dev Container in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)
+- [x] Local using with Dev Containers in VSCode by [@FlamingFury00](https://github.com/FlamingFury00)
 - [ ] Add other free Custom LLM wrapper [Add this](https://github.com/xtekky/gpt4free)
 - [ ] Add long term memory
 - [ ] Find a way to replace PINECONE api
