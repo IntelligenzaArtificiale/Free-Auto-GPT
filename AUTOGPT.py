@@ -8,7 +8,7 @@ import pandas as pd
 from dotenv import load_dotenv
 from pathlib import Path
 from json import JSONDecodeError
-from langchain.experimental.autonomous_agents.autogpt.agent import AutoGPT
+from langchain_experimental.autonomous_agents import AutoGPT
 from FreeLLM import ChatGPTAPI  # FREE CHATGPT API
 from FreeLLM import HuggingChatAPI  # FREE HUGGINGCHAT API
 from FreeLLM import BingChatAPI  # FREE BINGCHAT API

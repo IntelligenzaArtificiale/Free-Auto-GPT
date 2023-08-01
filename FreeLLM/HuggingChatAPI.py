@@ -35,7 +35,7 @@ class HuggingChat(LLM):
                     cookies = sign.login()
 
                     # Save cookies to usercookies/<email>.json
-                    sign.saveCookies()
+                    sign.saveCookiesToDir("usercookies/")
 
                     # Create a ChatBot
                     self.chatbot = hugchat.ChatBot(cookies=cookies.get_dict()) 

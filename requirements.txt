@@ -1,5 +1,6 @@
 requests
 langchain
+langchain_experimental
 streamlit
 streamlit-chat-media
 numpy
@@ -8,8 +9,8 @@ duckduckgo-search
 transformers
 tabulate
 wikipedia
-faiss-gpu # if u have a GPU
-#faiss-cpu # if u dont have a GPU
+#faiss-gpu # if u have a GPU
+faiss-cpu # if u dont have a GPU
 nest_asyncio
 torch
 # tensorflow >= 2.0 -- For other future models
