@@ -17,7 +17,7 @@ from FreeLLM import BardChatAPI  # FREE GOOGLE BARD API
 from langchain.vectorstores.base import VectorStore
 from pydantic import BaseModel, Field
 from langchain.chains.base import Chain
-from langchain.experimental import BabyAGI
+from langchain_experimental.autonomous_agents import BabyAGI
 from BabyAgi import BabyAGIMod
 
 import faiss
@@ -83,6 +83,7 @@ elif select_model == "3":
 
 elif select_model == "4":
     GB_TOKEN = os.getenv("BARDCHAT_TOKEN", "your-googlebard-token")
+    GB_PSIDTS = os.getenv("BARDCHAT_1PSITS", "your-googlebard-1PSITS")
 
     if GB_TOKEN != "your-googlebard-token":
         os.environ["BARDCHAT_TOKEN"] = GB_TOKEN
@@ -90,8 +91,12 @@ elif select_model == "4":
         raise ValueError(
             "GoogleBard Token EMPTY. Edit the .env file and put your GoogleBard token"
         )
-    cookie_path = os.environ["BARDCHAT_TOKEN"]
-    llm = BardChatAPI.BardChat(cookie=cookie_path)
+    if GB_TOKEN != "your-googlebard-1PSITS":
+        os.environ["BARDCHAT_1PSITS"] = GB_PSIDTS
+
+    secure_1psid = os.environ["BARDCHAT_TOKEN"]
+    secure_1psidts = os.environ["BARDCHAT_1PSITS"]
+    llm = BardChatAPI.BardChat(secure_1psid=secure_1psid,secure_1psidts=secure_1psidts)
 
 
     
