@@ -8,7 +8,7 @@ class TaskCreationChain(LLMChain):
     def from_llm(cls, llm: BaseLanguageModel, verbose: bool = True) -> LLMChain:
         """Get the response parser."""
         task_creation_template = (
-            "Can you hel me to"
+            "Can you help me to"
             " to create new tasks with the following objective: {objective},"
             " The last completed task has the result: {result}."
             " This result was based on this task description: {task_description}."
