@@ -1,5 +1,5 @@
 requests
-langchain
+langchain<=0.0.187
 streamlit
 streamlit-chat-media
 numpy
@@ -19,7 +19,7 @@ undetected-chromedriver>=3.2.1
 markdownify>=0.11.6
 hugchat
 python-dotenv
-EdgeGPT
+EdgeGPT<=0.6.10
 GoogleBard
 lark
 accelerate
