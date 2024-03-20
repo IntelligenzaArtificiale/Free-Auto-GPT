@@ -1,6 +1,6 @@
 # !pip install bs4
 # !pip install nest_asyncio
-
+! pip install langchain_experimental
 # General
 import os
 import json
